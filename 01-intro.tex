@@ -1,5 +1,6 @@
 % The contents of this file is 
-% Copyright (c) 2009-  Charles R. Severance, All Righs Reserved
+% Copyright (c) 2021- David S. Read, All Rights Reserved
+% Previous version, Copyright (c) 2009-  Charles R. Severance, All Rights Reserved
 
 \chapter{Why should you learn to write programs?}
 
@@ -25,7 +26,7 @@ is essentially built to continuously ask us the question,
 
 Programmers add an operating system and a set of applications
 to the hardware and we end up with a Personal Digital
-Assistant that is quite helpful and capable of helping
+Assistant that is quite useful and capable of helping
 us do many different things.
 
 Our computers are fast and have vast amounts of memory and 
@@ -69,15 +70,16 @@ to your partner (the computer), leaving more time
 for you to do the 
 things that you are uniquely suited for.  You bring 
 creativity, intuition, and inventiveness to this
-partnership.  
+partnership.
 
 \section{Creativity and motivation}
 
-While this book is not intended for professional programmers, professional
-programming can be a very rewarding job both financially and personally.
+This book is designed to introduce people to the concepts inherent in
+programming a computer. Programming can be a very rewarding job both 
+financially and personally.
 Building useful, elegant, and clever programs for others to use is a very
-creative activity.  Your computer or Personal Digital Assistant (PDA) 
-usually contains many different programs from many different groups of 
+creative activity.  Your computer and smart phone
+contain many different programs from many different groups of 
 programmers, each competing for your attention and interest.  They try 
 their best to meet your needs and give you a great user experience in the
 process.   In some situations, when you choose a piece of software, the 
@@ -91,8 +93,8 @@ perhaps the following figure is a more sensible version of our PDA:
 \afterfig
 
 For now, our primary motivation is not to make money or please end users, but
-instead for us to be more productive in handling the data and 
-information that we will encounter in our lives.
+instead for us to learn how to write computer programs. We create programs
+to be more productive and to entertain.
 When you first start, you will be both the programmer and the end user of
 your programs.  As you gain skill as a programmer and
 programming feels more creative to you, your thoughts may turn
@@ -105,7 +107,12 @@ toward developing programs for others.
 Before we start learning the language we 
 speak to give instructions to computers to 
 develop software, we need to learn a small amount about 
-how computers are built.  If you were to take
+how computers are built. The architecture used to build
+most computers, including tablets and smart phones, is
+based on the work of John von Neumann and is usually
+referred to as the {\bf von Neumann architecture}.
+
+If you were to take
 apart your computer or cell phone and look deep
 inside, you would find the following parts:
 
@@ -155,8 +162,11 @@ to computer builders, it helps to have some terminology
 so we can talk about these different parts as we write our programs.
 
 As a programmer, your job is to use and orchestrate 
-each of these resources to solve the problem that you need to solve
-and analyze the data you get from the solution.  As a programmer you will 
+each of these resources to make the computer carry out the
+actions you want in order to have your program deliver
+a result to the user, whether updating a score in a game
+or analyzing traffic data to find the optimal route home at
+rush hour.  As a programmer you will 
 mostly be ``talking'' to the CPU and telling it what to 
 do next.  Sometimes you will tell the CPU to use the main memory,
 secondary memory, network, or the input/output devices.
@@ -170,17 +180,17 @@ question.  But it would be very uncomfortable to shrink you
 down to 5mm tall and insert you into the computer just so you 
 could issue a command three billion times per second.  So instead,
 you must write down your instructions in advance.
-We call these stored instructions a {\bf program} and the act 
+We call these stored instructions a {\bf program}. The act 
 of writing these instructions down and getting the instructions to 
-be correct {\bf programming}.
+be correct is called {\bf programming}.
 
 \section{Understanding programming}
 
 In the rest of this book, we will try to turn you into a person
 who is skilled in the art of programming.  In the end you will be a 
 {\bf programmer} --- perhaps not a professional programmer, but 
-at least you will have the skills to look at a data/information
-analysis problem and develop a program to solve the problem.
+at least you will have the skills to look at the description
+of a process (perhaps the rules of a game) and develop a program to automate the process.
 
 \index{problem solving}
 
@@ -188,7 +198,7 @@ In a sense, you need two skills to be a programmer:
 
 \begin{itemize}
 
-\item First, you need to know the programming language (Python) -
+\item First, you need to know the programming language (Python in this case) -
 you need to know the vocabulary and the grammar.  You need to be able 
 to spell the words in this new language properly and know how to construct 
 well-formed ``sentences'' in this new language.
@@ -204,7 +214,7 @@ problem you are trying to solve is the ``idea''.
 
 Once you learn one programming language such as Python, you will 
 find it much easier to learn a second programming language such
-as JavaScript or C++.  The new programming language has very different 
+as Java or C++.  The new programming language has very different 
 vocabulary and grammar but the problem-solving skills 
 will be the same across all programming languages.
 
@@ -235,15 +245,18 @@ you called {\bf variables}.   You will have great latitude in choosing
 your names for your variables, but you cannot use any of Python's 
 reserved words as a name for a variable.
 
+\index{keyword}
+\index{reserved word}
+
 When we train a dog, we use special words like
 ``sit'', ``stay'', and ``fetch''.  When you talk to a dog and
 don't use any of the reserved words, they just look at you with a 
 quizzical look on their face until you say a reserved word.  
 For example, if you say, 
-``I wish more people would walk to improve their overall health'', 
+``Exercise is important. People should sit less and walk more to be healthier'', 
 what most dogs likely hear is,
-``blah blah blah {\bf walk} blah blah blah blah.''
-That is because ``walk'' is a reserved word in dog language.  Many
+``blah blah blah {\bf sit} blah blah blah.''
+That is because ``sit'' is a reserved word in dog language.  Many
 might suggest that the language between humans and cats has no
 reserved words\footnote{\url{http://xkcd.com/231/}}.
 
@@ -252,13 +265,13 @@ Python include the following:
 
 \beforeverb
 \begin{verbatim}
-and       del       from      not       while    
-as        elif      global    or        with     
-assert    else      if        pass      yield    
-break     except    import    print              
-class     exec      in        raise              
-continue  finally   is        return             
-def       for       lambda    try
+and       del       from      not       with    
+as        elif      global    or        yield     
+assert    else      if        pass         
+break     except    import    raise              
+class     exec      in        return              
+continue  finally   is        try             
+def       for       lambda    while
 \end{verbatim}
 \afterverb
 %
@@ -273,13 +286,15 @@ is that we can even tell it what to say by giving it a message in quotes:
 
 \beforeverb
 \begin{verbatim}
-print 'Hello world!'
+print('Hello world!')
 \end{verbatim}
 \afterverb
 
 And we have even written our first syntactically correct Python sentence.
-Our sentence starts with the reserved word {\bf print} followed
-by a string of text of our choosing enclosed in single quotes.
+Our sentence starts with the built-in command {\bf print()} which is then given
+a string of text of our choosing enclosed in single quotes. 
+
+If you noticed that ``print'' is not on the list of reserved words give yourself a pat on the back. Beyond Python's reserved words, there are {\bf operations} and {\bf operators} already built into Python. The ``print()'' operation is used frequently. An example operator is the plus sign (+) which may be used to adding numbers. We'll cover these concepts throughout the semester.
 
 \section{Conversing with Python}
 
@@ -300,8 +315,8 @@ and appear somewhat as follows:
 
 \beforeverb
 \begin{verbatim}
-Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49) 
-[GCC 4.2.1 (Apple Inc. build 5646)] on darwin
+Python 3.7.9 (default, Aug 19 2020, 17:05:11) 
+[GCC 9.3.1 20200408 (Red Hat 9.3.1-2)] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 \end{verbatim}
@@ -336,7 +351,7 @@ this very page and try again:
 
 \beforeverb
 \begin{verbatim}
->>> print 'Hello world!'
+>>> print('Hello world!')
 Hello world!
 \end{verbatim}
 \afterverb
@@ -346,13 +361,13 @@ more:
 
 \beforeverb
 \begin{verbatim}
->>> print 'You must be the legendary god that comes from the sky'
+>>> print('You must be the legendary god that comes from the sky')
 You must be the legendary god that comes from the sky
->>> print 'We have been waiting for you for a long time'
+>>> print('We have been waiting for you for a long time')
 We have been waiting for you for a long time
->>> print 'Our legend says you will be very tasty with mustard'
+>>> print('Our legend says you will be very tasty with mustard')
 Our legend says you will be very tasty with mustard
->>> print 'We will have a feast tonight unless you say
+>>> print('We will have a feast tonight unless you say)
   File "<stdin>", line 1
     print 'We will have a feast tonight unless you say
                                                      ^
@@ -417,7 +432,7 @@ to be helpful.
 
 Python is a {\bf high-level} language intended to be relatively
 straightforward for humans to read and write and for computers
-to read and process.  Other high-level languages include Java, C++,
+to read and process efficiently.  Other high-level languages include Java, C++,
 PHP, Ruby, Basic, Perl, JavaScript, and many more.  The actual hardware
 inside the Central Processing Unit (CPU) does not understand any
 of these high-level languages.
@@ -437,8 +452,8 @@ is represented all in zeros and ones:
 Machine language seems quite simple on the surface, given that there 
 are only zeros and ones, but its syntax is even more complex
 and far more intricate than Python.  So very few programmers ever write
-machine language.  Instead we build various translators to allow
-programmers to write in high-level languages like Python or JavaScript
+machine language.  Instead we use various translators to allow
+programmers to write in high-level languages like Python or Java
 and these translators convert the programs to machine language for actual
 execution by the CPU.
 
@@ -465,10 +480,10 @@ term {\bf variable} to refer to the labels we use to refer to this stored data.
 \beforeverb
 \begin{verbatim}
 >>> x = 6
->>> print x
+>>> print(x)
 6
 >>> y = x * 7
->>> print y
+>>> print(y)
 42
 >>> 
 \end{verbatim}
@@ -481,7 +496,7 @@ it by seven and put the newly computed value in {\bf y}.  Then we ask Python to 
 the value currently in {\bf y}.
 
 Even though we are typing these commands into Python one line at a time, Python
-is treating them as an ordered sequence of statements with later statements able
+is treating them as an {\bf ordered sequence of statements} with later statements able
 to retrieve data created in earlier statements.   We are writing our first 
 simple paragraph with four sentences in a logical and meaningful order.
 
@@ -538,6 +553,11 @@ That is more than you really need to know to be a Python programmer, but
 sometimes it pays to answer those little nagging questions right at 
 the beginning.
 
+One other question might have occurred to you, ``why are some languages interpreted and other compiled?'' There are a variety of reasons but one key difference is speed. A program written using an interpreted language will generally run more slowly on a given computer than the same program written in a compiled language. This is because the compilation step produces a file that is specifically designed to be run by the computer, meaning it has less work to do when it runs the compiled program.
+
+On the flip side, an interpreted language has the advantage of allowing us to experiment one statement at a time to get a program working. We can test our code as we type it in rather than waiting to complete an entire program so that it can be compiled.
+
+
 \section{Writing a program}
 
 Typing commands into the Python interpreter is a great way to experiment 
@@ -556,15 +576,15 @@ you would type {\tt python hello.py} as follows:
 
 \beforeverb
 \begin{verbatim}
-csev$ cat hello.py
+$ cat hello.py
 print 'Hello world!'
-csev$ python hello.py
+$ python hello.py
 Hello world!
-csev$
+$
 \end{verbatim}
 \afterverb
 %
-The ``csev\$'' is the operating system prompt, and the ``cat hello.py'' is 
+The ``\$'' is the operating system prompt, and the ``cat hello.py'' is 
 showing us that the file ``hello.py'' has a one-line Python program to print
 a string.
 
@@ -592,7 +612,7 @@ Lets say you are doing Social Computing research on Facebook posts and
 you are interested in the most frequently used word in a series of posts.
 You could print out the stream of Facebook posts and pore over the text
 looking for the most common word, but that would take a long time and be very 
-mistake prone.  You would be smart to write a Python program to handle the
+mistake prone.  You would be smart to write a Java program to handle the
 task quickly and accurately so you can spend the weekend doing something 
 fun.
 
@@ -617,14 +637,14 @@ tested it, and now I am giving it to you to use so you can save some time.
 
 \beforeverb
 \begin{verbatim}
-name = raw_input('Enter file:')
+name = input('Enter file: ')
 handle = open(name, 'r')
 text = handle.read()
 words = text.split()
 counts = dict()
 
 for word in words:
-   counts[word] = counts.get(word,0) + 1
+    counts[word] = counts.get(word,0) + 1
 
 bigcount = None
 bigword = None
@@ -633,7 +653,8 @@ for word,count in counts.items():
         bigword = word
         bigcount = count
 
-print bigword, bigcount
+print(bigword, bigcount)
+
 \end{verbatim}
 \afterverb
 %
@@ -675,7 +696,7 @@ or store them in a file or perhaps write them to a device like a
 speaker to play music or speak text.
 
 \item[sequential execution:] Perform statements one after
-another in the order they are encountered in the script.
+another in the order they are encountered in the program.
 
 \item[conditional execution:] Check for certain conditions and
 then execute or skip a sequence of statements.
@@ -697,7 +718,7 @@ basic elements together many times over to produce something
 that is useful to its users.
 
 The word counting program above directly uses all of 
-these patterns except for one.
+these patterns except for one. Any idea which one?
 
 \section{What could possibly go wrong?}
 
@@ -712,6 +733,17 @@ While Python seems to like everyone else, Python knows them
 personally and holds a grudge against them.  Because of this grudge,
 Python takes our perfectly written programs and rejects them as 
 ``unfit'' just to torment us.
+
+There is little to be gained by arguing with Python.  It is just a tool.
+It has no emotions and it is happy and ready to serve you whenever you
+need it.  Its error messages sound harsh, but they are just Python's
+call for help.  It has looked at what you typed, and it simply cannot
+understand what you have entered.
+
+Python is much more like a dog, loving you unconditionally, having a few
+key words that it understands, looking at you with a sweet look on its
+face and waiting for you to say something it understands.
+When Pythonsays something like:
 
 \beforeverb
 \begin{verbatim}
@@ -738,19 +770,10 @@ SyntaxError: invalid syntax
 >>> 
 \end{verbatim}
 \afterverb
-%
-There is little to be gained by arguing with Python.  It is just a tool.
-It has no emotions and it is happy and ready to serve you whenever you
-need it.  Its error messages sound harsh, but they are just Python's
-call for help.  It has looked at what you typed, and it simply cannot
-understand what you have entered.
 
-Python is much more like a dog, loving you unconditionally, having a few
-key words that it understands, looking you with a sweet look on its
-face ({\tt >>>}), and waiting for you to say something it understands.
-When Python says ``SyntaxError: invalid syntax'', it is simply wagging
+it is simply wagging
 its tail and saying, ``You seemed to say something but I just don't
-understand what you meant, but please keep talking to me ({\tt >>>}).''
+understand what you meant.''
 
 As your programs become increasingly sophisticated, you will encounter three 
 general types of errors:
@@ -765,12 +788,12 @@ the mistake that needs fixing is actually earlier in the program than where Pyth
 {\em noticed} it was confused.  So the line and character that Python indicates in 
 a syntax error may just be a starting point for your investigation.
 
-\item[Logic errors:] A logic error is when your program has good syntax but there is a mistake 
-in the order of the statements or perhaps a mistake in how the statements relate to one another.
+\item[Logic errors:] A logic error occurs when your program has good syntax but there is a mistake 
+in the order of the statements or perhaps a mistake in how the statements relate to one another. Logic errors do not prevent the program from compiling.
 A good example of a logic error might be, ``take a drink from your water bottle, put it 
 in your backpack, walk to the library, and then put the top back on the bottle.''
 
-\item[Semantic errors:] A semantic error is when your description of the steps to take 
+\item[Semantic errors:] A semantic error occurs when your description of the steps to take 
 is syntactically perfect and in the right order, but there is simply a mistake in 
 the program.  The program is perfectly correct but it does not do what
 you {\em intended} for it to do. A simple example would
@@ -782,7 +805,7 @@ Then you say ``did you turn left or right at the gas station?'' and
 they say, ``I followed your directions perfectly, I have 
 them written down, it says turn left and go one mile at the gas station.''  Then you say,
 ``I am very sorry, because while my instructions were syntactically correct, they 
-sadly contained a small but undetected semantic error.''. 
+sadly contained a small but undetected semantic error.''.  The issue in this case being that you meant to tell your friend to turn right instead of left. The order of steps is correct (logically) but the semantics are incorrect (right versus left). Logic and semantic errors are very related so don't get hung up on trying to differentiate between them at this point.
 
 \end{description}
 
@@ -999,4 +1022,3 @@ For example, ``What is the human equivalent to a Central Processing Unit''?
 \begin{ex}
 How do you fix a ``Syntax Error''?
 \end{ex}
-
