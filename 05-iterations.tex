@@ -1,8 +1,11 @@
-% LaTeX source for ``Python for Informatics: Exploring Information''
+% LaTeX source for ``Introduction to Computer Science (Python Edition)''
+% Copyright (c) 2021- David S. Read, All Rights Reserved
+% Built upon, ``Python for Informatics: Exploring Information''
 % Copyright (c)  2010-  Charles R. Severance, All Rights Reserved
 
 \chapter{Iteration}
 \index{iteration}
+\index{loop}
 
 \section{Updating variables}
 \label{update}
@@ -16,7 +19,7 @@ where the new value of the variable depends on the old.
 
 \beforeverb
 \begin{verbatim}
-x = x+1
+x = x + 1
 \end{verbatim}
 \afterverb
 %
@@ -29,7 +32,7 @@ a value to {\tt x}:
 
 \beforeverb
 \begin{verbatim}
->>> x = x+1
+>>> x = x + 1
 NameError: name 'x' is not defined
 \end{verbatim}
 \afterverb
@@ -42,7 +45,7 @@ it, usually with a simple assignment:
 \beforeverb
 \begin{verbatim}
 >>> x = 0
->>> x = x+1
+>>> x = x + 1
 \end{verbatim}
 \afterverb
 %
@@ -72,9 +75,9 @@ a simple program that counts down from five and then says ``Blastoff!''.
 \begin{verbatim}
 n = 5
 while n > 0:
-    print n
-    n = n-1
-print 'Blastoff!'
+    print(n)
+    n = n - 1
+print('Blastoff!')
 \end{verbatim}
 \afterverb
 %
@@ -83,6 +86,10 @@ It means, ``While {\tt n} is greater than 0,
 display the value of {\tt n} and then reduce the value of
 {\tt n} by 1.  When you get to 0, exit the {\tt while} statement and
 display the word {\tt Blastoff!}''
+
+\beforefig
+\centerline{\includegraphics[height=3in]{figs2/while.eps}}
+\afterfig
 
 \index{flow of execution}
 
@@ -152,9 +159,9 @@ expression on the
 \begin{verbatim}
 n = 10
 while True:
-    print n, 
+    print(n) 
     n = n - 1
-print 'Done!'
+print('Done!')
 \end{verbatim}
 \afterverb
 %
@@ -179,11 +186,11 @@ type {\tt done}.  You could write:
 \beforeverb
 \begin{verbatim}
 while True:
-    line = raw_input('> ')
+    line = input('> ')
     if line == 'done':
         break
-    print line
-print 'Done!'
+    print(line)
+print('Done!')
 \end{verbatim}
 \afterverb
 %
@@ -229,13 +236,13 @@ as lines not to be printed (kind of like Python comments).
 \beforeverb
 \begin{verbatim}
 while True:
-    line = raw_input('> ')
+    line = input('> ')
     if line[0] == '#' :
         continue
     if line == 'done':
         break
-    print line
-print 'Done!'
+    print(line)
+print('Done!')
 \end{verbatim}
 \afterverb
 %
@@ -280,8 +287,8 @@ in that there is a {\tt for} statement and a loop body:
 \begin{verbatim}
 friends = ['Joseph', 'Glenn', 'Sally']
 for friend in friends:
-    print 'Happy New Year:', friend
-print 'Done!'
+    print('Happy New Year:', friend)
+print('Done!')
 \end{verbatim}
 \afterverb
 %
@@ -311,10 +318,10 @@ Looking at the {\tt for} loop, {\bf for} and {\bf in} are reserved
 Python keywords, and {\tt friend} and {\tt friends} are variables.
 
 {\tt {\bf for} friend {\bf in} friends{\bf :}\\
-\verb"    "{\bf print} 'Happy New Year', friend }
+\verb"    "{\bf print(} 'Happy New Year', friend {\bf )}}
 
 In particular, {\tt friend} is the {\bf iteration variable} for 
-the for loop.  The variable {\tt friend} changes for each iteration of
+the {\tt for} loop.  The variable {\tt friend} changes for each iteration of
 the loop and controls when the {\tt for} loop completes.  The 
 {\bf iteration variable} steps successively through the 
 three strings stored in the {\tt friends} variable.
@@ -352,7 +359,7 @@ in a list, we would write the following {\tt for} loop:
 count = 0
 for itervar in [3, 41, 12, 9, 74, 15]:
     count = count + 1
-print 'Count: ', count
+print('Count: ', count)
 \end{verbatim}
 \afterverb
 %
@@ -379,7 +386,7 @@ is as follows:
 total = 0
 for itervar in [3, 41, 12, 9, 74, 15]:
     total = total + itervar
-print 'Total: ', total
+print('Total: ', total)
 \end{verbatim}
 \afterverb
 %
@@ -422,8 +429,8 @@ print 'Before:', largest
 for itervar in [3, 41, 12, 9, 74, 15]:
     if largest is None or itervar > largest :
         largest = itervar
-    print 'Loop:', itervar, largest
-print 'Largest:', largest
+    print('Loop:', itervar, largest)
+print('Largest:', largest)
 \end{verbatim}
 \afterverb
 %
@@ -478,8 +485,8 @@ print 'Before:', smallest
 for itervar in [3, 41, 12, 9, 74, 15]:
     if smallest is None or itervar < smallest:
         smallest = itervar
-    print 'Loop:', itervar, smallest
-print 'Smallest:', smallest
+    print('Loop:', itervar, smallest)
+print('Smallest:', smallest)
 \end{verbatim}
 \afterverb
 %

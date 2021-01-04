@@ -1,4 +1,6 @@
-% LaTeX source for ``Python for Informatics: Exploring Information''
+% LaTeX source for ``Introduction to Computer Science (Python Edition)''
+% Copyright (c) 2021- David S. Read, All Rights Reserved
+% Built upon, ``Python for Informatics: Exploring Information''
 % Copyright (c)  2010-  Charles R. Severance, All Rights Reserved
 
 \chapter{Functions}
@@ -76,8 +78,8 @@ in the string.
 These functions are not limited to looking at strings. They can operate
 on any set of values, as we will see in later chapters.
 
-You should treat the names of built-in functions as reserved words (i.e.,
-avoid using ``max'' as a variable name).
+{\bf You should treat the names of built-in functions as reserved words} (i.e.,
+avoid using ``max'' as a variable name). Creating variables whose names match a function will lead to errors when you try to use those functions.
 
 \section{Type conversion functions}
 \index{conversion!type}
@@ -236,7 +238,7 @@ The function {\tt randint} takes the parameters {\tt low} and
 \end{verbatim}
 \afterverb
 %
-To choose an element from a sequence at random, you can use
+To choose an element from a sequence\footnote{We'll cover sequences in a future chapter} at random, you can use
 {\tt choice}:
 
 \index{choice function}
@@ -283,7 +285,7 @@ you print the module object, you get some information about it:
 \afterverb
 %
 The module object contains the functions and variables defined in the
-module.  To access one of the functions, you have to specify the name
+module\footnote{We'll learn how to create our own modules later in the course}.  To access one of the functions, you have to specify the name
 of the module and the name of the function, separated by a dot (also
 known as a period).  This format is called {\bf dot notation}.
 
@@ -347,10 +349,11 @@ the square root of two divided by two:
 %
 
 
-\section{Adding new functions}
+\section{Creating functions}
 
 So far, we have only been using the functions that come with Python,
-but it is also possible to add new functions.
+but it is also possible to create our own functions. This allows us to add new functions beyond those provided by Python.
+
 A {\bf function definition} specifies the name of a new function and
 the sequence of statements that execute when the function is called.
 Once we define a function, we can reuse the function over and over 
@@ -365,8 +368,8 @@ Here is an example:
 \beforeverb
 \begin{verbatim}
 def print_lyrics():
-    print "I'm a lumberjack, and I'm okay."
-    print 'I sleep all night and I work all day.'
+    print("I'm a lumberjack, and I'm okay.")
+    print('I sleep all night and I work all day.')
 \end{verbatim}
 \afterverb
 %
@@ -412,8 +415,8 @@ isn't complete:
 \beforeverb
 \begin{verbatim}
 >>> def print_lyrics():
-...     print "I'm a lumberjack, and I'm okay."
-...     print 'I sleep all night and I work all day.'
+...     print("I'm a lumberjack, and I'm okay.")
+...     print('I sleep all night and I work all day.')
 ...
 \end{verbatim}
 \afterverb
@@ -425,9 +428,9 @@ Defining a function creates a variable with the same name.
 
 \beforeverb
 \begin{verbatim}
->>> print print_lyrics
+>>> print(print_lyrics)
 <function print_lyrics at 0xb7e99e9c>
->>> print type(print_lyrics)
+>>> print(type(print_lyrics))
 <type 'function'>
 \end{verbatim}
 \afterverb
@@ -485,8 +488,8 @@ whole program looks like this:
 \beforeverb
 \begin{verbatim}
 def print_lyrics():
-    print "I'm a lumberjack, and I'm okay."
-    print 'I sleep all night and I work all day.'
+    print("I'm a lumberjack, and I'm okay.")
+    print('I sleep all night and I work all day.')
 
 def repeat_lyrics():
     print_lyrics()
@@ -552,6 +555,24 @@ time a function completes, the program picks up where it left off in
 the function that called it.  When it gets to the end of the program,
 it terminates.
 
+\begin{minipage}{\textwidth}\label{ch4TraceFlow}
+Here is a depiction of a program, traceflow.py, numbering the statements in the order they will execute. The arrows depict the function calls which cause the flow of execution to change.
+
+\beforefig
+\centerline{\includegraphics[height=3.5in]{figs2/traceflow.eps}}
+\afterfig
+\end{minipage}
+
+Running the \texttt{traceflow.py} program would produce this output on the screen:
+
+\beforeverb
+\begin{verbatim}
+11
+done
+\end{verbatim}
+\afterverb
+
+
 What's the moral of this sordid tale?  When you read a program, you
 don't always want to read from top to bottom.  Sometimes it makes
 more sense if you follow the flow of execution.
@@ -578,8 +599,8 @@ user-defined function that takes an argument:
 \beforeverb
 \begin{verbatim}
 def print_twice(bruce):
-    print bruce
-    print bruce
+    print(bruce)
+    print(bruce)
 \end{verbatim}
 \afterverb
 %
@@ -676,9 +697,9 @@ the result:
 \end{verbatim}
 \afterverb
 %
-But in a script, if you call a fruitful function and do 
+But in a script, {\bf if you call a fruitful function and do 
 not store the result of the function in a variable,
-the return value vanishes into the mist!
+the return value vanishes into the mist!}
 
 \beforeverb
 \begin{verbatim}
@@ -732,7 +753,7 @@ def addtwo(a, b):
     return added
 
 x = addtwo(3, 5)
-print x
+print(x)
 \end{verbatim}
 \afterverb
 %
@@ -805,7 +826,7 @@ Debugging can take a long time if you keep running the same
 incorrect program over and over!
 
 Make sure that the code you are looking at is the code you are running.
-If you're not sure, put something like \verb"print 'hello'" at the
+If you're not sure, put something like \verb"print('hello')" at the
 beginning of the program and run it again.  If you don't see
 \verb"hello", you're not running the right program!
 
@@ -915,10 +936,10 @@ What will the following Python program print out?
 \beforeverb
 \begin{verbatim}
 def fred():
-   print "Zap"
+   print("Zap")
 
 def jane():
-   print "ABC"
+   print("ABC")
 
 jane()
 fred()
@@ -934,7 +955,7 @@ e) Zap Zap Zap
 \end{ex}
 
 \begin{ex}
-Rewrite your pay computation with time-and-a-half for overtime
+Rewrite your pay computation (exercise \ref{exCh3HourRate}, page \pageref{exCh3HourRate}) with time-and-a-half for overtime
 and create a function called {\tt computepay} which takes
 two parameters ({\tt hours} and {\tt rate}).
 
@@ -946,7 +967,7 @@ Pay: 475.0
 \end{ex}
 
 \begin{ex}
-Rewrite the grade program from the previous chapter 
+Rewrite the grade program (exercise \ref{exCh3Score}, page \pageref{exCh3Score})
 using a function called {\tt computegrade} that takes
 a score as its parameter and returns a grade as a string.
 
@@ -979,5 +1000,8 @@ F
 Run the program repeatedly to test the various different values
 for input.
 \end{ex}
+\begin{ex}
+Retype the traceflow program (page \pageref{ch4TraceFlow}) into a file on your computer called traceflow.py and run it. Verify you get the expected results. 
 
-
+Next, modify the {\tt def\_number()} function to accept a number from the user (use the {\tt input()} function) and return the value entered by the user. Test your updated program and verify the new output is what you expect.
+\end{ex}

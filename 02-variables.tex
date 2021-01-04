@@ -1,4 +1,6 @@
-% LaTeX source for ``Python for Informatics: Exploring Information''
+% LaTeX source for ``Introduction to Computer Science (Python Edition)''
+% Copyright (c) 2021- David S. Read, All Rights Reserved
+% Built upon, ``Python for Informatics: Exploring Information''
 % Copyright (c)  2010-  Charles R. Severance, All Rights Reserved
 
 \chapter{Variables, expressions, and statements}
@@ -28,7 +30,7 @@ The {\tt print} statement also works for integers.  We use the
 \beforeverb
 \begin{verbatim}
 python
->>> print 4
+>>> print(4)
 4
 \end{verbatim}
 \afterverb
@@ -57,6 +59,8 @@ format called {\bf floating point}.
 \index{type!int}
 \index{float type}
 \index{type!float}
+
+As you may have guessed, {\bf type()} is another function built in to Python. It reports back the type of information it is given. Compare this to the {\bf print()} function we've been using which displays the supplied information on the screen.
 
 \beforeverb
 \begin{verbatim}
@@ -88,7 +92,7 @@ legal integer in Python, but it is legal:
 
 \beforeverb
 \begin{verbatim}
->>> print 1,000,000
+>>> print(1,000,000)
 1 0 0
 \end{verbatim}
 \afterverb
@@ -135,9 +139,9 @@ To display the value of a variable, you can use a print statement:
 
 \beforeverb
 \begin{verbatim}
->>> print n
+>>> print(n)
 17
->>> print pi
+>>> print(pi)
 3.14159265359
 \end{verbatim}
 \afterverb
@@ -200,20 +204,45 @@ and they cannot be used as variable names.
 
 \index{keyword}
 
-Python reserves 31 keywords\footnote{In Python 3.0, {\tt exec} is no
-longer a keyword, but {\tt nonlocal} is.} for its use:
+Remember Python's reserved words? We saw the list in the previous chapter, here it is again for your reference.
 
-\beforeverb
-\begin{verbatim}
-and       del       from      not       while    
-as        elif      global    or        with     
-assert    else      if        pass      yield    
-break     except    import    print              
-class     exec      in        raise              
-continue  finally   is        return             
-def       for       lambda    try
-\end{verbatim}
-\afterverb
+\begin{multicols}{4}
+	\raggedcolumns
+	\begin{itemize}[label={}]
+		\item and
+		\item as
+		\item assert
+		\item break
+		\item class
+		\item continue
+		\item def
+		\item del
+		\item elif
+		\item else
+		\item except
+		\item finally
+		\item for
+		\item from
+		\item global
+		\item if
+		\item import
+		\item in
+		\item is
+		\item lambda
+		\item nonlocal
+		\item not
+		\item or
+		\item pass
+		\item raise
+		\item return
+		\item try
+		\item while
+		\item with
+		\item yield
+	\end{itemize}
+\end{multicols}
+
+
 %
 You might want to keep this list handy.  If the interpreter complains
 about one of your variable names and you don't know why, see if it
@@ -240,9 +269,9 @@ For example, the script
 
 \beforeverb
 \begin{verbatim}
-print 1
+print(1)
 x = 2
-print x
+print(x)
 \end{verbatim}
 \afterverb
 %
@@ -255,7 +284,7 @@ produces the output
 \end{verbatim}
 \afterverb
 %
-The assignment statement produces no output.
+{\bf Note that the assignment statement produces no visible output.}
 
 
 \section{Operators and operands}
@@ -274,46 +303,29 @@ exponentiation, as in the following examples:
 
 \beforeverb
 \begin{verbatim}
-20+32   hour-1   hour*60+minute   minute/60   5**2   (5+9)*(15-7)
+20+32   hour-1   hour*60+minute   minute/60   minute//60   5**2   (5+9)*(15-7)
 \end{verbatim}
 \afterverb
 %
-The division operator might not do what you expect:
+There are two division operators. One uses a single slash and the other uses two slashes. See if you can figure out how they differ from these examples:
 
 \beforeverb
 \begin{verbatim}
 >>> minute = 59
->>> minute/60
+>>> minute / 60
+0.9833333333333333
+>>> minute // 60
 0
 \end{verbatim}
 \afterverb
 %
-The value of {\tt minute} is 59, and in conventional arithmetic 59
-divided by 60 is 0.98333, not 0.  The reason for the discrepancy is
-that Python is performing {\bf floor division}\footnote{In Python 3.0,
-the result of this division is a {\tt float}.  
-In Python 3.0, the new operator
-{\tt //} performs integer division.}.
+The value of {\tt minute} is 59, an integer. In the first division, using the single slash operator, Python gives us a {\tt float} result (0.983...). However, when we use the double slash division operator Python gives us an {\tt int} result (0). The difference is that the single slash division operator performs floating point division while the double slash division operator performs integer division. In the latter case, only whole numbers (integers) may be represented in the answer. Any fractional value is truncated (removed). This is known as {\tt floor} division. This means that Python does not round the integer answer to the nearest integer it simply floors the result, throwing away the fractional value.
 
 \index{Python 3.0}
 \index{floor division}
 \index{floating-point division}
 \index{division!floor}
 \index{division!floating-point}
-
-When both of the operands are integers, the result is also an
-integer; floor division chops off the fractional
-part, so in this example it truncates the answer to zero.
-
-If either of the operands is a floating-point number, Python performs
-floating-point division, and the result is a {\tt float}:
-
-\beforeverb
-\begin{verbatim}
->>> minute/60.0
-0.98333333333333328
-\end{verbatim}
-\afterverb
 
 
 \section{Expressions}
@@ -344,8 +356,8 @@ If you type an expression in interactive mode, the interpreter
 \end{verbatim}
 \afterverb
 %
-But in a script, an expression all by itself doesn't
-do anything!  This is a common
+{\bf But in a script, an expression all by itself doesn't
+do anything!} This is a common
 source of confusion for beginners.
 
 \begin{ex}
@@ -414,11 +426,11 @@ as for other operators:
 
 \beforeverb
 \begin{verbatim}
->>> quotient = 7 / 3
->>> print quotient
+>>> quotient = 7 // 3
+>>> print(quotient)
 2
 >>> remainder = 7 % 3
->>> print remainder
+>>> print(remainder)
 1
 \end{verbatim}
 \afterverb
@@ -453,27 +465,29 @@ linking them end to end.  For example:
 \begin{verbatim}
 >>> first = 10
 >>> second = 15
->>> print first+second
+>>> print(first + second)
 25
 >>> first = '100'
 >>> second = '150'
->>> print first + second
+>>> print(first + second)
 100150
 \end{verbatim}
 \afterverb
 %
-The output of this program is {\tt 100150}.
+The first output is {\tt 25} which is the mathematical sum of 10 and 15. The second output is {\tt 100150} which is the concatenation of '100' and '150'.
+
+Concatenation is very useful as a way to build up messages shown to a user or written to a file. We'll use this technique often in our programs to concatenate text labels with information in variables.
+
 
 \section{Asking the user for input}
 \index{keyboard input}
 
 Sometimes we would like to take the value for a variable from the user
 via their keyboard.
-Python provides a built-in function called \verb"raw_input" that gets
-input from the keyboard\footnote{In Python 3.0, this function is named
-  {\tt input}.}.  When this function is called, the program stops and
+Python provides a built-in function called \verb"input" that gets
+input from the keyboard.  When this function is called, the program stops and
 waits for the user to type something.  When the user presses {\sf
-  Return} or {\sf Enter}, the program resumes and \verb"raw_input"
+  Return} or {\sf Enter}, the program resumes and \verb"input"
 returns what the user typed as a string.
 
 \index{Python 3.0}
@@ -482,26 +496,26 @@ returns what the user typed as a string.
 
 \beforeverb
 \begin{verbatim}
->>> input = raw_input()
+>>> info = input()
 Some silly stuff
->>> print input
+>>> print(info)
 Some silly stuff
 \end{verbatim}
 \afterverb
 %
 Before getting input from the user, it is a good idea to print a
 prompt telling the user what to input.  You can pass a string
-to \verb"raw_input" to be displayed to the user before pausing
+to \verb"input" to be displayed to the user before pausing
 for input:
 
 \index{prompt}
 
 \beforeverb
 \begin{verbatim}
->>> name = raw_input('What is your name?\n')
+>>> name = input('What is your name?\n')
 What is your name?
 Chuck
->>> print name
+>>> print(name)
 Chuck
 \end{verbatim}
 \afterverb
@@ -518,7 +532,7 @@ the return value to {\tt int} using the {\tt int()} function:
 \beforeverb
 \begin{verbatim}
 >>> prompt = 'What...is the airspeed velocity of an unladen swallow?\n'
->>> speed = raw_input(prompt)
+>>> speed = input(prompt)
 What...is the airspeed velocity of an unladen swallow?
 17
 >>> int(speed)
@@ -533,7 +547,7 @@ you get an error:
 
 \beforeverb
 \begin{verbatim}
->>> speed = raw_input(prompt)
+>>> speed = input(prompt)
 What...is the airspeed velocity of an unladen swallow?
 What do you mean, an African or a European swallow?
 >>> int(speed)
@@ -649,7 +663,7 @@ in the first place.
 While this all sounds great, and it is a very good idea to use mnemonic variable
 names, mnemonic variable names can get in the way of a beginning programmer's 
 ability to parse and understand code.  This is because beginning programmers 
-have not yet memorized the reserved words (there are only 31 of them) and sometimes
+have not yet memorized the reserved words (there are about 30 of them) and sometimes
 variables with names that are too descriptive start to look like 
 part of the language and not just well-chosen variable names.
 
@@ -659,7 +673,7 @@ We will cover loops soon, but for now try to just puzzle through what this means
 \beforeverb
 \begin{verbatim}
 for word in words:
-    print word
+    print(word)
 \end{verbatim}
 \afterverb
 %
@@ -675,7 +689,7 @@ The following code is equivalent to the above code:
 \beforeverb
 \begin{verbatim}
 for slice in pizza:
-    print slice
+    print(slice)
 \end{verbatim}
 \afterverb
 %
@@ -693,10 +707,10 @@ After a pretty short period of time, you will know the most common reserved word
 and you will start to see the reserved words jumping out at you:
 
 {\tt {\bf for} word {\bf in} words{\bf :}\\
-\verb"    "{\bf print} word }
+\verb"    "{\bf print(} word {\bf )}}
 
 The parts of the code that are defined by 
-Python ({\tt for}, {\tt in}, {\tt print}, and {\tt :}) are in bold
+Python ({\tt for}, {\tt in}, {\tt print()}, and {\tt :}) are in bold
 and the programmer-chosen variables ({\tt word} and {\tt words}) are not in bold.  
 Many text editors are aware of Python
 syntax and will color reserved words differently to give you clues to keep 
@@ -856,8 +870,8 @@ that a program manipulates.
 \section{Exercises}
 
 \begin{ex}
-Write a program that uses  \verb"raw_input" to prompt a user for their name 
-and then welcomes them.
+Write a program that uses the \verb"input" function to prompt a user for their name 
+and then welcomes them. Here is what it would look like when run.
 
 \begin{verbatim}
 Enter your name: Chuck
@@ -866,9 +880,9 @@ Hello Chuck
 
 \end{ex}
 
-\begin{ex}
+\begin{ex}\label{exCh2HourRate}
 Write a program to prompt the user for hours and rate per hour to compute
-gross pay.
+gross pay. Note that when run the user will enter the hours and rate. Then the pay will be calculated and printed on the screen.
 \begin{verbatim}
 Enter Hours: 35
 Enter Rate: 2.75
@@ -894,11 +908,11 @@ expression and the type (of the value of the expression).
 
 \begin{enumerate}
 
-\item {\tt width/2}
+\item {\tt width / 2}
 
-\item {\tt width/2.0}
+\item {\tt width // 2}
 
-\item {\tt height/3}
+\item {\tt height / 3}
 
 \item {\tt 1 + 2 * 5}
 
@@ -910,7 +924,6 @@ Use the Python interpreter to check your answers.
 \begin{ex}
 Write a program which prompts the user for a Celsius temperature,
 convert the temperature to Fahrenheit, and print out the converted
-temperature.
+temperature. Remember the formula for this conversion is \linebreak
+{\tt DegreesF = DegreesC * 9.0 / 5.0 + 32.0}
 \end{ex}
-
-

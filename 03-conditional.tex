@@ -1,4 +1,6 @@
-% LaTeX source for ``Python for Informatics: Exploring Information''
+% LaTeX source for ``Introduction to Computer Science (Python Edition)''
+% Copyright (c) 2021- David S. Read, All Rights Reserved
+% Built upon, ``Python for Informatics: Exploring Information''
 % Copyright (c)  2010-  Charles R. Severance, All Rights Reserved
 
 \chapter{Conditional execution}
@@ -89,7 +91,7 @@ is true only if {\tt x} is greater than 0
 \index{operator!or}
 \index{operator!not}
 
-{\tt n\%2 == 0 or n\%3 == 0} is true if \emph{either} of the conditions
+{\tt n \% 2 == 0 or n \% 3 == 0} is true if \emph{either} of the conditions
 is true, that is, if the number is divisible by 2 \emph{or} 3.
 
 Finally, the {\tt not} operator negates a boolean
@@ -107,9 +109,9 @@ True
 \end{verbatim}
 \afterverb
 %
-This flexibility can be useful, but there are some subtleties to
-it that might be confusing.  You might want to avoid it until
-you are sure you know what you are doing.
+We say that a value is ``truthy'' or ``falsey'' depending on how Python treats it when used as a boolean value. So 17 is truthy and 0 is falsey. This flexibility can be useful, but there are some subtleties to
+it that can be confusing.  You might want to avoid it until
+you are sure you know what you are doing. Further, relying on this conversion may make a program harder to understand.
 
 \section{Conditional execution}
 \label{conditional execution}
@@ -128,7 +130,7 @@ simplest form is the {\tt if} statement:
 \beforeverb
 \begin{verbatim}
 if x > 0 :
-    print 'x is positive'
+    print('x is positive')
 \end{verbatim}
 \afterverb
 %
@@ -181,7 +183,7 @@ statements, as shown below:
 \begin{verbatim}
 >>> x = 3
 >>> if x < 10:
-...    print 'Small'
+...    print('Small')
 ... 
 Small
 >>>
@@ -202,10 +204,10 @@ which one gets executed.  The syntax looks like this:
 
 \beforeverb
 \begin{verbatim}
-if x%2 == 0 :
-    print 'x is even'
+if x % 2 == 0 :
+    print('x is even')
 else :
-    print 'x is odd'
+    print('x is odd')
 \end{verbatim}
 \afterverb
 %
@@ -237,11 +239,11 @@ chained conditional}:
 \beforeverb
 \begin{verbatim}
 if x < y:
-    print 'x is less than y'
+    print('x is less than y')
 elif x > y:
-    print 'x is greater than y'
+    print('x is greater than y')
 else:
-    print 'x and y are equal'
+    print('x and y are equal')
 \end{verbatim}
 \afterverb
 %
@@ -263,11 +265,11 @@ at the end, but there doesn't have to be one.
 \beforeverb
 \begin{verbatim}
 if choice == 'a':
-    print 'Bad guess'
+    print('Bad guess')
 elif choice == 'b':
-    print 'Good guess'
+    print('Good guess')
 elif choice == 'c':
-    print 'Close, but not correct'
+    print('Close, but not correct')
 \end{verbatim}
 \afterverb
 %
@@ -288,12 +290,12 @@ written the three-branch example like this:
 \beforeverb
 \begin{verbatim}
 if x == y:
-    print 'x and y are equal'
+    print('x and y are equal')
 else:
     if x < y:
-        print 'x is less than y'
+        print('x is less than y')
     else:
-        print 'x is greater than y'
+        print('x is greater than y')
 \end{verbatim}
 \afterverb
 %
@@ -319,7 +321,7 @@ single conditional:
 \begin{verbatim}
 if 0 < x:
     if x < 10:
-        print 'x is a positive single-digit number.'
+        print('x is a positive single-digit number.')
 \end{verbatim}
 \afterverb
 %
@@ -329,7 +331,7 @@ conditionals, so we can get the same effect with the {\tt and} operator:
 \beforeverb
 \begin{verbatim}
 if 0 < x and x < 10:
-    print 'x is a positive single-digit number.'
+    print('x is a positive single-digit number.')
 \end{verbatim}
 \afterverb
 
@@ -337,13 +339,13 @@ if 0 < x and x < 10:
 \section{Catching exceptions using try and except}
 \label{catch1}
 
-Earlier we saw a code segment where we used the \verb"raw_input" and
+Earlier we saw a code segment where we used the \verb"input" and
 {\tt int} functions to read and parse an integer number entered by
 the user.  We also saw how treacherous doing this could be:
 
 \beforeverb
 \begin{verbatim}
->>> speed = raw_input(prompt)
+>>> speed = input(prompt)
 What...is the airspeed velocity of an unladen swallow?
 What do you mean, an African or a European swallow?
 >>> int(speed)
@@ -370,10 +372,10 @@ to a Celsius temperature:
 
 \beforeverb
 \begin{verbatim}
-inp = raw_input('Enter Fahrenheit Temperature:')
+inp = input('Enter Fahrenheit Temperature:')
 fahr = float(inp)
 cel = (fahr - 32.0) * 5.0 / 9.0
-print cel
+print(cel)
 \end{verbatim}
 \afterverb
 %
@@ -412,13 +414,13 @@ We can rewrite our temperature converter as follows:
 
 \beforeverb
 \begin{verbatim}
-inp = raw_input('Enter Fahrenheit Temperature:')
+inp = input('Enter Fahrenheit Temperature:')
 try:
     fahr = float(inp)
     cel = (fahr - 32.0) * 5.0 / 9.0
-    print cel
+    print(cel)
 except:
-    print 'Please enter a number'
+    print('Please enter a number')
 \end{verbatim}
 \afterverb
 %
@@ -454,11 +456,11 @@ again, or at least end the program gracefully.
 \index{short circuit}
 
 When Python is processing a logical expression such as 
-{\tt x >= 2 and (x/y) > 2}, it evaluates the expression
+{\tt x >= 2 and (x / y) > 2}, it evaluates the boolean expressions
 from left to right.  Because of the definition of {\tt and},
 if {\tt x} is less than 2, the expression {\tt x >= 2} is 
 {\tt False} and so the whole expression is {\tt False} regardless
-of whether {\tt (x/y) > 2} evaluates to {\tt True} or {\tt False}.
+of whether {\tt (x / y) > 2} evaluates to {\tt True} or {\tt False}.
 
 When Python detects that there is nothing to be gained by evaluating
 the rest of a logical expression, it stops its evaluation and does
@@ -477,15 +479,15 @@ Consider the following code sequence in the Python interpreter:
 \begin{verbatim}
 >>> x = 6 
 >>> y = 2
->>> x >= 2 and (x/y) > 2
+>>> x >= 2 and (x / y) > 2
 True
 >>> x = 1 
 >>> y = 0
->>> x >= 2 and (x/y) > 2
+>>> x >= 2 and (x / y) > 2
 False
 >>> x = 6
 >>> y = 0
->>> x >= 2 and (x/y) > 2
+>>> x >= 2 and (x / y) > 2
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ZeroDivisionError: integer division or modulo by zero
@@ -506,13 +508,13 @@ evaluation just before the evaluation that might cause an error as follows:
 \begin{verbatim}
 >>> x = 1
 >>> y = 0
->>> x >= 2 and y != 0 and (x/y) > 2
+>>> x >= 2 and y != 0 and (x / y) > 2
 False
 >>> x = 6 
 >>> y = 0
->>> x >= 2 and y != 0 and (x/y) > 2
+>>> x >= 2 and y != 0 and (x / y) > 2
 False
->>> x >= 2 and (x/y) > 2 and y != 0
+>>> x >= 2 and (x / y) > 2 and y != 0
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ZeroDivisionError: integer division or modulo by zero
@@ -550,7 +552,7 @@ useful parts are usually:
 
 Syntax errors are usually easy to find, but there are a few
 gotchas.  Whitespace errors can be tricky because spaces and
-tabs are invisible and we are used to ignoring them.
+tabs are invisible and we are used to ignoring them when reading.
 
 \index{whitespace}
 
@@ -584,15 +586,13 @@ you might write something like this:
 import math
 signal_power = 9
 noise_power = 10
-ratio = signal_power / noise_power
+ratio = signal_power // noise_power
 decibels = 10 * math.log10(ratio)
-print decibels
+print(decibels)
 \end{verbatim}
 \afterverb
 %
-But when you run it, you get an error message\footnote{In Python 3.0,
-  you no longer get an error message; the division operator performs
-  floating-point division even with integer operands.}:
+But when you run it, you get an error message:
 
 \index{exception!OverflowError}
 \index{OverflowError}
@@ -609,15 +609,13 @@ OverflowError: math range error
 The error message indicates line 5, but there is nothing
 wrong with that line.  To find the real error, it might be
 useful to print the value of {\tt ratio}, which turns out to
-be 0.  The problem is in line 4, because dividing two integers
-does floor division.  The solution is to represent signal power
-and noise power with floating-point values.
+be 0.  The problem is in line 4, because integer division is being used. The solution is to use floating point division (with the single slash).
 
 \index{floor division}
 \index{division!floor}
 
 In general, error messages tell you where the problem was discovered, 
-but that is often not where it was caused.
+but that may not be where it was caused.
 
 
 \section{Glossary}
@@ -687,7 +685,7 @@ without needing to evaluate the rest of the expression.
 \section{Exercises}
 
 \begin{ex}
-Rewrite your pay computation to give the employee 1.5 
+Rewrite your pay computation (exercise \ref{exCh2HourRate}, page \pageref{exCh2HourRate}) to give the employee 1.5 
 times the hourly rate for 
 hours worked above 40 hours.
 
@@ -698,8 +696,8 @@ Pay: 475.0
 \end{verbatim}
 \end{ex}
 
-\begin{ex}
-Rewrite your pay program using {\tt try} and {\tt except} 
+\begin{ex}\label{exCh3HourRate}
+Rewrite your pay program, from above, using {\tt try} and {\tt except} 
 so that your program handles non-numeric input gracefully
 by printing a message and exiting the program.
 The following shows two executions of the program:
@@ -714,7 +712,7 @@ Error, please enter numeric input
 \end{verbatim}
 \end{ex}
 
-\begin{ex}
+\begin{ex}\label{exCh3Score}
 Write a program to prompt for a score between 0.0 and 1.0.
 If the score is out of range, print an error message.  If the score
 is between 0.0 and 1.0, print a grade using the following 
@@ -747,4 +745,3 @@ F
 Run the program repeatedly as shown above to test the 
 various different values for input.
 \end{ex}
-

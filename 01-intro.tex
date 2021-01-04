@@ -1,6 +1,7 @@
-% The contents of this file is 
+% LaTeX source for ``Introduction to Computer Science (Python Edition)''
 % Copyright (c) 2021- David S. Read, All Rights Reserved
-% Previous version, Copyright (c) 2009-  Charles R. Severance, All Rights Reserved
+% Built upon, ``Python for Informatics: Exploring Information''
+% Copyright (c)  2010-  Charles R. Severance, All Rights Reserved
 
 \chapter{Why should you learn to write programs?}
 
@@ -261,19 +262,44 @@ might suggest that the language between humans and cats has no
 reserved words\footnote{\url{http://xkcd.com/231/}}.
 
 The reserved words in the language where humans talk to 
-Python include the following:
+Python include the following\footnote{These keywords are for Python 3}:
 
-\beforeverb
-\begin{verbatim}
-and       del       from      not       with    
-as        elif      global    or        yield     
-assert    else      if        pass         
-break     except    import    raise              
-class     exec      in        return              
-continue  finally   is        try             
-def       for       lambda    while
-\end{verbatim}
-\afterverb
+\begin{multicols}{4}
+\raggedcolumns
+\begin{itemize}[label={}]
+\item and
+\item as
+\item assert
+\item break
+\item class
+\item continue
+\item def
+\item del
+\item elif
+\item else
+\item except
+\item finally
+\item for
+\item from
+\item global
+\item if
+\item import
+\item in
+\item is
+\item lambda
+\item nonlocal
+\item not
+\item or
+\item pass
+\item raise
+\item return
+\item try
+\item while
+\item with
+\item yield
+\end{itemize}
+\end{multicols}
+
 %
 That is it, and unlike a dog, Python is already completely trained.
 When you say ``try'', Python will try every time you say it without
@@ -294,7 +320,7 @@ And we have even written our first syntactically correct Python sentence.
 Our sentence starts with the built-in command {\bf print()} which is then given
 a string of text of our choosing enclosed in single quotes. 
 
-If you noticed that ``print'' is not on the list of reserved words give yourself a pat on the back. Beyond Python's reserved words, there are {\bf operations} and {\bf operators} already built into Python. The ``print()'' operation is used frequently. An example operator is the plus sign (+) which may be used to adding numbers. We'll cover these concepts throughout the semester.
+If you noticed that ``print'' is not on the list of reserved words give yourself a pat on the back. Beyond Python's reserved words, there are {\bf functions} and {\bf operators} already built into Python. The ``print()'' function is used frequently. An example operator is the plus sign (+) which may be used to add numbers. We'll cover these concepts throughout the semester. We'll even learn how to create our own functions!
 
 \section{Conversing with Python}
 
