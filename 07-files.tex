@@ -1,4 +1,6 @@
-% LaTeX source for ``Python for Informatics: Exploring Information''
+% LaTeX source for ``Introduction to Computer Science (Python Edition)''
+% Copyright (c) 2021- David S. Read, All Rights Reserved
+% Built upon, ``Python for Informatics: Exploring Information''
 % Copyright (c)  2010-  Charles R. Severance, All Rights Reserved
 
 \chapter{Files}
@@ -15,14 +17,14 @@
 So far, we have learned how to write programs and communicate 
 our intentions to the {\bf Central Processing Unit} using conditional
 execution, functions, and iterations.  We have learned how to 
-create and use data structures in the {\bf Main Memory}.  The CPU 
-and memory are where our software works and runs.  It is where 
+create and use data structures in {\bf Main Memory}.  The CPU 
+and main memory are where our software works and runs.  It is where 
 all of the ``thinking'' happens.  
 
 But if you recall from our hardware architecture discussions,
 once the power is turned off, anything stored in either
 the CPU or main memory is erased.  So up to now, our
-programs have just been transient fun exercises to learn Python.
+programs have just been transient \textit{and fun} exercises to learn Python.
 
 \beforefig
 \centerline{\includegraphics[height=2.50in]{figs2/arch3.eps}}
@@ -30,41 +32,39 @@ programs have just been transient fun exercises to learn Python.
 
 In this chapter, we start to work with {\bf Secondary Memory} 
 (or files).
-Secondary memory is not erased even when the power is turned off.  
-Or in the case of a USB flash drive, the
+Secondary memory is not erased when the power is turned off.  
+In the case of a USB flash drive, the
 data we write from our programs can be removed from the 
 system and transported to another system.
 
 We will primarily focus on reading and writing text files such as 
 those we create in a text editor.  Later we will see how to work
-with database files which are binary files, specifically designed to be read
-and written through database software.
+with binary files specifically designed to be read
+and written through specialized software.
 
 \section{Opening files}
 \index{file!open}
 \index{open function}
 \index{function!open}
 
-When we want to read or write a file (say on your hard drive), we first
+When we want to read or write a file (perhaps on your hard drive), we first
 must {\bf open} the file.  Opening the file communicates with your operating
 system, which knows where the data for each file is stored.  When you open
 a file, you are asking the operating system to find the file by name
 and make sure the file exists.  In this example, we open the file 
-{\tt mbox.txt}, which should be stored in the same folder that you
+{\tt mbox.txt}\footnote{You may download the \texttt{mbox.txt} file from \url{https://www.monead.com/introcompsci/mbox.txt}}, which should be stored in the same folder that you
 are in when you start Python.
-You can download this file from 
-\url{www.py4inf.com/code/mbox.txt}
 
 \beforeverb
 \begin{verbatim}
 >>> fhand = open('mbox.txt')
->>> print fhand
+>>> print(fhand)
 <open file 'mbox.txt', mode 'r' at 0x1005088b0>
 \end{verbatim}
 \afterverb
 %
 \index{file handle}
-If the {\tt open} is successful, the operating system returns us a 
+If the {\tt open} is successful, the operating system returns a 
 {\bf file handle}.  The file handle is not the actual data contained
 in the file, but instead it is a ``handle'' that we can use to 
 read the data.   You are given a handle if the requested file
@@ -89,6 +89,34 @@ IOError: [Errno 2] No such file or directory: 'stuff.txt'
 Later we will use {\tt try} and {\tt except} to deal more gracefully
 with the situation where we attempt to open a file that does 
 not exist.
+
+\section {Closing files} 
+
+\index{closing files}
+\index{close() method}
+\index{method!close()}
+
+Once we are finished using the file we need to \textbf{close} it. This means that we tell the computer that we are done reading the file and it may release the file handle that was created to allow us access to it.
+
+This may not seem like a big deal but computers have a limited number of file handles that may be open at one time. If we fail to close files then our program may eventually be unable to open other files once we exhaust the available file handles. Failing to close files falls into a category of programming bugs known as \textbf{leaking resources}.
+
+\index{leaking resources}
+
+The term \textbf{leaking resources} refers to the fact that we are wasting a finite resource, in this case file handles. Other resources that a program may leak include memory and database connections.
+
+To close a file we call the \texttt{close()} method on the file handle we have open. 
+
+\beforeverb
+\begin{verbatim}
+>>> fhand.close()
+\end{verbatim}
+\afterverb
+%
+
+Forgetting to close a file makes for a sloppy program. Python does close all open files when the program ends, which often hides our mistake.  If your program is short and only opens a few files you usually won't experience a failure. Even so, closing any file when you are done with it is a good habit to establish.
+
+\index{close method}
+\index{method!close}
 
 \section{Text files and lines}
 
@@ -137,11 +165,11 @@ into two lines by the newline character.
 >>> stuff = 'Hello\nWorld!'
 >>> stuff
 'Hello\nWorld!'
->>> print stuff
+>>> print(stuff)
 Hello
 World!
 >>> stuff = 'X\nY'
->>> print stuff
+>>> print(stuff)
 X
 Y
 >>> len(stuff)
@@ -187,7 +215,8 @@ fhand = open('mbox.txt')
 count = 0
 for line in fhand:
     count = count + 1
-print 'Line Count:', count
+fhand.close()
+print('Line Count:', count)
 
 python open.py 
 Line Count: 132045
@@ -227,9 +256,10 @@ using the {\tt read} method on the file handle.
 \begin{verbatim}
 >>> fhand = open('mbox-short.txt')
 >>> inp = fhand.read()
->>> print len(inp)
+>>> fhand.close()
+>>> print(len(inp))
 94626
->>> print inp[:20]
+>>> print(inp[:20])
 From stephen.marquar
 \end{verbatim}
 \afterverb
@@ -270,7 +300,8 @@ the desired prefix:
 fhand = open('mbox-short.txt')
 for line in fhand:
     if line.startswith('From:') :
-        print line
+        print(line)
+fhand.close()        
 \end{verbatim}
 \afterverb
 %
@@ -307,7 +338,8 @@ fhand = open('mbox-short.txt')
 for line in fhand:
     line = line.rstrip()
     if line.startswith('From:') :
-        print line
+        print(line)
+fhand.close()
 \end{verbatim}
 \afterverb
 %
@@ -344,7 +376,8 @@ for line in fhand:
     if not line.startswith('From:') :
         continue
     # Process our 'interesting' line
-    print line
+    print(line)
+fhand.close()
 \end{verbatim}
 \afterverb
 %
@@ -369,7 +402,8 @@ for line in fhand:
     line = line.rstrip()
     if line.find('@uct.ac.za') == -1 : 
         continue
-    print line
+    print(line)
+fhand.close()
 \end{verbatim}
 \afterverb
 %
@@ -403,13 +437,14 @@ the user using \verb"raw_input" as follows:
 
 \beforeverb
 \begin{verbatim}
-fname = raw_input('Enter the file name: ')
+fname = input('Enter the file name: ')
 fhand = open(fname)
 count = 0
 for line in fhand:
     if line.startswith('Subject:') :
         count = count + 1
-print 'There were', count, 'subject lines in', fname
+fhand.close()
+print('There were', count, 'subject lines in', fname)
 \end{verbatim}
 \afterverb
 %
@@ -486,18 +521,19 @@ as follows:
 
 \beforeverb
 \begin{verbatim}
-fname = raw_input('Enter the file name: ')
+fname = input('Enter the file name: ')
 try:
     fhand = open(fname)
 except:
-    print 'File cannot be opened:', fname
+    print('File cannot be opened:', fname)
     exit()
 
 count = 0
 for line in fhand:
     if line.startswith('Subject:') : 
         count = count + 1
-print 'There were', count, 'subject lines in', fname
+fhand.close()
+print('There were', count, 'subject lines in', fname)
 \end{verbatim}
 \afterverb
 %
@@ -518,18 +554,18 @@ File cannot be opened: na na boo boo
 \end{verbatim}
 \afterverb
 %
-\index{Pythonic}
+
+\index{Idiomatic}
 Protecting the {\tt open} call is a good example 
 of the proper use of {\tt try}
 and {\tt except} in a Python program.  We use the term
-``Pythonic'' when we are doing something the ``Python
-way''.  We might say that the above example is 
-the Pythonic way to open a file.
+``idiomatic'' when we are doing something the commonly accepted way in a language.  We might say that the above example is 
+the idiomatic way to open and close a file in Python.
 
 Once you become more skilled in Python, you can engage
 in repartee with other Python programmers to decide
 which of two equivalent solutions to a problem is 
-``more Pythonic''.  The goal to be ``more Pythonic'' 
+``more idiomatic''.  The goal to be ``more idiomatic'' 
 captures the notion that programming is part engineering
 and part art.  We are not always interested
 in just making something work, we also want
@@ -547,7 +583,7 @@ To write a file, you have to open it with mode
 \beforeverb
 \begin{verbatim}
 >>> fout = open('output.txt', 'w')
->>> print fout
+>>> print(fout)
 <open file 'output.txt', mode 'w' at 0xb7eb2410>
 \end{verbatim}
 \afterverb
@@ -593,15 +629,51 @@ to the disk so it will not be lost if the power goes off.
 \end{verbatim}
 \afterverb
 %
-We could close the files which we open for read as well, 
-but we can be a little sloppy if we are only opening a few
-files since Python makes sure that all open files are 
-closed when the program ends.  When we are writing files, 
+Although we saw that we can get away with forgetting to close a file we are reading, writing files is a different story. When we are writing files, 
 we want to explicitly close the files so as to leave nothing
 to chance.
 
 \index{close method}
 \index{method!close}
+
+\section{Using \texttt{finally} with \texttt{close}}
+
+Your code for writing files , and sometime reading files, can fail even after the file is open. Consider what would happen if your program was writing to a file and the disk became full. No more writes world work. Python would detect the error and we could handle the situation in the \texttt{except} code.
+
+This leads to a conundrum. Our program may work fine, opening and writing the file, or it could open the file but fail when writing, or it could fail when opening the file. In the first two cases we need to close the file. How can we write code that will close the file regardless of whether an error triggered our \texttt{except} code?
+
+This is where we can use \texttt{finally} in combination with \texttt{try} and \texttt{except}. The code we include in the \texttt{finally} section will run whether or not an error causes our \texttt{except} code to run.
+
+\textbf{You should use the example program, below, as a template for all of your fileinteractions:}
+\begin{enumerate}
+	\item Open and process the file using \texttt{try} 
+	\item Report errors using \texttt{except}. Note in the example how we can get the text of the error.
+	\item Close the file using \texttt{finally}
+\end{enumerate}
+
+Note the example reads a file but the same pattern should be used when writing a file.
+
+\beforeverb
+\begin{verbatim}
+fname = input('Enter the file name: ')
+fhand = None
+try:
+    fhand = open(fname)
+    count = 0
+    for line in fhand:
+        if line.startswith('Subject:') :
+            count = count + 1
+    print('There were', count, 'subject lines in', fname)
+except Exception as err:
+    print('File', fname, 'cannot be processed, caused by:', err)
+    exit()
+finally:
+    if fhand != None:
+        fhand.close()
+\end{verbatim}
+\afterverb
+%
+
 
 
 \section{Debugging}
@@ -616,7 +688,7 @@ tabs, and newlines are normally invisible:
 \beforeverb
 \begin{verbatim}
 >>> s = '1 2\t 3\n 4'
->>> print s
+>>> print(s)
 1 2	 3
  4
 \end{verbatim}
@@ -633,7 +705,7 @@ characters with backslash sequences:
 
 \beforeverb
 \begin{verbatim}
->>> print repr(s)
+>>> print(repr(s))
 '1 2\t 3\n 4'
 \end{verbatim}
 \afterverb
@@ -664,14 +736,14 @@ could write one yourself.
 a program using the {\tt try} and {\tt except} statements.
 \index{catch}
 
-\item[newline:] A special character used in files and strings to indicate
-the end of a line.
-\index{newline}
+\item[Idiomatic:] A technique that works elegantly in a programming language.
+``Using try, except, and finally is the \emph{Idiomatic} way to recover from 
+missing files in Python''.
+\index{Idiomatic}
 
-\item[Pythonic:] A technique that works elegantly in Python.
-``Using try and except is the \emph{Pythonic} way to recover from 
-missing files''.
-\index{Pythonic}
+\item[newline:] A special character used in files and strings to indicate
+the end of a line of text.
+\index{newline}
 
 \item[Quality Assurance:] A person or team focused on insuring the 
 overall quality of a software product.  QA is often involved 
@@ -707,7 +779,7 @@ RECEIVED: FROM MURDER (MAIL.UMICH.EDU [141.211.14.90])
 \afterverb
 %
 You can download the file from
-\url{www.py4inf.com/code/mbox-short.txt}
+\url{https://www.monead.com/introcompsci/mbox-short.txt}
 \end{ex}
 
 \begin{ex}
@@ -743,32 +815,30 @@ Test your file on the {\tt mbox.txt} and {\tt mbox-short.txt} files.
 
 
 \begin{ex}
-Sometimes when programmers get bored or want to have a bit of fun,
-they add a harmless {\bf Easter Egg} to their program 
-(\url{en.wikipedia.org/wiki/Easter_egg_(media)}). Modify the program
-that prompts the user for the file name so that it prints a funny
-message when the user types in the exact file name ``na na boo boo''. 
-The program should behave normally for all other files which exist
-and don't exist.  Here is a sample execution of the program:
+Write a program named long\_colon\_lines.py
+to prompt for a file name, and then read through the file 
+and look for lines that are between 40 and 50 characters and contain a colon ``:''. For each matching line display its line number in the file as well as the text. At the end, report the number of lines that were matched. Executing the program should look as follows:
 
 \beforeverb
 \begin{verbatim}
-python egg.py 
-Enter the file name: mbox.txt
-There were 1797 subject lines in mbox.txt
-
-python egg.py 
-Enter the file name: missing.tyxt
-File cannot be opened: missing.tyxt
-
-python egg.py 
-Enter the file name: na na boo boo
-NA NA BOO BOO TO YOU - You have been punk'd!
+$ python long_colon_lines.py
+What file do you want to search? quotes.txt
+96: Second childhood: when old goats act like kids
+102: Tuning fork: utensil used at musical banquets
+104: Checks and balances: famous juggling act
+114: Pipedreams: chimney cleaners' nightmares
+115: Gerry Mander: an unscrupulous politician
+119: Race track: a place where windows clean people
+185: Weakdays: after hard nights on the town.
+188: Ancient hill top castle: ruin with a view.
+189: Beginner's gardening manual: trowel and error.
+193: Rhinoceros: Unicorn designed by committee.
+199: Bandleader: A man who can face the music.
+Number of lines that were matched: 11
 \end{verbatim}
 \afterverb
 %
-We are not encouraging you to put Easter Eggs in your 
-programs---this is just an exercise.
-
+Test your file on the {\tt quotes.txt} file which 
+you can download from
+\url{https://www.monead.com/introcompsci/quotes.txt}
 \end{ex}
-
