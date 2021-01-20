@@ -3,6 +3,8 @@
 % Built upon, ``Python for Informatics: Exploring Information''
 % Copyright (c)  2010-  Charles R. Severance, All Rights Reserved
 
+% Updated throughout for Python3: output from type function
+
 \chapter{Variables, expressions, and statements}
 
 \section{Values and types}
@@ -40,9 +42,9 @@ If you are not sure what type a value has, the interpreter can tell you.
 \beforeverb
 \begin{verbatim}
 >>> type('Hello, World!')
-<type 'str'>
+<class 'str'>
 >>> type(17)
-<type 'int'>
+<class 'int'>
 \end{verbatim}
 \afterverb
 %
@@ -65,7 +67,7 @@ As you may have guessed, {\bf type()} is another function built in to Python. It
 \beforeverb
 \begin{verbatim}
 >>> type(3.2)
-<type 'float'>
+<class 'float'>
 \end{verbatim}
 \afterverb
 %
@@ -78,9 +80,9 @@ strings.
 \beforeverb
 \begin{verbatim}
 >>> type('17')
-<type 'str'>
+<class 'str'>
 >>> type('3.2')
-<type 'str'>
+<class 'str'>
 \end{verbatim}
 \afterverb
 %
@@ -151,11 +153,11 @@ The type of a variable is the type of the value it refers to.
 \beforeverb
 \begin{verbatim}
 >>> type(message)
-<type 'str'>
+<class 'str'>
 >>> type(n)
-<type 'int'>
+<class 'int'>
 >>> type(pi)
-<type 'float'>
+<class 'float'>
 \end{verbatim}
 \afterverb
 %
@@ -206,12 +208,19 @@ and they cannot be used as variable names.
 
 Remember Python's reserved words? We saw the list in the previous chapter, here it is again for your reference.
 
+% Updated based on Python3 documentation
+% https://docs.python.org/3/reference/lexical_analysis.html#keywords
 \begin{multicols}{4}
 	\raggedcolumns
 	\begin{itemize}[label={}]
+		\item False
+		\item None
+		\item True
 		\item and
 		\item as
 		\item assert
+		\item async
+		\item await
 		\item break
 		\item class
 		\item continue

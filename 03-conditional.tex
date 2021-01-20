@@ -38,9 +38,9 @@ values that belong to the type {\tt bool}; they are not strings:
 \beforeverb
 \begin{verbatim}
 >>> type(True)
-<type 'bool'>
+<class 'bool'>
 >>> type(False)
-<type 'bool'>
+<class 'bool'>
 \end{verbatim}
 \afterverb
 %
@@ -420,7 +420,7 @@ try:
     cel = (fahr - 32.0) * 5.0 / 9.0
     print(cel)
 except:
-    print('Please enter a number')
+    print('You did not enter a number')
 \end{verbatim}
 \afterverb
 %
@@ -433,6 +433,10 @@ exception occurs in the {\tt try} block,
 Python jumps out of the {\tt try} block and
 executes the sequence of statements in the {\tt except} block.
 
+% Updated error message to be clearer that program ended and is not looking for more input.
+% Added information about loops in future chapter can be used for asking for input
+% until the user enters the correct type.
+
 \beforeverb
 \begin{verbatim}
 python fahren2.py 
@@ -441,7 +445,7 @@ Enter Fahrenheit Temperature:72
 
 python fahren2.py 
 Enter Fahrenheit Temperature:fred
-Please enter a number
+You did not enter a number
 \end{verbatim}
 \afterverb
 %
@@ -450,7 +454,7 @@ Handling an exception with a {\tt try} statement is called {\bf
 catching} an exception.  In this example, the {\tt except} clause
 prints an error message.  In general,
 catching an exception gives you a chance to fix the problem, or try
-again, or at least end the program gracefully.
+again, or at least end the program gracefully. After you learn about looping in the Iteration chapter you can write code that uses a loop to keep asking for user input until the user enters the desired type of data. 
 
 \section{Short-circuit evaluation of logical expressions}
 \index{short circuit}

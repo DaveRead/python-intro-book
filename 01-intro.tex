@@ -118,7 +118,7 @@ apart your computer or cell phone and look deep
 inside, you would find the following parts:
 
 \beforefig
-\centerline{\includegraphics[height=2.50in]{figs2/arch.eps}}
+\centerline{\includegraphics[width=0.9\textwidth]{figs2/archNoSoftware.eps}}
 \afterfig
 
 The high-level definitions of these parts are as follows:
@@ -173,7 +173,7 @@ do next.  Sometimes you will tell the CPU to use the main memory,
 secondary memory, network, or the input/output devices.
 
 \beforefig
-\centerline{\includegraphics[height=2.50in]{figs2/arch2.eps}}
+\centerline{\includegraphics[width=0.9\textwidth]{figs2/arch2NoSoftware.eps}}
 \afterfig
 
 You need to be the person who answers the CPU's ``What next?'' 
@@ -263,13 +263,19 @@ reserved words\footnote{\url{http://xkcd.com/231/}}.
 
 The reserved words in the language where humans talk to 
 Python include the following\footnote{These keywords are for Python 3}:
-
+% Updated based on Python3 documentation
+% https://docs.python.org/3/reference/lexical_analysis.html#keywords
 \begin{multicols}{4}
 \raggedcolumns
 \begin{itemize}[label={}]
+\item False
+\item None
+\item True
 \item and
 \item as
 \item assert
+\item async
+\item await
 \item break
 \item class
 \item continue
@@ -331,7 +337,7 @@ our new language skills.
 Before you can converse with Python, you must first install the Python
 software on your computer and learn how to start Python on your 
 computer.  That is too much detail for this chapter so I suggest
-that you consult \url{www.pythonlearn.com} where I have detailed
+that you consult \url{https://www.py4e.com/lessons/install} for detailed
 instructions and screencasts of setting up and starting Python 
 on Macintosh and Windows systems.  At some point, you will be in 
 a terminal or command window and you will type {\bf python} and 
@@ -638,7 +644,7 @@ Lets say you are doing Social Computing research on Facebook posts and
 you are interested in the most frequently used word in a series of posts.
 You could print out the stream of Facebook posts and pore over the text
 looking for the most common word, but that would take a long time and be very 
-mistake prone.  You would be smart to write a Java program to handle the
+mistake prone.  You would be smart to write a Python program to handle the
 task quickly and accurately so you can spend the weekend doing something 
 fun.
 
@@ -690,7 +696,7 @@ used to make the program.  You are the end user, you simply use the program and 
 at its cleverness and how it saved you so much manual effort.
 You simply type the code 
 into a file called {\bf words.py} and run it or you download the source 
-code from \url{http://www.pythonlearn.com/code/} and run it.
+code from \url{https://www.py4e.com/code3/} and run it.
 
 \index{program}
 This is a good example of how Python and the Python language are acting as an intermediary
@@ -769,7 +775,7 @@ understand what you have entered.
 Python is much more like a dog, loving you unconditionally, having a few
 key words that it understands, looking at you with a sweet look on its
 face and waiting for you to say something it understands.
-When Pythonsays something like:
+When Python says something like:
 
 \beforeverb
 \begin{verbatim}
@@ -837,6 +843,64 @@ sadly contained a small but undetected semantic error.''.  The issue in this cas
 
 Again in all three types of errors, Python is merely trying its hardest to 
 do exactly what you have asked.
+
+% Added from the 2021 version of Python for Everybody
+\section{Debugging}
+\index{debugging}
+When Python spits out an error or even when it gives you a result that is different from what you had intended, then begins the hunt for the cause of the error. Debugging is the process of finding the cause of the error in your code. When you are debugging a program, and especially if you are working on a hard bug, there are four things to try:
+
+\begin{description}
+
+\item[Reading:] Examine your code, read it back to yourself, and check that it says what you meant to say.
+
+\item[Running:] Experiment by making changes and running different versions. Often if you display the right thing at the right place in the program, the problem becomes obvious, but sometimes you have to spend some time to build scaffolding.
+
+\item[Ruminating:] Take some time to think! What kind of error is it: syntax, runtime, semantic? What information can you get from the error messages, or from the output of the program? What kind of error could cause the problem you're seeing? What did you change last, before the problem appeared?
+
+\item[Retreating:] At some point, the best thing to do is back off, undoing recent changes, until you get back to a program that works and that you understand. Then you can start rebuilding.
+
+\end{description}
+
+Beginning programmers sometimes get stuck on one of these activities and forget the others.  Finding a hard bug requires reading, running, ruminating, and sometimes retreating. If you get stuck on one of these activities, try the others. Each activity comes with its own failure mode.
+
+\index{typographical error}
+
+For example, reading your code might help if the problem is a
+typographical error, but not if the problem is a conceptual
+misunderstanding. If you don't understand what your program does, you
+can read it 100 times and never see the error, because the error is in
+your head.
+
+\index{experimental debugging}
+
+Running experiments can help, especially if you run small, simple tests.
+But if you run experiments without thinking or reading your code, you
+might fall into a pattern I call "random walk programming", which is the
+process of making random changes until the program does the right thing.
+Needless to say, random walk programming can take a long time.
+
+\index{random walk programming}
+\index{development plan!random walk programming}
+
+You have to take time to think. Debugging is like an experimental
+science. You should have at least one hypothesis about what the problem
+is. If there are two or more possibilities, try to think of a test that
+would eliminate one of them.
+
+Taking a break helps with the thinking. So does talking. If you explain
+the problem to someone else (or even to yourself), you will sometimes
+find the answer before you finish asking the question. 
+
+But even the best debugging techniques will fail if there are too many
+errors, or if the code you are trying to fix is too big and complicated.
+Sometimes the best option is to retreat, simplifying the program until
+you get to something that works and that you understand.
+
+Beginning programmers are often reluctant to retreat because they can't
+stand to delete a line of code (even if it's wrong). If it makes you
+feel better, copy your program into another file before you start
+stripping it down. Then you can paste the pieces back in a little bit at
+a time. 
 
 \section{The learning journey}
 
