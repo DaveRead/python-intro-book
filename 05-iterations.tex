@@ -266,6 +266,30 @@ the current iteration and jumps
 back to the {\tt while} statement to start the next iteration, thus 
 skipping the {\tt print} statement.
 
+\section{A word of caution}
+There is debate among programmers about the use of the {\tt break} and
+{\tt continue} statements. Some programmers consider these statements as useful for
+writing concise code. Other programmers dislike using these statements and think that
+they lead to code that is difficult to read and prone to bugs. A general guideline is
+to use the {\tt break} and {\tt continue} statements in loops that are short and simple, 
+and to use other approaches for loop control in longer or more complex loops. Your goal 
+is to write code that is easy for others to quickly read and understand.
+
+An additional iteration variable is an alternative to using a {\tt break} statement.
+An {\tt if} statement can be used in place of a {\tt continue} statement. For example, here 
+is the code from above rewritten without using {\tt break} or {\tt continue}.
+
+\beforeverb
+\begin{verbatim}
+line = input('> ')
+while line != 'done':
+    if line[0] != '#':
+        print(line)
+    line = input('> ')
+print('Done!')
+\end{verbatim}
+\afterverb
+
 \section{Definite loops using {\tt for} }
 \index{for statement}
 \index{statement!for}
