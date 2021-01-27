@@ -515,21 +515,80 @@ Also since the file has capitalization, we would treat
 counts.
 
 We can solve both these problems by using the string
-methods {\tt lower}, {\tt punctuation}, and {\tt translate}.  The 
-{\tt translate} is the most subtle of the methods.  
-Here is the documentation for {\tt translate}:
-%TODO: update information about the translate function for Python3
+methods {\tt lower}, {\tt punctuation}, and {\tt translate}. Using {\tt translate} is the most subtle of the methods.  
 
-\verb"string.translate(s, table[, deletechars])"
+\index{translate method}
+\index{maketrans method}
 
-\emph{Delete all characters from s that are in deletechars (if present), 
-and then translate the characters using table, which must 
-be a 256-character string giving the translation for each 
-character value, indexed by its ordinal. If table is None, 
-then only the character deletion step is performed.}
+{\bf Using the string translate() method}
 
-We will not specify the {\tt table} but we will use 
-the {\tt deletechars} parameter to delete all of the punctuation.
+The {\tt translate} method operates on a string, replacing and/or removing characters. We decide which characters are replaced or removed using another string method called {\tt maketrans}. The method creates a {\em translation object} which is used by the {\tt translate} method. The operation may sound a little convulted, but we'll go through a couple of examples to clarify how these methods work together.
+
+You can review Python's documentation for the {\tt maketrans} method at 
+\url{https://docs.python.org/3/library/stdtypes.html#str.maketrans}
+
+The {\tt maketrans} method accepts three string arguments. The first is the set of characters to be replaced. The second is the set of characters to be used as replacements. There is a one-to-one relationship between these strings and they must be the same length. The third argument is a string containing the characters we want to remove from the string.
+
+If we only want to remove characters then we use empty strings for the first two arguments. If we only want to replace characters we leave the third argument out or supply it as an empty string.
+
+Here is an example of using {\tt maketrans} to create a translation object which changes any lowercase 'e' to '3' and any lowercase 'o' to 0 (zero). It will not remove any characters. Note that we call the method on the {\bf str} class itself.
+
+\beforeverb
+\begin{verbatim}
+>>> trans = str.maketrans('eo', '30')
+\end{verbatim}
+\afterverb
+
+When we use this translation object on a string, Python will look through the string for a matching character from the first argument. If a match is found then that character's position will be used to find a matching character in the second argument. That character will replace the original matching one in the string.
+
+You can review Python's documentation for the {\tt translate} method at 
+\url{https://docs.python.org/3/library/stdtypes.html#str.translate}
+
+The following example puts all the translation steps together. We create a string variable named {\tt phrase}. We then create the translation object, called  {\tt trans}, in the same fashion as before. Next we use the translate method with our {\tt phrase} string, passing the translation object, {\tt trans}, and assigning the translated string to the variable {\tt newphrase}. Finally we print the two strings on the console to see the effect of the translation.
+
+\beforeverb
+\begin{verbatim}
+	>>> phrase = 'To be or not to be'
+	>>> trans = str.maketrans('eo', '30')
+	>>> newphrase = phrase.translate(trans)
+	>>> print(phrase, '|', newphrase)
+	To be or not to be | T0 b3 0r n0t t0 b3
+\end{verbatim}
+\afterverb
+
+Let's try one more example. We'll create a translation object that translates all lowercase vowels to uppercase and deletes any digits from a string.
+
+Here is the translation object that does that:
+
+\beforeverb
+\begin{verbatim}
+alter = str.maketrans('aeiou', 'AEIOU', '0123456789');
+\end{verbatim}
+\afterverb
+
+Remember that the first argument provides the string of characters to match for replacement, the second provides the string of replacement characters, and the third provides a string of characters to be deleted.
+
+Let's use {\tt translate} on a string with our {\tt alter} translation object to see the resulting string.
+
+\beforeverb
+\begin{verbatim}
+>>> data = 'Temps today will range from 25 to 42'
+>>> alter = str.maketrans('aeiou', 'AEIOU', '0123456789');
+>>> newdata = data.translate(alter)
+>>> print(data, '|', newdata)
+Temps today will range from 25 to 42 | TEmps tOdAy wIll rAngE frOm  tO 
+\end{verbatim}
+\afterverb
+
+Review the output and make sure you understand why the {\tt newdata} string ends up with those characters. Also, create variations of these examples to check your understanding.
+
+One more thought before we get back to our {\tt romeo.txt} example. We can embed the call to the {\tt maketrans} method inside the call to {\tt translate} and avoid creating a separate variable for the translation object. We'll use that approach in our next program.
+
+{\bf Combining split, lower, and translate}
+
+We return to our program for processing the {\tt romeo.txt} file. Remember, our intent is to extend our earlier program, removing all the punctuation from the input. Using {\tt maketrans} and {\tt translate} will make it easy to accomplish that.
+
+We'll use the last argument to {\tt maketrans} to list all of the punctuation to be deleted.
 We will even let Python tell us the list of characters
 that it considers ``punctuation'':
 
@@ -541,7 +600,7 @@ that it considers ``punctuation'':
 \end{verbatim}
 \afterverb
 %
-We make the following modifications to our program:
+We make the following modifications to our program. Note we place the call to {\tt maketrans} as the parameter to {\tt translate} instead of storing that separately:
 
 % Code updated to Python3
 \beforeverb
@@ -573,15 +632,7 @@ print(counts)
 %
 We use {\tt translate} to remove all punctuation and {\tt lower} to 
 force the line to lowercase.  Otherwise the program is unchanged.
-%Note that for Python 2.5 and earlier, {\tt translate} does not 
-%accept {\tt None} as the first parameter so use this code instead
-%for the translate call:
 
-%\beforeverb
-%\begin{verbatim}
-%print a.translate(string.maketrans(' ',' '), string.punctuation
-%\end{verbatim}
-%\afterverb
 %
 Part of learning the ``Art of Python'' or ``Thinking Pythonically''
 is realizing that Python
