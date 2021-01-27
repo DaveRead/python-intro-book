@@ -32,7 +32,7 @@ should avoid using it as a variable name.
 \beforeverb
 \begin{verbatim}
 >>> eng2sp = dict()
->>> print eng2sp
+>>> print(eng2sp)
 {}
 \end{verbatim}
 \afterverb
@@ -56,7 +56,7 @@ between the key and value:
 
 \beforeverb
 \begin{verbatim}
->>> print eng2sp
+>>> print(eng2sp)
 {'one': 'uno'}
 \end{verbatim}
 \afterverb
@@ -74,7 +74,7 @@ But if you print {\tt eng2sp}, you might be surprised:
 
 \beforeverb
 \begin{verbatim}
->>> print eng2sp
+>>> print(eng2sp)
 {'one': 'uno', 'three': 'tres', 'two': 'dos'}
 \end{verbatim}
 \afterverb
@@ -90,7 +90,7 @@ Instead, you use the keys to look up the corresponding values:
 
 \beforeverb
 \begin{verbatim}
->>> print eng2sp['two']
+>>> print(eng2sp['two'])
 'dos'
 \end{verbatim}
 \afterverb
@@ -105,7 +105,7 @@ If the key isn't in the dictionary, you get an exception:
 
 \beforeverb
 \begin{verbatim}
->>> print eng2sp['four']
+>>> print(eng2sp['four']}
 KeyError: 'four'
 \end{verbatim}
 \afterverb
@@ -165,7 +165,7 @@ algorithm called a {\bf hash table} that has a remarkable property---the
 many items there are in a dictionary.  I won't explain 
 why hash functions are so magical,
 but you can read more about it at
-\url{wikipedia.org/wiki/Hash_table}.
+\url{https://en.wikipedia.org/wiki/Hash_table}.
 
 \index{hash table}
 
@@ -233,7 +233,7 @@ for c in word:
         d[c] = 1
     else:
         d[c] = d[c] + 1
-print d
+print(d)
 \end{verbatim}
 \afterverb
 %
@@ -274,9 +274,9 @@ the default value.  For example:
 \beforeverb
 \begin{verbatim}
 >>> counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
->>> print counts.get('jan', 0)
+>>> print(counts.get('jan', 0))
 100
->>> print counts.get('tim', 0)
+>>> print(counts.get('tim', 0))
 0
 \end{verbatim}
 \afterverb
@@ -292,7 +292,7 @@ word = 'brontosaurus'
 d = dict()
 for c in word:
     d[c] = d.get(c,0) + 1
-print d
+print(d)
 \end{verbatim}
 \afterverb
 %
@@ -352,7 +352,7 @@ fname = raw_input('Enter the file name: ')
 try:
     fhand = open(fname)
 except:
-    print 'File cannot be opened:', fname
+    print('File cannot be opened:', fname)
     exit()
 
 counts = dict()
@@ -371,7 +371,7 @@ print counts
 When we run the program, we see a raw dump of all of the counts in unsorted
 hash order.
 (the {\tt romeo.txt} file is available at
-\url{www.py4inf.com/code/romeo.txt})
+\url{https://www.py4e.com/code3/romeo.txt})
 
 \beforeverb
 \begin{verbatim}
@@ -405,7 +405,7 @@ prints each key and the corresponding value:
 \begin{verbatim}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
 for key in counts:
-    print key, counts[key]
+    print(key, counts[key])
 \end{verbatim}
 \afterverb
 %
@@ -432,7 +432,7 @@ above ten, we could write the following code:
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
 for key in counts:
     if counts[key] > 10 :
-        print key, counts[key]
+        print(key, counts[key])
 \end{verbatim}
 \afterverb
 %
@@ -465,11 +465,11 @@ as follows:
 \beforeverb
 \begin{verbatim}
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
-lst = counts.keys()
-print lst
+lst = list(counts.keys())
+print(lst)
 lst.sort()
 for key in lst:
-    print key, counts[key]
+    print(key, counts[key])
 \end{verbatim}
 \afterverb
 %
@@ -518,6 +518,7 @@ We can solve both these problems by using the string
 methods {\tt lower}, {\tt punctuation}, and {\tt translate}.  The 
 {\tt translate} is the most subtle of the methods.  
 Here is the documentation for {\tt translate}:
+%TODO: update information about the translate function for Python3
 
 \verb"string.translate(s, table[, deletechars])"
 
@@ -542,20 +543,22 @@ that it considers ``punctuation'':
 %
 We make the following modifications to our program:
 
+% Code updated to Python3
 \beforeverb
 \begin{verbatim}
 import string                                          # New Code
 
-fname = raw_input('Enter the file name: ')
+fname = input('Enter the file name: ')
 try:
     fhand = open(fname)
 except:
-    print 'File cannot be opened:', fname
+    print('File cannot be opened:', fname)
     exit()
 
 counts = dict()
 for line in fhand:
-    line = line.translate(None, string.punctuation)    # New Code
+	line = line.rstrip()
+    line = line.translate(line.maketrans('','',string.punctuation))    # New Code
     line = line.lower()                                # New Code
     words = line.split()
     for word in words:
@@ -564,21 +567,21 @@ for line in fhand:
         else:
             counts[word] += 1
 
-print counts
+print(counts)
 \end{verbatim}
 \afterverb
 %
 We use {\tt translate} to remove all punctuation and {\tt lower} to 
 force the line to lowercase.  Otherwise the program is unchanged.
-Note that for Python 2.5 and earlier, {\tt translate} does not 
-accept {\tt None} as the first parameter so use this code instead
-for the translate call:
+%Note that for Python 2.5 and earlier, {\tt translate} does not 
+%accept {\tt None} as the first parameter so use this code instead
+%for the translate call:
 
-\beforeverb
-\begin{verbatim}
-print a.translate(string.maketrans(' ',' '), string.punctuation
-\end{verbatim}
-\afterverb
+%\beforeverb
+%\begin{verbatim}
+%print a.translate(string.maketrans(' ',' '), string.punctuation
+%\end{verbatim}
+%\afterverb
 %
 Part of learning the ``Art of Python'' or ``Thinking Pythonically''
 is realizing that Python

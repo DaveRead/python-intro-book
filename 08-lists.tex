@@ -925,6 +925,8 @@ example, the {\tt append} method modifies a list, but the
 \index{list!concatenation}
 \index{concatenation!list}
 
+% corrected the second part of this example to continue using t1 as
+% it is modified in the first part of the example.
 \beforeverb
 \begin{verbatim}
 >>> t1 = [1, 2]
@@ -934,10 +936,10 @@ example, the {\tt append} method modifies a list, but the
 >>> print(t2)
 None
 
->>> t3 = t1 + [3]
+>>> t3 = t1 + [4]
 >>> print(t3)
-[1, 2, 3]
->>> t2 is t3
+[1, 2, 3, 4]
+>>> t1 is t3
 False
 \end{verbatim}
 \afterverb
@@ -1021,14 +1023,15 @@ t = t.sort()           # WRONG!
 Because {\tt sort} returns {\tt None}, the
 next operation you perform with {\tt t} is likely to fail.
 
+% Updated links to Python 3
 Before using list methods and operators, you should read the
 documentation carefully and then test them in interactive mode.  The
 methods and operators that lists share with other sequences (like
 strings) are documented at
-\url{https://docs.python.org/2/library/stdtypes.html#string-methods}.
+\url{https://docs.python.org/3/library/stdtypes.html#string-methods}.
 The methods and operators that only apply to mutable sequences
 are documented at
-\url{https://docs.python.org/2/library/stdtypes.html#mutable-sequence-types}.
+\url{https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types}.
 
 
 \item Pick an idiom and stick with it.
@@ -1324,7 +1327,10 @@ For each word, check to see if the word is already in a list.
 If the word is not in the list, add it to the list.  
 
 When the program completes, sort and print the resulting words
-in alphabetical order.
+in alphabetical order. (Note: this ordering is technically called
+\textbf{lexicographic order} because it is based on the
+character symbols. Notice that words that start with a capital letter
+are placed before words that start with a lowercase letter.)
 
 \begin{verbatim}
 Enter file: romeo.txt

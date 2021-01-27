@@ -22,7 +22,7 @@ expressions, see:
 
 \url{http://en.wikipedia.org/wiki/Regular_expression}
 
-\url{https://docs.python.org/2/library/re.html}
+\url{https://docs.python.org/3/library/re.html}
 
 The regular expression library {\tt re} must be imported into your program before you can use it.
 The simplest use of the regular expression library is the {\tt search()} function.  The following
@@ -36,7 +36,7 @@ hand = open('mbox-short.txt')
 for line in hand:
     line = line.rstrip()
     if re.search('From:', line) :
-        print line
+        print(line)
 \end{verbatim}
 \afterverb
 %
@@ -63,7 +63,7 @@ hand = open('mbox-short.txt')
 for line in hand:
     line = line.rstrip()
     if re.search('^From:', line) :
-        print line
+        print(line)
 \end{verbatim}
 \afterverb
 %
@@ -92,7 +92,7 @@ hand = open('mbox-short.txt')
 for line in hand:
     line = line.rstrip()
     if re.search('^F..m:', line) :
-        print line
+        print(line)
 \end{verbatim}
 \afterverb
 %
@@ -112,7 +112,7 @@ hand = open('mbox-short.txt')
 for line in hand:
     line = line.rstrip()
     if re.search('^From:.+@', line) :
-        print line
+        print(line)
 \end{verbatim}
 \afterverb
 %
@@ -177,7 +177,7 @@ extract one or more addresses from each of those lines.
 import re
 s = 'Hello from csev@umich.edu to cwen@iupui.edu about the meeting @2PM'
 lst = re.findall('\S+@\S+', s)
-print lst
+print(lst)
 \end{verbatim}
 \afterverb
 %
@@ -210,7 +210,7 @@ for line in hand:
     line = line.rstrip()
     x = re.findall('\S+@\S+', line)
     if len(x) > 0 :
-        print x
+        print(x)
 \end{verbatim}
 \afterverb
 %
@@ -272,7 +272,7 @@ for line in hand:
     line = line.rstrip()
     x = re.findall('[a-zA-Z0-9]\S*@\S*[a-zA-Z]', line)
     if len(x) > 0 :
-        print x
+        print(x)
 \end{verbatim}
 \afterverb
 %
@@ -339,7 +339,7 @@ hand = open('mbox-short.txt')
 for line in hand:
     line = line.rstrip()
     if re.search('^X\S*: [0-9.]+', line) :
-        print line
+        print(line)
 \end{verbatim}
 \afterverb
 %
@@ -378,7 +378,7 @@ for line in hand:
     line = line.rstrip()
     x = re.findall('^X\S*: ([0-9.]+)', line)
     if len(x) > 0 :
-        print x
+        print(x)
 \end{verbatim}
 \afterverb
 %
@@ -424,7 +424,7 @@ for line in hand:
     line = line.rstrip()
     x = re.findall('^Details:.*rev=([0-9]+)', line)
     if len(x) > 0:
-        print x
+        print(x)
 \end{verbatim}
 \afterverb
 %
@@ -500,7 +500,7 @@ hand = open('mbox-short.txt')
 for line in hand:
     line = line.rstrip()
     x = re.findall('^From .* ([0-9][0-9]):', line)
-    if len(x) > 0 : print x
+    if len(x) > 0 : print(x)
 \end{verbatim}
 \afterverb
 %
@@ -646,23 +646,24 @@ This documentation can be viewed in the Python interpreter in interactive mode.
 
 You can bring up an interactive help system using {\tt help()}.
 
+% Updated for Python3
 \beforeverb
 \begin{verbatim}
 >>> help()
 
-Welcome to Python 2.6!  This is the online help utility.
+WWelcome to Python 3.7's help utility!
 
 If this is your first time using Python, you should definitely check out
-the tutorial on the Internet at http://docs.python.org/tutorial/.
+the tutorial on the Internet at https://docs.python.org/3.7/tutorial/.
 
 Enter the name of any module, keyword, or topic to get help on writing
 Python programs and using Python modules.  To quit this help utility and
 return to the interpreter, just type "quit".
 
-To get a list of available modules, keywords, or topics, type "modules",
-"keywords", or "topics".  Each module also comes with a one-line summary
-of what it does; to list the modules whose summaries contain a given word
-such as "spam", type "modules spam".
+To get a list of available modules, keywords, symbols, or topics, type
+"modules", "keywords", "symbols", or "topics".  Each module also comes
+with a one-line summary of what it does; to list the modules whose name
+or summary contain a given string such as "spam", type "modules spam".
 
 help> modules
 \end{verbatim}
