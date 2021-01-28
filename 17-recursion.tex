@@ -350,7 +350,7 @@ Fundamentally, \textbf{\textit{all the earlier elements and all the later elemen
 
 \section{Implementing a recursive binary search}
 
-Let's look at the code to implement the binary search process we just described. We'll call our class \texttt{WordSearch} and create a recursive method called \texttt{binarySearch} to implement the logic.
+Let's look at the code to implement the binary search process we just described. We'll create a recursive function called \texttt{binary\_search} to implement the logic.
 
 \index{recursive method}
 
@@ -365,7 +365,7 @@ There are four pieces of information the method needs:
 
 In the binary search process we will first calculate the center element. We will also need a variable to house the result of comparing the word being sought to the word in the center element of the sublist.
 
-Next we need to compare the words (strings). Remember from our discussion of strings that we can compare string using the relational operators.
+Next we need to compare the words (strings). Remember from our discussion of strings that we can compare strings using the relational operators.
 
 The next part of the method will need to evaluate the result of the comparison.
 
@@ -407,14 +407,14 @@ def binary_search(wordlist, searchterm, startpos, endpos):
         # No more words to check, the word is not in the list
         return -1
 
-fruits = [ "apple", "banana", "cherry", "date", "elderberry",
-    "fig","grape", "honeydew", "jujube", "kiwi" ]
-position = binary_search(fruits, "jujube", 0, len(fruits) - 1)
+fruits = [ 'apple', 'banana', 'cherry', 'date', 'elderberry',
+    'fig', 'grape', 'honeydew', 'jujube', 'kiwi' ]
+position = binary_search(fruits, 'jujube', 0, len(fruits) - 1)
 print('Found jujube?', position)
     
 print('===============================')
 
-position = binary_search(fruits, "carrot", 0, len(fruits) - 1)
+position = binary_search(fruits, 'carrot', 0, len(fruits) - 1)
 print('Found carrot?', position)
 \end{verbatim}
 \afterverb
@@ -468,14 +468,14 @@ def binary_search(wordlist, searchterm, startpos, endpos):
         # No more words to check, the word is not in the list
         return -1
 
-fruits = [ "apple", "banana", "cherry", "date", "elderberry", 
-    "fig","grape", "honeydew", "jujube", "kiwi" ]
-position = binary_search(fruits, "jujube", 0, len(fruits) - 1)
+fruits = [ 'apple', 'banana', 'cherry', 'date', 'elderberry',
+    'fig', 'grape', 'honeydew', 'jujube', 'kiwi' ]
+position = binary_search(fruits, 'jujube', 0, len(fruits) - 1)
 print('Found jujube?', position)
     
 print('===============================')
 
-position = binary_search(fruits, "carrot", 0, len(fruits) - 1)
+position = binary_search(fruits, 'carrot', 0, len(fruits) - 1)
 print('Found carrot?', position)
 \end{verbatim}
 \afterverb
