@@ -171,7 +171,7 @@ This means that we will call the \texttt{fibonacci} method passing the value 3 \
 
 We now start executing a new copy of \texttt{fibonacci} passing 3 as the value for \texttt{position}. Again, we skip past the two Boolean tests and end up at the recursive call. We then recurse again, passing 2 as the value for \texttt{position}. This new executing copy of the \texttt{fibonacci} method will wait until it gets the answer back from its recursive call. We now have two copies of the \texttt{fibonacci} method waiting on results from their recursive calls.
 
-Eventually we'll end up calling \texttt{fibonacci} with the value 1, which is a base condition. In that case the method returns the number 1 back to its caller. This allows the previous executing copy of \texttt{fibonacci} to continue running, using the returned value. This process continues to unwind its way back to the top of the stack, which is the original call made to \texttt{fibonacci} in the \texttt{main} method.
+Eventually we'll end up calling \texttt{fibonacci} with the value 1, which is a base condition. In that case the method returns the number 1 back to its caller. This allows the previous executing copy of \texttt{fibonacci} to continue running, using the returned value. This process continues to unwind its way back to the top of the stack, which is the original call made to \texttt{fibonacci} when the program started running.
 
 Thinking back to the movie row example, this is similar to how each person asking the person in front of them for their row number has to wait for that person to get an answer from the person in front of them before they will respond to the person behind them. Eventually the request reaches a person in the front row who immediately responds ``1''.
 
