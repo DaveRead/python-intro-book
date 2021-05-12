@@ -1057,15 +1057,44 @@ What is wrong with the following code:
 
 \beforeverb
 \begin{verbatim}
->>> primt 'Hello world!'
-  File "<stdin>", line 1
-    primt 'Hello world!'
-                       ^
-SyntaxError: invalid syntax
+>>> primt('Hello world!')
+Traceback (most recent call last):
+ File "<stdin>", line 1, in <module>
+NameError: name 'primt' is not defined
 >>> 
 \end{verbatim}
 \afterverb
 
+\end{ex}
+
+\begin{ex}
+What is wrong with the following code:
+
+\beforeverb
+\begin{verbatim}
+>>> print('Love the silly walks)
+ File "<stdin>", line 1
+   print('Love the silly walks)
+                              ^
+SyntaxError: EOL while scanning string literal
+\end{verbatim}
+\afterverb
+	
+\end{ex}
+
+\begin{ex}
+What is wrong with the following code:
+	
+\beforeverb
+\begin{verbatim}
+>>> print(I wish pluto was still a full-fledged planet)
+ File "<stdin>", line 1
+   print(I wish pluto was still a full-fledged planet)
+           ^
+SyntaxError: invalid syntax
+\end{verbatim}
+\afterverb
+	
 \end{ex}
 
 \begin{ex}
