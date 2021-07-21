@@ -24,10 +24,39 @@ expressions, see:
 
 \url{https://docs.python.org/3/library/re.html}
 
+Many of the example programs in this chapter read the file {\tt mbox-short.txt}. Here are the initial lines from {\tt mbox-short.txt}\footnote{You may download the \texttt{mbox-short.txt} file from \url{https://www.monead.com/introcompsci/mbox-short.txt}, which should be stored in the same folder that you are in when you start Python.} file to help you picture the strings the programs are reading:
+
+\beforeverb
+\begin{verbatim}
+From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+Return-Path: <postmaster@collab.sakaiproject.org>
+Received: from murder (mail.umich.edu [141.211.14.90])
+by frankenstein.mail.umich.edu (Cyrus v2.3.8) with LMTPA;
+Message-ID: <200801051412.m05ECIaH010327@nakamura.uits.iupui.edu>
+Mime-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Date: Sat, 5 Jan 2008 09:12:18 -0500
+To: source@collab.sakaiproject.org
+From: stephen.marquard@uct.ac.za
+Subject: [sakai] svn commit: r39772 - content/branches/sakai_2-5-x/content-impl/impl/src/java/org/sakaiproject/content/impl
+X-DSPAM-Result: Innocent
+X-DSPAM-Confidence: 0.8475
+X-DSPAM-Probability: 0.0000
+Author: stephen.marquard@uct.ac.za
+Date: 2008-01-05 09:12:07 -0500 (Sat, 05 Jan 2008)
+New Revision: 39772
+From louis@media.berkeley.edu Fri Jan  4 18:10:48 2008
+Return-Path: <postmaster@collab.sakaiproject.org>
+...
+\end{verbatim}
+\afterverb
+
+
 The regular expression library {\tt re} must be imported into your program before you can use it.
 The simplest use of the regular expression library is the {\tt search()} function.  The following
 program demonstrates a trivial use of the search function.
 \index{regex!search}
+
 
 \beforeverb
 \begin{verbatim}
@@ -219,7 +248,7 @@ Since {\tt findall()} returns a list, we simply check if the number of elements 
 list is more than zero to print only lines where we found at least one substring that looks
 like an email address.
 
-If we run the program on {\tt mbox.txt} we get the following output:
+If we run the program on {\tt mbox.txt}\footnote{You may download the \texttt{mbox.txt} file from \url{https://www.monead.com/introcompsci/mbox.txt}, which should be stored in the same folder that you are in when you start Python. This file is similar to mbox-short.txt but has many more lines of text in it.} we get the following output:
 
 \beforeverb
 \begin{verbatim}
@@ -669,7 +698,7 @@ help> modules
 \end{verbatim}
 \afterverb
 %
-If you know what module you want to use, you can use the {\tt dir()} command to find the methods in the module as follows:
+If you know what module you want to use, you can use the {\tt dir()} command to find the functions in the module as follows:
 
 \beforeverb
 \begin{verbatim}
@@ -681,7 +710,7 @@ If you know what module you want to use, you can use the {\tt dir()} command to 
 \end{verbatim}
 \afterverb
 %
-You can also get a small amount of documentation on a particular method using the dir command.
+You can also get a small amount of documentation on a particular function using the dir command.
 
 \beforeverb
 \begin{verbatim}
@@ -735,7 +764,7 @@ character is the period.
 \begin{ex}
 Write a simple program to simulate the operation of the {\tt grep} command 
 on Unix.  Ask the user to enter a regular expression and count the number
-of lines that matched the regular expression:
+of lines in the {\tt mbox.txt}\footnote{You may download the \texttt{mbox.txt} file from \url{https://www.monead.com/introcompsci/mbox.txt}, which should be stored in the same folder that you are in when you start Python.} file that match the regular expression entered by the user:
 
 \beforeverb
 \begin{verbatim}
@@ -756,11 +785,11 @@ mbox.txt had 4218 lines that matched java$
 \end{ex}
 
 \begin{ex}
-Write a program to look for lines of the form
+Write a program which asks the user for a file name and then reads that file, looking for lines of the form:
 
 \verb"New Revision: 39772"
 
-and extract the number from each of the lines using a regular expression
+(e.g. lines beginning with the text {\tt New Revision:} followed by a number) and extract the number from each of the lines using a regular expression
 and the {\tt findall()} method.  Compute the average of the numbers and 
 print out the average.
 

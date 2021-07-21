@@ -484,12 +484,17 @@ By carefully constructing the list of tuples to have the value as the first
 element of each tuple, we can sort the list of tuples and get our dictionary
 contents sorted by value.
 
+\newpage
+
 \section{The most common words}
 
 \index{Romeo and Juliet}
+
 Coming back to our running example of the text from \emph{Romeo and Juliet} 
-Act 2, Scene 2, we can augment our program to use this technique to 
-print the ten most common words in the text as follows:
+Act 2, Scene 2, we can augment our program to use this technique to print the ten most common words in the text as follows\footnote{You may download the {\tt romeo.txt} file from \url{https://www.monead.com/introcompsci/romeo.txt}, which should be stored in the same folder that you
+	are in when you start Python.}:
+
+\index{Romeo and Juliet}
 
 % Example updated to Python3
 \beforeverb
@@ -514,8 +519,8 @@ for key, val in list(counts.items()):
 
 lst.sort(reverse=True)
 
-for key, val in lst[:10] :
-    print(key, val)
+for val, key in lst[:10] :
+    print(val, key)
 \end{verbatim}
 \afterverb
 %

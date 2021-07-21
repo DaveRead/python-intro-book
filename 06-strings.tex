@@ -601,106 +601,191 @@ space character''.
 The documentation for the {\tt find} method is available at
 \url{https://docs.python.org/3/library/stdtypes.html#string-methods}.
 
-\section{Format operator}
+\section{Format strings}	
 
-\index{format operator}
-\index{operator!format}
+\index{format strings}
+\index{strings!format}
 
-The {\bf format operator}, {\tt \%} (percent sign),
-allows us to construct strings, replacing parts of the strings
-with the data stored in variables.
-When applied to integers, {\tt \%} is the modulus operator.  But
-when the first operand is a string, {\tt \%} is the format operator.
+A {\bf format string} contains text and {\bf replacement fields}, which are delineated with curly braces, \{\}. Format strings allow us to create strings that combine text with other values, including literals and variables.
 
-\index{format string}
+As an example, if we were writing a game and wanted to display the current score we might display the message:
+\beforeverb
+\begin{verbatim}
+Current score is 5
+\end{verbatim}
+\afterverb
 
-The first operand is the {\bf format string}, which contains
-one or more {\bf format sequences} that specify how
-the second operand is formatted.  The result is a string.
+However, the score value, 5 as shown above, can't be part of the hardcoded string's text. Instead it is probably being stored in a variable, since it can change as the user plays the game. The current score needs to be included in the string where the 5 is shown.
 
-\index{format sequence}
+That's where a format string becomes useful, allowing us to combine text with replacement fields. Here is a format string that could be used for the score example. It starts with the text {\tt Current score is} and then includes a replacement field to specify that some value should be inserted at that point in the string:
 
-For example, the format sequence \verb"'%d'" means that
-the second operand should be formatted as an
-integer ({\tt d} stands for ``decimal''):
+\beforeverb
+\begin{verbatim}
+'Current score is {}'
+\end{verbatim}
+\afterverb
+
+
+Later, we'll see that we can include values in the replacement field to control the formatting of data. If the braces are left empty, {\tt \{\}}, the default representation for the data will be used. In all cases, the result is a string.
+
+We call the {\tt format} method to provide the values used in place of the replacement fields in the format string. Let's put the score example together:
+
+\beforeverb
+\begin{verbatim}
+>>> score = 6
+>>> message = 'Current score is {}'.format(score)
+>>> print(message)
+Current score is 6
+\end{verbatim}
+\afterverb
+
+The {\tt message} variable is assigned a value using a format string. The resulting value is \verb"'Current score is 6'", where the {\tt 6} is the {\tt score} variable's value being passed to the {\tt format} method. If you think about all the programs that you use and all the ways they show you information, mixing data with text, this technique becomes very handy.
+
+We can place more than one replacement field in a string. Here is a basic example which uses two variables' values as part of the string being printed:
 
 \beforeverb
 \begin{verbatim}
 >>> camels = 42
->>> '%d' % camels
-'42'
+>>> elk = 25
+>>> message = 'There are {} camels and {} elk.'.format(camels, elk)
+>>> print(message)
+There are 42 camels and 25 elk.
 \end{verbatim}
 \afterverb
 %
-The result is the string \verb"'42'", which is not to be confused
-with the integer value {\tt 42}.
+Again, the {\tt message} variable is assigned a value using a format string. The resulting value is \verb"'There are 42 camels and 25 elk.'", where {\tt 42} and {\tt 25} are values taken from the variables passed to the {\tt format} method.
 
-A format sequence can appear anywhere in the string,
-so you can embed a value in a sentence:
+Replacement fields may appear anywhere in a format string,
+so you can embed values anywhere in a sentence. Here is an example using three replacement fields, one at the begining, one near the middle, and one at the very end:
 
 \beforeverb
 \begin{verbatim}
+>>> label_id = 1
 >>> camels = 42
->>> 'I have spotted %d camels.' % camels
-'I have spotted 42 camels.'
+>>> mood = 'happy'
+>>> print('{}: The {} camels are {}'.format(label_id, camels, mood))
+1: The 42 camels are happy
 \end{verbatim}
 \afterverb
 %
-If there is more than one format sequence in the string,
-the second argument has to be a tuple\footnote{A tuple is a
-sequence of comma-separated values inside a pair of brackets.
-We will cover tuples in Chapter 10}.  Each format sequence is
-matched with an element of the tuple, in order.
 
-The following example uses \verb"'%d'" to format an integer,
-\verb"'%g'" to format
-a floating-point number (don't ask why), and \verb"'%s'" to format
-a string:
+Values passed to the {\tt format} method may be any sort of data, such as integers, floats, and strings. By default, for each replacement field in the string, there must be a variable passed to {\tt format}. The values are used in left to right order.
+
+You can control the formatting of data as it is included in the string. For instance, you can limit the number of decimal places displayed for a number or set the value to be left or right justified. Formatting is controlled by adding {\bf format specifications} within the curly braces of the replacement field.
+
+Let's demonstrate some formatting capabilities. We'll begin by formatting numeric values, limiting the width of a value and the number of decimal places displayed.
+
+To set the desired width (number of characters occupied by the number) and the number of decimal places, we define a format specification starting with a colon, followed by the total number of characters to display (width), a dot, the number of digits after the decimal point to display, and the letter {\bf f}, indicating a floating point value.
+
+Our next examples will set the number of decimal places without limiting the width (we'll place no number before the dot in the format specification of the replacement field). Look carefully at the output and be sure you understand what is happening.
 
 \beforeverb
 \begin{verbatim}
->>> 'In %d years I have spotted %g %s.' % (3, 0.1, 'camels')
-'In 3 years I have spotted 0.1 camels.'
+>>> print('{:.0f}'.format(3000.14159))
+3000
+>>> print('{:.1f}'.format(3000.14159))
+3000.1
+>>> print('{:.2f}'.format(3000.14159))
+3000.14
+>>> print('{:.5f}'.format(3000.14159))
+3000.14159
+>>> print('{:.10f}'.format(3000.14159))
+3000.1415900000
+>>>
 \end{verbatim}
 \afterverb
 %
-The number of elements in the tuple must match the number
-of format sequences in the string.  The types of the
-elements also must match the format sequences:
+ 
+Now let's try setting the width as well. \emph{Note that the width is a minimum.} If the whole number portion of a value is too large for the width, it will not be truncated. Instead, the width will be increased to include all the digits to the left of the decimal point. 
 
-\index{exception!TypeError}
-\index{TypeError}
 
 \beforeverb
 \begin{verbatim}
->>> '%d %d %d' % (1, 2)
-TypeError: not enough arguments for format string
->>> '%d' % 'dollars'
-TypeError: illegal argument type for built-in operation
+>>> print('{:1.0f}'.format(3000.14159))
+3000
+>>> print('{:4.0f}'.format(3000.14159))
+3000
+>>> print('{:10.0f}'.format(3000.14159))
+      3000
+>>> print('{:10.2f}'.format(3000.14159))
+   3000.14
 \end{verbatim}
 \afterverb
 %
-In the first example, there aren't enough elements; in the
-second, the element is the wrong type.
 
-The format operator is powerful, but it can be difficult to use.  You
-can read more about it at
-\url{https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting}.
+{\bf Why do the last two examples start with empty spaces?} Hint: the third printed value contains 6 spaces before the 3000 and the fourth printed value contains 3 spaces before the 3000.14
 
-% You can specify the number of digits as part of the format sequence.
-% For example, the sequence \verb"'%8.2f'"
-% formats a floating-point number to be 8 characters long, with
-% 2 digits after the decimal point:
+You can format string values in a similar way, controlling the width and also the text justification (left, right, and centered). The characters \textbf{$>$}, \textbf{$<$}, and \textbf{\^} are used to control right, left, and center justification, respectively. Justification works with numeric values as well. As with numbers, the width given in the replacement field is the minimum number of characters Python will use. If the string is longer, then the width will grow to accomodate.
 
-% \beforeverb
-% \begin{verbatim}
-% >>> '%8.2f' % 3.14159
-% '    3.14'
-% \end{verbatim}
-% \afterverb
-% %
-% The result takes up eight spaces with two
-% digits after the decimal point.  
+\newpage
+
+\beforeverb
+\begin{verbatim}
+>>> print('{:2}'.format('Hi!'))
+Hi!
+>>> print('{:3}'.format('Hi!'))
+Hi!
+>>> print('{:20}'.format('Hi!'))
+Hi!                 
+>>> print('{:<20}'.format('Hi!'))
+Hi!                 
+>>> print('{:>20}'.format('Hi!'))
+                 Hi!
+>>> print('{:^20}'.format('Hi!'))
+        Hi!         
+\end{verbatim}
+\afterverb
+%
+
+{\bf Based on the last 4 print statements, what is the default justification for text values?} Now review the numeric formatting we discussed earlier and determine what the default justification is for numbers.
+
+If you include the precision when formatting a string, then the string {\bf will be truncated}, if it is longer than the precision value. For example:
+
+
+\beforeverb
+\begin{verbatim}
+>>> print('{:.3}'.format('Hi!'))
+Hi!
+>>> print('{:.2}'.format('Hi!'))
+Hi
+>>> print('{:20.2}'.format('Hi!'))
+Hi                  
+>>> print('{:>20.2}'.format('Hi!'))
+                  Hi
+>>> print('{:^20.1}'.format('Hi!'))
+         H
+\end{verbatim}
+\afterverb
+%
+
+Again, review the replacement field and the output to be sure you can explain what is happening.
+
+A couple of common errors you may encounter with format strings are having more replacement fields than values being passed to the {\tt format} method, and defining the replacement field for one type of information but passing a different type of value to the {\tt format} method. Here are examples of those situations:
+
+\index{exception!IndexError}
+\index{IndexError}
+\index{exception!ValueError}
+\index{ValueError}
+
+\beforeverb
+\begin{verbatim}
+>>> print('{} {} {}'.format('Hello', 'World!'))
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+IndexError: Replacement index 2 out of range for positional args tuple
+>>> print('{:.2f}'.format('Hi'))
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+ValueError: Unknown format code 'f' for object of type 'str'
+\end{verbatim}
+\afterverb
+%
+In the first example, there aren't enough values being passed, so Python displays an \textbf{IndexError}. In the
+second example, the value being passed is the wrong type; the replacement field was defined for a floating point value and the {\tt format} method is being passed a string, so Python displays a \textbf{ValueError}.
+
+Format strings and replacement field options are powerful. They allow you to make the output of your Python programs look organized and professional. However, they can be overwhelming as you start using them. Be patient, they'll become second nature as you write more sophisticated programs. You
+can read more about format strings at
+\url{https://docs.python.org/3/library/string.html#formatstrings}
 
 
 \section{Debugging}

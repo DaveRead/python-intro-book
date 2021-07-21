@@ -266,7 +266,7 @@ four:
 \centerline{\includegraphics[height=.8 in]{figs2/list-2dimensional.eps}}
 \afterfig
 
-You may get the length of a nested array by using the \texttt{len()} function with the element containing the nested array You may use additional square brackets to access specific elements of a nested array.
+You may get the length of a nested list by using the \texttt{len()} function with the element containing the nested list You may use additional square brackets to access specific elements of a nested list.
 
 \beforeverb
 \begin{verbatim}
@@ -706,16 +706,33 @@ From stephen.marquard@uct.ac.za {\bf Sat} Jan  5 09:14:16 2008
 
 The {\tt split} method is very effective when faced with this 
 kind of problem.
-We can write a small program that looks for lines where the 
-line starts with ``From '', {\tt split} those lines, 
-and then print out the third word in the line:
+We can write a small program that looks for lines starting with ``From '', using {\tt startswith}), next we can {\tt split} those lines, 
+and finally print out the third word in the line.
+
+Here are a few lines from the mbox-short.txt\footnote{You may download the \texttt{mbox-short.txt} \url{https://www.monead.com/introcompsci/mbox-short.txt}, which should be stored in the same folder that you are in when you start Python.} file that the program uses:
+
+\beforeverb
+\begin{verbatim}
+From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+Return-Path: <postmaster@collab.sakaiproject.org>
+From louis@media.berkeley.edu Fri Jan  4 18:10:48 2008
+Return-Path: <postmaster@collab.sakaiproject.org>
+From zqian@umich.edu Fri Jan  4 16:10:39 2008
+Return-Path: <postmaster@collab.sakaiproject.org>
+From rjlowe@iupui.edu Fri Jan  4 15:46:24 2008
+Return-Path: <postmaster@collab.sakaiproject.org>
+\end{verbatim}
+\afterverb
+
+
+Here is the program that uses {\tt startswith} and {\tt split} as described above:
 
 \beforeverb
 \begin{verbatim}
 fhand = open('mbox-short.txt')
 for line in fhand:
     line = line.rstrip()
-    if not line.startswith('From ') : continue
+    if not line.startswith('From '): continue
     words = line.split()
     print(words[2])
 \end{verbatim}
@@ -727,7 +744,7 @@ same line as the {\tt if}.  This contracted form
 of the {\tt if} functions the same as if the
 {\tt continue} were on the next line and indented.
 
-The program produces the output that starts like this:
+The program produces output that starts like this:
 
 \beforeverb
 \begin{verbatim}
@@ -1118,7 +1135,7 @@ that don't have ``From'' as the first word as follows:
 fhand = open('mbox-short.txt')
 for line in fhand:
     words = line.split()
-    if words[0] != 'From' : continue
+    if words[0] != 'From': continue
     print(words[2])
 \end{verbatim}
 \afterverb
@@ -1162,7 +1179,7 @@ our regular output separate from our debug output.
 for line in fhand:
     words = line.split()
     print('Debug:', words)
-    if words[0] != 'From' : continue
+    if words[0] != 'From': continue
     print(words[2])
 \end{verbatim}
 \afterverb
@@ -1217,8 +1234,8 @@ count = 0
 for line in fhand:
     words = line.split()
     # print('Debug:', words)
-    if len(words) == 0 : continue
-    if words[0] != 'From' : continue
+    if len(words) == 0: continue
+    if words[0] != 'From': continue
     print(words[2])
 \end{verbatim}
 \afterverb
@@ -1315,11 +1332,8 @@ has a type and a value.
 \end{ex}
 
 \begin{ex}
-Download a copy of the file from 
-\url{https://www.monead.com/introcompsci/romeo.txt}
-\index{Romeo and Juliet}
-
-Write a program to open the file {\tt romeo.txt} and read it
+	Write a program to open the file {\tt romeo.txt}\footnote{You may download the {\tt romeo.txt} file from \url{https://www.monead.com/introcompsci/romeo.txt}, which should be stored in the same folder that you
+	are in when you start Python.} and read it
 line by line.  For each line, split the line into  a list of 
 words using the {\tt split} function.
 
@@ -1343,7 +1357,7 @@ Enter file: romeo.txt
 \end{ex}
 
 \begin{ex}
-Write a program to read through the mail box data and when you find 
+Write a program to read through the mail box data\footnote{You may download the \texttt{mbox-short.txt} \url{https://www.monead.com/introcompsci/mbox-short.txt}, which should be stored in the same folder that you are in when you start Python.} and when you find 
 line that starts with ``From'', you will split the line into 
 words using the {\tt split} function. We are interested in 
 who sent the message, which is the second word on the From line.

@@ -67,14 +67,14 @@ Here are the first 12 numbers in the Fibonacci sequence:
 
 Thinking about how this is calculated, we can break the problem down into a process of adding together the last two numbers in the current sequence, which in turn adds the previous last two numbers in the sequence, and continuing on until we have as much of the sequence as desired.
 
-To create a method that is recursive we have to be sure to answer three questions, matching the key aspects we discussed in the movie theater row calculating example:
+To create a function that is recursive we have to be sure to answer three questions, matching the key aspects we discussed in the movie theater row calculating example:
 
 \begin{enumerate}
-	\item What is the base case and how is the method written to identify it?
+	\item What is the base case and how is the function written to identify it?
 		
-	\item What information does the recursive method need in order to calculate the new value?
+	\item What information does the recursive function need in order to calculate the new value?
 	
-	\item When is the process complete so that the method knows to stop recursing?
+	\item When is the process complete so that the function knows to stop recursing?
 \end{enumerate}
 
 In the case of the Fibonacci sequence we would answer those questions as follows:
@@ -82,12 +82,12 @@ In the case of the Fibonacci sequence we would answer those questions as follows
 \begin{enumerate}
 	\item The base case is that the first value in the sequence is 0 and the second value in the sequence is 1.
 
-	\item The method will need to add the last two numbers currently in the sequence if the base case does not apply.
+	\item The function will need to add the last two numbers currently in the sequence if the base case does not apply.
 
-	\item The method will need to be told which element of the sequence to compute.
+	\item The function will need to be told which element of the sequence to compute.
 \end{enumerate}
 
-Here is how we could declare our \texttt{fibonacci} method, which accounts for the argument value we need (element number in the sequence we are to calculate):
+Here is how we could declare our \texttt{fibonacci} function, which accounts for the argument value we need (element number in the sequence we are to calculate):
 
 \beforeverb
 \begin{verbatim}
@@ -115,11 +115,11 @@ return fibonacci(position - 1) + fibonacci(position - 2)
 \end{verbatim}
 \afterverb
 
-What this says is that to calculate the Fibonacci value at a \texttt{position} we will return the result of calling the \texttt{fibonacci} method passing \texttt{position~-~1} and adding to that the value of calling the \texttt{fibonacci} method passing the value \texttt{position~-~2}.
+What this says is that to calculate the Fibonacci value at a \texttt{position} we will return the result of calling the \texttt{fibonacci} function passing \texttt{position~-~1} and adding to that the value of calling the \texttt{fibonacci} function passing the value \texttt{position~-~2}.
 
 \pagebreak
 
-Here is a complete version of a program implementing our recursive Fibonacci algorithm in a method called \texttt{fibonacci}. The code calls the \texttt{fibonacci} method passing the values 0 through 9 to display the first 10 values of the Fibonacci sequence\footnote{Remember sequence position 0 contains the first value.}:
+Here is a complete version of a program implementing our recursive Fibonacci algorithm in a function called \texttt{fibonacci}. The code calls the \texttt{fibonacci} function passing the values 0 through 9 to display the first 10 values of the Fibonacci sequence\footnote{Remember sequence position 0 contains the first value.}:
 
 \beforeverb
 \begin{verbatim}
@@ -147,19 +147,19 @@ $ python fibonacci.py
 \end{verbatim}
 \afterverb
 
-It may take some time studying and thinking through what is happening when the \texttt{fibonacci} method runs and calls itself to really grasp how this approach works.
+It may take some time studying and thinking through what is happening when the \texttt{fibonacci} function runs and calls itself to really grasp how this approach works.
 
-One way to picture the code running is to imagine a stack of plates such as you might see at a salad bar. As new plates are added, the ones already there are pushed down. We call this a \textbf{Last-in, First-out} stack. The last plate added will be the first one removed. When we write recursive methods we are creating such a stack of values in the computer.
+One way to picture the code running is to imagine a stack of plates such as you might see at a salad bar. As new plates are added, the ones already there are pushed down. We call this a \textbf{Last-in, First-out} stack. The last plate added will be the first one removed. When we write recursive functions we are creating such a stack of values in the computer.
 
 \index{stack}
 
-When a method calls itself, the current set of parameters and local variables are "pushed down" and temporarily replaced by a new set of parameters and local variables which the recursive call uses. Once the recursive call ends, those original values are "popped up" and put back for the original method call to continue using.
+When a function calls itself, the current set of parameters and local variables are "pushed down" and temporarily replaced by a new set of parameters and local variables which the recursive call uses. Once the recursive call ends, those original values are "popped up" and put back for the original function call to continue using.
 
-Fundamentally, each call to a method creates its own unique set of parameters and local variables which are separate from the parameters and local variables used by any other calls to the same method. This happens for each call, so if we call a method 5 times there will be five independent sets of parameters and local variables created for that method.
+Fundamentally, each call to a function creates its own unique set of parameters and local variables which are separate from the parameters and local variables used by any other calls to the same function. This happens for each call, so if we call a function 5 times there will be five independent sets of parameters and local variables created for that function.
 
-Let's walk through the calculation of one value in the Fibonacci sequence using our \texttt{fibonacci} method and the concept of a stack. In this example we will look at what happens when we ask for the fifth value in the sequence, which, as we saw above, is 3.
+Let's walk through the calculation of one value in the Fibonacci sequence using our \texttt{fibonacci} function and the concept of a stack. In this example we will look at what happens when we ask for the fifth value in the sequence, which, as we saw above, is 3.
 
-We call the \texttt{fibonacci} method passing the number 4 as the \texttt{sequencePosition} argument.\footnote{We want the fifth value in the sequence. Remember the first value in the sequence is in the zero-eth position.} Inside the method this means that the parameter \texttt{position} has the value 4. Looking at the logic in the \texttt{fibonacci} method, the two Boolean tests will be false (4 isn't 0 and it isn't 1) and we'll end up at the recursive statement:
+We call the \texttt{fibonacci} function passing the number 4 as the \texttt{sequencePosition} argument.\footnote{We want the fifth value in the sequence. Remember the first value in the sequence is in the zero-eth position.} Inside the function this means that the parameter \texttt{position} has the value 4. Looking at the logic in the \texttt{fibonacci} function, the two Boolean tests will be false (4 isn't 0 and it isn't 1) and we'll end up at the recursive statement:
 
 \beforeverb
 \begin{verbatim}
@@ -167,17 +167,17 @@ return fibonacci(position - 1) + fibonacci(position - 2);
 \end{verbatim}
 \afterverb
 
-This means that we will call the \texttt{fibonacci} method passing the value 3 \mbox{(e.g. 4-1)}. This is a recursive request, the method is calling itself. The currently executing copy of the \texttt{fibonacci} method (with \texttt{position} = 4) will wait until it gets the answer back from its recursive calls.
+This means that we will call the \texttt{fibonacci} function passing the value 3 \mbox{(e.g. 4-1)}. This is a recursive request, the function is calling itself. The currently executing copy of the \texttt{fibonacci} function (with \texttt{position} = 4) will wait until it gets the answer back from its recursive calls.
 
-We now start executing a new copy of \texttt{fibonacci} passing 3 as the value for \texttt{position}. Again, we skip past the two Boolean tests and end up at the recursive call. We then recurse again, passing 2 as the value for \texttt{position}. This new executing copy of the \texttt{fibonacci} method will wait until it gets the answer back from its recursive call. We now have two copies of the \texttt{fibonacci} method waiting on results from their recursive calls.
+We now start executing a new copy of \texttt{fibonacci} passing 3 as the value for \texttt{position}. Again, we skip past the two Boolean tests and end up at the recursive call. We then recurse again, passing 2 as the value for \texttt{position}. This new executing copy of the \texttt{fibonacci} function will wait until it gets the answer back from its recursive call. We now have two copies of the \texttt{fibonacci} function waiting on results from their recursive calls.
 
-Eventually we'll end up calling \texttt{fibonacci} with the value 1, which is a base condition. In that case the method returns the number 1 back to its caller. This allows the previous executing copy of \texttt{fibonacci} to continue running, using the returned value. This process continues to unwind its way back to the top of the stack, which is the original call made to \texttt{fibonacci} when the program started running.
+Eventually we'll end up calling \texttt{fibonacci} with the value 1, which is a base condition. In that case the function returns the number 1 back to its caller. This allows the previous executing copy of \texttt{fibonacci} to continue running, using the returned value. This process continues to unwind its way back to the top of the stack, which is the original call made to \texttt{fibonacci} when the program started running.
 
 Thinking back to the movie row example, this is similar to how each person asking the person in front of them for their row number has to wait for that person to get an answer from the person in front of them before they will respond to the person behind them. Eventually the request reaches a person in the front row who immediately responds ``1''.
 
 \pagebreak
 
-Here are two depictions of the entire recursive process for our Fibonacci example where we ask for the fifth element in the sequence. The first depiction illustrates the set of recursive calls showing the \texttt{sequencePosition} value being passed into the method with each call. The numbers in the circles depict the order in which these recursive calls occur when the program runs.
+Here are two depictions of the entire recursive process for our Fibonacci example where we ask for the fifth element in the sequence. The first depiction illustrates the set of recursive calls showing the \texttt{sequencePosition} value being passed into the function with each call. The numbers in the circles depict the order in which these recursive calls occur when the program runs.
 
 \beforefig
 \centerline{\includegraphics[height=2in]{figs2/recursion-fibonacci-depiction-0.eps}}
@@ -238,11 +238,11 @@ The stop conditions are reached when either:
 	\item The subdividing of the list has reduced down to a subset with one element and that element's value does not match the word we are seeking
 \end{enumerate}
 
-For this example, the information a recursive method would need includes the sorted list of words, the current start and end positions of the sublist being searched and the word being sought.
+For this example, the information a recursive function would need includes the sorted list of words, the current start and end positions of the sublist being searched and the word being sought.
 
-The method would check the center of the sublist for the word. If the method finds a match it is done and returns a success result, either a Boolean \texttt{true} or perhaps the list index location containing the word. 
+The function would check the center of the sublist for the word. If the function finds a match it is done and returns a success result, either a Boolean \texttt{true} or perhaps the list index location containing the word. 
 
-If the word is not matched at the center of the sublist, the method will check whether the word is alphabetically greater or less than the word found in the middle of the list. It then makes a recursive call, replacing the beginning or ending value of the sublist with the location of the old center, offset by one. For example, if the word being sought is greater than the one found then the recursive call needs to check the elements from the old center plus one to the end of the sublist.
+If the word is not matched at the center of the sublist, the function will check whether the word is alphabetically greater or less than the word found in the middle of the list. It then makes a recursive call, replacing the beginning or ending value of the sublist with the location of the old center, offset by one. For example, if the word being sought is greater than the one found then the recursive call needs to check the elements from the old center plus one to the end of the sublist.
 
 \section{Depicting a successful binary search}
 
@@ -352,9 +352,9 @@ Fundamentally, \textbf{\textit{all the earlier elements and all the later elemen
 
 Let's look at the code to implement the binary search process we just described. We'll create a recursive function called \texttt{binary\_search} to implement the logic.
 
-\index{recursive method}
+\index{recursive function}
 
-There are four pieces of information the method needs:
+There are four pieces of information the function needs:
 
 \begin{enumerate}
 	\item The ordered list of words
@@ -367,7 +367,7 @@ In the binary search process we will first calculate the center element. We will
 
 Next we need to compare the words (strings). Remember from our discussion of strings that we can compare strings using the relational operators.
 
-The next part of the method will need to evaluate the result of the comparison.
+The next part of the function will need to evaluate the result of the comparison.
 
 \begin{enumerate}
 	\item If we have found a match we'll return the list index position of the element containing the word. 
@@ -377,7 +377,7 @@ The next part of the method will need to evaluate the result of the comparison.
 
 Finally we need to determine whether we have reached the end of the process, meaning there is no smaller subset of the original list left to search. The easiest way to figure that out is to compare the updated start and end positions. If they cross, meaning that the start position becomes greater than the end position, we have finished the search and not found a match. If the start position is equal to or less than the end position we need to recurse and check the new sublist.
 
-Here is the entire method, which implements the process just described. Make sure that each part makes sense and that you can see how the code relates to the explanation above.
+Here is the entire function, which implements the process just described. Make sure that each part makes sense and that you can see how the code relates to the explanation above.
 
 \beforeverb
 \begin{verbatim}
@@ -431,7 +431,7 @@ Found carrot? -1
 
 This means that \textit{jujube} was found in element 8 of the \texttt{fruits} list and \textit{carrot} was not found in the list (we chose to use -1 as the signal for not finding a match).
 
-Let's add a few print statements so that we can see what is happening when the \texttt{binary\_search} method runs. Here is an updated version that includes some \texttt{print} output to display the variable values as the recursive calls are made. 
+Let's add a few print statements so that we can see what is happening when the \texttt{binary\_search} function runs. Here is an updated version that includes some \texttt{print} output to display the variable values as the recursive calls are made. 
 
 
 \beforeverb
@@ -509,7 +509,7 @@ Found carrot? -1
 \end{verbatim}
 \afterverb
 
-Make sure to study the output and trace through the recursive method calls that are executed in these examples. Drawing a table of values and keeping track of the \textit{stack} of parameter and local variable values may be helpful as well.
+Make sure to study the output and trace through the recursive function calls that are executed in these examples. Drawing a table of values and keeping track of the \textit{stack} of parameter and local variable values may be helpful as well.
 
 
 \iffalse
@@ -537,16 +537,16 @@ subset
 
 \begin{description}
 
-\item[recurse:] Having a method call itself, typically with a subset of the data that was provided to the initial method call. 
+\item[recurse:] Having a function call itself, typically with a subset of the data that was provided to the initial function call. 
 \index{recurse}
 
-\item[recursion:] The use of a method that uses its own definition to apply the same logic over and over. Typically this is used to break a large problem into smaller pieces and ultimately solve the larger problem by combining the results of the recursive calls.
+\item[recursion:] The use of a function that uses its own definition to apply the same logic over and over. Typically this is used to break a large problem into smaller pieces and ultimately solve the larger problem by combining the results of the recursive calls.
 \index{recursion}
 
-\item[recursive method:] A method that uses recursion.
-\index{recursive method}
+\item[recursive function:] A function that uses recursion.
+\index{recursive function}
 
-\item[stack:] A data structure where information (data) is placed in an ordered list. In the case of recursion, the stack holds the data from earlier calls to a recursive method that are waiting on results from their recursive calls. As recursive calls end, the previous data is retrieved from the stack and restored for the earlier method call to use.
+\item[stack:] A data structure where information (data) is placed in an ordered list. In the case of recursion, the stack holds the data from earlier calls to a recursive function that are waiting on results from their recursive calls. As recursive calls end, the previous data is retrieved from the stack and restored for the earlier function call to use.
 \index{stack}
 
 \end{description}
@@ -560,7 +560,7 @@ Write a program that takes an ordered list of integers and uses a binary search 
 \end{ex}
 
 \begin{ex}
-Write a program that prompts the user for a positive number and then sums all the numbers from 1 up to the entered value. The program \textbf{may \textit{not} use a loop}. Rather, it must use a recursive method to carry out the summing process.
+Write a program that prompts the user for a positive number and then sums all the numbers from 1 up to the entered value. The program \textbf{may \textit{not} use a loop}. Rather, it must use a recursive function to carry out the summing process.
 Here is an example of what a run of the program would look like:
 
 \beforeverb

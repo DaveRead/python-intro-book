@@ -294,15 +294,15 @@ print('Done!')
 \index{for statement}
 \index{statement!for}
 
-Sometimes we want to loop through a {\bf set} of things such 
+Sometimes we want to loop through a {\bf collection} of things such 
 as a list of words, the lines in a file, or a list of numbers.
 When we have a list of things to loop through, we can
 construct a \emph{definite} loop using a {\tt for} statement.
 We call the {\tt while} statement an \emph{indefinite} loop
 because it simply loops until some condition becomes {\tt False}, 
 whereas the {\tt for} loop is looping through a known
-set of items so it runs through as many iterations as there
-are items in the set.
+collection of items so it runs through as many iterations as there
+are items in the collection.
 
 The syntax of a {\tt for} loop is similar to the {\tt while} loop
 in that there is a {\tt for} statement and a loop body:
@@ -334,9 +334,9 @@ Done!
 %
 
 Translating this {\tt for} loop to English is not as direct as the 
-{\tt while}, but if you think of friends as a {\bf set},
+{\tt while}, but if you think of friends as a {\bf collection},
 it goes like this: ``Run the statements in the body of the 
-for loop once for each friend \emph{in} the set named friends.''
+for loop once for each friend \emph{in} the collection named {\tt friends}.''
 
 Looking at the {\tt for} loop, {\bf for} and {\bf in} are reserved
 Python keywords, and {\tt friend} and {\tt friends} are variables.
@@ -387,7 +387,7 @@ print('Count: ', count)
 \end{verbatim}
 \afterverb
 %
-We set the variable {\tt count} to zero before the loop starts,
+We initialize the variable {\tt count} to zero before the loop starts,
 then we write a {\tt for} loop to run through the list of numbers.
 Our {\bf iteration} variable is named {\tt itervar} and while we do
 not use {\tt itervar} in the loop, it does control the loop and cause
@@ -402,7 +402,7 @@ of items.   The total number ``falls in our lap'' at the end of the
 loop.  We construct the loop so that we have what we want when the loop
 finishes.
 
-Another similar loop that computes the total of a set of numbers
+Another similar loop that computes the total of a collection of numbers
 is as follows:
 
 \beforeverb
@@ -425,7 +425,7 @@ during the loop {\tt total} is the running total, and at the end of
 the loop {\tt total} is the overall total of all the values 
 in the list.
 
-As the loop executes, {\tt total} accumulates the sum of the
+As the loop executes, {\tt total} \emph{accumulates} the sum of the
 elements; a variable used this way is sometimes called an
 {\bf accumulator}.
 \index{accumulator!sum}
@@ -443,7 +443,7 @@ respectively.
 \index{None special value}
 \index{special value!None}
 \label{maximumloop}
-To find the largest value in a list or sequence, we construct the
+To find the largest value in a collection such as a list, we construct the
 following loop:
 
 \beforeverb
@@ -475,7 +475,7 @@ Largest: 74
 %
 The variable {\tt largest} is best thought of as 
 the ``largest value we have seen so far''.
-Before the loop, we set {\tt largest} to the constant {\tt None}.  
+Before the loop, we initialize {\tt largest} to the constant {\tt None}.  
 {\tt None} is a special constant value which we can 
 store in a variable to mark 
 the variable as ``empty''.  
@@ -485,7 +485,7 @@ is {\tt None} since we have not yet seen any values.  While the
 loop is executing, if {\tt largest} is {\tt None} then we take
 the first value we see as the largest so far.   You can see in 
 the first iteration when the value of {\tt itervar} is 3,
-since {\tt largest} is {\tt None}, we immediately set 
+since {\tt largest} is {\tt None}, we immediately update 
 {\tt largest} to be 3.
 
 After the first iteration, {\tt largest} is no longer {\tt None},
@@ -604,7 +604,7 @@ a variable that will be updated.
 never satisfied or for which there is no terminating condition.
 \index{infinite loop}
 
-\item[iteration:] Repeated execution of a set of statements using
+\item[iteration:] Repeated execution of a group of statements using
 either a function that calls itself or a loop.
 \index{iteration}
 
