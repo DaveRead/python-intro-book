@@ -1,0 +1,103 @@
+Taken from: https://www.scottaaronson.com/blog/?p=524
+Shtetl-Optimized: The Blog of Scott Aaronson
+
+Reduced the entries to be managable across the graphical timeline for the appendix
+
+300BC Euclid’s Elements describes nontrivial algorithms (for problems such as Greatest Common Divisor) that are still used today
+825  Abu Abdallah Muhammad ibn Musa al-Khwarizmi writes “On the Calculation with Hindu Numerals,” the work primarily responsible for spreading decimal notation in the West.  The word “algorithm” will be named for al-Khwarizmi
+1642 Blaise Pascal builds an addition and subtraction machine
+
+1837 Charles Babbage first describes plans for the Analytical Engine
+1842 In her notes on the Analytical Engine, Ada Lovelace writes what’s generally considered the first computer program, to calculate Bernoulli numbers
+1890 Herman Hollerith builds the first electromechanical counting machine; the US government buys it to complete the census
+
+
+1936 Alan Turing publishes “On computable numbers,” often considered the founding document of computer science; the paper gives an explicit construction of a universal Turing machine. Alonzo Church and Emil Post arrive at similar ideas independently
+1936 Working alone in Germany, Konrad Zuse builds the Z1, the first working stored-program computer
+
+1940 Alan Turing builds an improved “Bombe” at Bletchley Park, to break the German Enigma code and help the Allies win WWII
+1942 Isaac Asimov introduces his Three Laws of Robotics
+1943 In their paper “A Logical Calculus Immanent in Nervous Activity,” Warren McCulloch and Walter Pitts propose neural networks and finite automata
+
+1945 John von Neumann describes the architecture of a stored-program computer (henceforth called “von Neumann architecture”)
+1945 Vannevar Bush publishes “As We May Think” in the Atlantic Monthly, a now-famous article that foresees a global information network based on hypertext
+1946 J. Presper Eckert and John Mauchly complete the ENIAC
+1947 At Bell Labs, John Bardeen, Walter Brattain, and William Shockley invent the transistor
+1948 Claude Shannon first uses the word “bit,” attributing it to John Tukey
+
+1950 Alan Turing proposes the Turing Test for artificial intelligence
+1951 J. Presper Eckert and John Mauchly release UNIVAC I, the first commercial electronic computer
+1951 Grace Murray Hopper creates A-O, considered the first compiler
+
+1956 Dartmouth hosts the first conference on artificial intelligence, bringing the term AI into use
+1956 In a letter to John von Neumann, Kurt Gödel first poses what will later become known as the P versus NP problem
+1956 Edsger Dijkstra conceives his shortest-path algorithm, the basis for modern trip-planning software
+1956 Noam Chomsky proposes the Chomsky Hierarchy, linking the theory of computing to formal languages
+1956 MIT Lincoln Laboratories builds the TX-0, the first general-purpose computer to be built with transistors
+1956 Reynold Johnson at IBM introduces the hard drive
+1957 A team led by John Backus at IBM delivers a compiler for FORTRAN, the first high-level programming language
+1958 John McCarthy proposes the LISP family of functional programming languages
+
+1960 Tony Hoare invents the Quicksort algorithm, while a visiting student at Moscow State University
+1961 UNIMATE, the first industrial robot, begins work at General Motors
+1961 A team led by MIT student Steve Russell creates Spacewar!, the first computer game
+1963 At MIT, Joseph Weizenbaum develops ELIZA, the now-famous program that simulates conversation between a Rogerian psychotherapist and a patient
+1963 The first edition of ASCII (American Standard Code for Information Interchange) is published
+1964 At Dartmouth, John Kemeny and Thomas Kurtz create the BASIC programming language
+
+1965 Intel cofounder Gordon Moore enunciates Moore’s Law, that the number of transistors per integrated circuit doubles roughly every two years
+1965 Edsger Dijkstra introduces semaphores, which allow multiple concurrently-running programs to share the same resource
+1966 Texas Instruments unveils the first electronic handheld calculator
+1966 The first cash-dispensing ATM is installed in Tokyo
+1967 At SRI, Douglas Engelbart and Bill English apply for a patent for the first computer mouse
+1967 In Norway, Ole-Johan Dahl and Kristen Nygaard develop Simula 67, considered the first object-oriented programming language and a major influence on Smalltalk and later C++
+1968 The movie “2001: A Space Odyssey” introduces the world to HAL
+1969 ARPAnet, the precursor of the Internet, links UCLA, SRI, Santa Barbara, and Utah (MIT joins in 1970)
+1969 At Bell Labs, Ken Thompson and Dennis Ritchie create UNIX, and begin developing the C programming language
+1969 Apollo 11 lands on the moon, with guidance software created by an MIT team led by Margaret Hamilton
+
+1970 John Horton Conway invents the Game of Life cellular automaton; it is estimated that millions of dollars of computer time are wasted watching Lifeforms evolve
+1970 E. F. Codd proposes the relational database management system (RDBMS)
+1971 Ray Tomlinson sends the first email message on ARPANET
+1971 Bob Thomas at BBN Technologies creates the first experimental computer virus
+1972 Atari releases Pong
+1973 At Xerox PARC, Alan Kay and collaborators create the Alto, featuring the first graphical user interface (GUI) with windows, icons, and menus
+1973 Robert Metcalfe at Xerox PARC creates Ethernet
+1974 MIT professor Barbara Liskov and students begin work on CLU, a predecessor of modern object-oriented programming languages
+
+1975 Robert Kahn and Vint Cerf test the new TCP/IP protocol between Stanford and University College London
+1975 At IBM, John Cocke advocates RISC processor architecture, and begins work on the 801 to implement it
+1977 Ronald Rivest, Adi Shamir, and Leonard Adleman develop the public-key encryption system that they call RSA, and announce it via Martin Gardner’s Mathematical Games column in Scientific American
+1977 Steve Jobs and Steve Wozniak release the Apple II
+1978 Intel releases the 8086, the first in the line of x86 processors
+1979 Dan Bricklin and Bob Frankston release VisiCalc, the first personal spreadsheet program and “killer app” for the Apple II
+
+1981 The IBM PC is released, running Microsoft’s MS-DOS
+1982 Sony and Philips commercially release the compact disc
+1983 Bjarne Stroustrup at Bell Labs develops C++, which is to become the dominant object-oriented programming language
+1984 With its iconic Super Bowl commercial, Apple announces the Macintosh, the first consumer machine with a mouse/windows interface
+
+1985 Microsoft releases Windows
+1985 Richard Stallman publishes his GNU Manifesto, setting out the principles of the free-software movement
+1988 While a graduate student at Cornell, Robert Morris creates a computer worm that cripples the Internet (though that wasn’t Morris’s intention)
+
+1990 At CERN in Geneva, Switzerland, Tim Berners-Lee creates the World Wide Web
+1990 Microsoft releases its first Office application suite, consisting of Word, Excel, and PowerPoint
+1991 The Linux kernel is designed by Finnish student Linus Torvalds
+1993 With 24 satellites in orbit, the Global Positioning System achieves “initial operational capability.”  Originally designed by the US Department of Defense for military applications, GPS quickly finds numerous civilian uses including computerized car navigation
+1994 Peter Shor proves that a quantum computer, if built, would be able to factor numbers efficiently, launching quantum computing as an active research field
+
+1995 Pixar releases Toy Story, the first feature film made entirely with computer-generated imagery
+1995 Lee Zehrer launches Match.com, the first major online dating service
+1995 Amazon.com is launched by Jeff Bezos and sells its first book
+1996 Stanford graduate students Larry Page and Sergey Brin begin developing Google
+1997 IBM’s Deep Blue computer defeats human world champion Garry Kasparov
+1998 Google founded
+
+2000 Putting an unexpected practical twist on Alan Turing’s ideas from 1950, Manuel Blum, Luis von Ahn, and John Langford at Carnegie Mellon articulate the notion of CAPTCHAs (Completely Automated Public Turing tests to tell Computers and Humans Apart), the challenges—usually involving reading distorted text—that are used by numerous websites to discourage spam-bots
+2001 Larry Sanger and Jimmy Wales launch Wikipedia
+2004 Harvard sophomore Mark Zuckerberg launches Thefacebook.com
+2005 YouTube is launched, beginning an era of online video-sharing
+2007 Apple releases the iPhone
+2011 IBM’s Watson computer defeats all-time human champions Ken Jennings and Brad Rutter on Jeopardy
+

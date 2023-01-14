@@ -1,0 +1,1659 @@
+https://www.scottaaronson.com/blog/?p=524
+
+
+Shtetl-Optimized
+The Blog of Scott Aaronson
+If you take nothing else from this blog: quantum computers won't
+solve hard problems instantly by just trying all solutions in parallel.
+
+Also, next pandemic, let's approve the vaccines faster!
+« Quantum Complexity Theory student project showcase!
+The students and the TAs are one hand »
+Timeline of computer science
+
+Update (Feb. 14): Thanks so much to the many commenters who offered suggestions—I’ve implemented a large fraction of them!  In addition to many clarifications and corrections of existing entries, I’ve added entries for:
+
+Al-Khwarizmi
+The slide rule
+William Stanley Jevons’s “logic piano”
+The Atanasoff-Berry computer
+Claude Shannon’s cryptographic work
+Reed-Solomon codes (replacing the Hamming code)
+Solomonoff-Kolmogorov-Chaitin complexity
+The 1ESS switching system
+Semaphores
+Viterbi’s algorithm
+Simula 67
+Back-propagation (now sharing an entry with the book “Perceptrons”)
+The Solovay-Strassen primality test
+Lempel-Ziv compression
+PAC-learning
+Microsoft Office
+Global Positioning System
+Slashdot (replacing the entry for the word “blog”)
+CAPTCHAs
+BitTorrent
+Egypt’s “Twitter revolution”
+
+The trouble is that I now have 165 entries, whereas I was told to deliver 150.  So, after realizing the infeasibility of simply “choosing” items for deletion, the MIT150 folks and I reached a decision to set up a voting site for the top 150 entries, which should be available within a couple weeks.  In the meantime, if you want to suggest even more entries, you can go ahead and do so … thanks!
+
+This year, MIT is celebrating its 150th anniversary—and as part of the birthday festivities, I somehow got roped into creating a timeline of “150 major events in computer science history” (i.e., in the world, not MIT).   I understand that the timeline will go up on a wall somewhere.
+
+My first thought was that singling out the “most important events in CS history” was an exercise in futility, and not a particularly original one either.  But then, as I spent weekends reading about Konrad Zuse, the UNIVAC, and the IBM 360, I started really getting into my assigned exercise in futility.  Sure, there were great CS timelines already on the web—some of which I stole from shamelessly—but none of them had exactly the focus I was looking for.  For example, the founding of a company didn’t strike me as a milestone in itself: the question was, what qualitatively new things did the company do?  So I decided to take as a starting point the words and concepts that populate the mental landscape of CS: floating-point, compiler, graphics, network, bug.  Which events were decisive in loosing these concepts upon the Earth?  To clarify, I was just as interested in the demonstration, popularization, and commercialization of existing concepts as in the discovery of new ones: the release of Windows in 1985 brought few new ideas into the world, but it seems hard to argue that Windows hasn’t carved out its place on the mental map.  But so, in my opinion, has the Time Hierarchy Theorem, even if only 0.01% as many people have heard of it.
+
+I’m including my current draft list of 152 events below, so that Shtetl-Optimized readers can critique it, nitpick it, and tell me all about the important events I’ve left out and the events I’ve included that shouldn’t be there.  I’ll carefully consider all of your suggestions, and will implement the ones that I like.
+
+While you’re sharpening your nitpick-knives, though, let me explain the ground rules I decided to follow:
+
+    I adopted a strict policy against listing general trends (“word processing gains widespread acceptance”).  To earn inclusion in the list, an event had to be something that happened at a particular time: for example, the release of a product, the publication of a book, or the beginning of a project.  Of course, I often chose a specific event to illustrate a trend.
+    I also adopted a strict policy against arbitrary numerical milestones (“millionth website,” “first processor to break the 1GHz barrier”), since otherwise such milestones would proliferate endlessly.
+    Even though this was a list of events, I cared a great deal about representing people who played major roles in CS.  When—as often happened—the same person was involved in too many significant events to list, I wasn’t shy about picking one or two events to highlight the person.
+    I wasn’t interested in external “recognition” bestowed on computers, such as TIME Magazine naming the computer its 1982 “Machine of the Year.”  Nor was I interested in what you might call “internal housekeeping milestones”: the founding of the ACM or the first CS departments, the establishment of the Turing Award, etc.  I felt that, if we’re going to engage in self-congratulation, then at least let it not be self-congratulation over self-congratulation!
+
+Before we get to the list itself, let me give you a breakdown of number of milestones per time period:
+
+Pre-1600s: 2
+1600s: 3
+1700s: 2
+1800s: 7
+1900s (i.e., 1900-1909): 1
+1910s: 0
+1920s: 2
+1930s: 4
+1940s: 16
+1950s: 20
+1960s: 29
+1970s: 23
+1980s: 15
+1990s: 19
+2000s: 9
+
+From the data, it would appear that the level of intellectual excitement in computer science peaked in the 1960s, and has steadily declined ever since, except for a bump in the 1990s coinciding with the Internet boom.  The past decade has been a particularly arid one, producing little of note besides Facebook, Wikipedia, YouTube, and the iPhone.  If you don’t like that message—and I’m guessing that many of the MIT150 organizers won’t—then hey, don’t shoot the messenger!  The biased, misleading, and unscientific data is what it is.
+
+Without further ado:
+
+300BC Euclid’s Elements describes nontrivial algorithms (for problems such as Greatest Common Divisor) that are still used today
+150-100BC The Antikythera mechanism, an astronomical computer, is built in ancient Greece
+825  Abu Abdallah Muhammad ibn Musa al-Khwarizmi writes “On the Calculation with Hindu Numerals,” the work primarily responsible for spreading decimal notation in the West.  The word “algorithm” will be named for al-Khwarizmi
+1622 William Oughtred invents the slide rule, which will remain in use until the 1970s
+1642 Blaise Pascal builds an addition and subtraction machine
+1669 Isaac Newton describes Newton’s method, an early numerical algorithm for finding roots of equations
+1679 Gottfried Wilhelm Leibniz develops binary notation; Leibniz’s writings about a “Calculus Ratiocinator” are among the first to envision a general-purpose computer
+1737 Jacques de Vaucanson builds a mechanical duck able to flap its wings, eat grain, and “defecate”
+1770 Wolfgang von Kempelen unveils the Mechanical Turk, a “chess-playing automaton” secretly operated by a human. The hoax is only revealed 50 years later
+1801 In his “Disquisitiones Arithmeticae,” Carl Friedrich Gauss discusses the computational complexity of factoring and primality testing
+1837 Charles Babbage first describes plans for the Analytical Engine
+1842 In her notes on the Analytical Engine, Ada Lovelace writes what’s generally considered the first computer program, to calculate Bernoulli numbers
+1847 George Boole proposes Boolean logic
+1869 William Stanley Jevons recasts Boole’s ideas in algebraic terms, and builds a wooden “logic piano” to construct the truth tables of small Boolean formulas
+1879 Gottlob Frege publishes his “Begriffsschrift,” introducing first-order logic as a mathematically-precise language of thought
+1890 Herman Hollerith builds the first electromechanical counting machine; the US government buys it to complete the census
+1900 In a lecture to the International Congress of Mathematicians, David Hilbert asks for way to mechanize all of mathematical reasoning
+1921 Czech author Karel Capek popularizes the term ‘robot’ in his play “R.U.R. (Rossum’s Universal Robots)”
+1925 Vannevar Bush and colleagues create the first large-scale analog calculator at MIT
+1931 Kurt Gödel publishes his Incompleteness Theorem; the system of “Gödel numbering” used in the proof foreshadows computer programming
+1936 Alan Turing publishes “On computable numbers,” often considered the founding document of computer science; the paper gives an explicit construction of a universal Turing machine. Alonzo Church and Emil Post arrive at similar ideas independently
+1936 Working alone in Germany, Konrad Zuse builds the Z1, the first working stored-program computer
+1937 In his MIT master’s thesis—considered possibly the most influential master’s thesis in history—Claude Shannon proposes the application of Boolean algebra to electrical circuit design
+1940 Building on earlier breakthroughs by Polish mathematician Marian Rejewski, Alan Turing builds an improved “Bombe” at Bletchley Park, to break the German Enigma code and help the Allies win WWII
+1942 Isaac Asimov introduces his Three Laws of Robotics
+1942 At Iowa State College, John Atanasoff and Clifford Berry successfully test a special-purpose vaccum-tube computer able to solve up to 29 simultaneous linear equations; Atanasoff will later spend decades in legal disputes to establish his computer’s priority over Eckert and Mauchly’s ENIAC
+1943 Colossus, the world’s first programmable electronic computer, begins operation at Bletchley Park
+1943 During the Manhattan Project, Richard Feynman and others pioneer large-scale scientific computing, using humans and later mechanical calculators
+1943 In their paper “A Logical Calculus Immanent in Nervous Activity,” Warren McCulloch and Walter Pitts propose neural networks and finite automata
+1944 The Mark I, designed by Howard Aiken, begins operations at Harvard
+1945 In a 100-page “draft report on the EDVAC”, John von Neumann describes the architecture of a stored-program computer (henceforth called “von Neumann architecture”)
+1945 Vannevar Bush publishes “As We May Think” in the Atlantic Monthly, a now-famous article that foresees a global information network based on hypertext
+1946 At the University of Pennsylvania, J. Presper Eckert and John Mauchly complete the ENIAC
+1946 In Los Alamos, Stanislaw Ulam develops the Monte Carlo method to speed up calculations of neutron diffusion in nuclear weapons
+1947 At Bell Labs, John Bardeen, Walter Brattain, and William Shockley invent the transistor
+1947 Operators of the Mark II computer trace an error to a moth trapped in a relay. The incident, popularized by Grace Murray Hopper, stimulates wider adoption of the terms “bug” and “debugging”
+1947 George Dantzig proposes the simplex algorithm for linear programming
+1948 In his landmark paper “A Mathematical Theory of Communication,” Claude Shannon first uses the word “bit,” attributing it to John Tukey
+1948 Norbert Wiener publishes “Cybernetics: Or Control and Communication in the Animal and the Machine”
+1949 The EDSAC, built by Maurice Wilkes, begins operations at Cambridge University
+1949 Claude Shannon initiates the rigorous mathematical study of cryptography, publishing his proof that the one-time pad is unbreakable and that any unbreakable encryption system has the same basic properties
+1950 Alan Turing proposes the Turing Test for artificial intelligence; four years later, Turing will commit suicide after being prosecuted for homosexuality
+1950 CSIRAC, in Australia, becomes the first computer to play music
+1951 J. Presper Eckert and John Mauchly release UNIVAC I, the first commercial electronic computer
+1951 Grace Murray Hopper creates A-O, considered the first compiler
+1951 MIT’s Whirlwind I computer goes online. Designed by Jay Forrester, Whirlwind features magnetic core memory and vacuum tubes that last 1000 times longer than those previously available
+1952 Based on analysis of early returns, a UNIVAC computer borrowed by CBS News predicts that Dwight Eisenhower will defeat Adlai Stevenson in the presidential election
+1954 Researchers at Birkbeck College perform the first demonstration of machine translation, with a rudimentary translation of English into French
+1955 MIT’s Whirlwind I becomes the first computer to display graphics on a video console
+1956 Dartmouth hosts the first conference on artificial intelligence, bringing the term AI into use
+1956 In a letter to John von Neumann, Kurt Gödel first poses what will later become known as the P versus NP problem
+1956 Edsger Dijkstra conceives his shortest-path algorithm, the basis for modern trip-planning software (Dijkstra also may have been the first person to list his profession as “programmer”)
+1956 Noam Chomsky proposes the Chomsky Hierarchy, linking the theory of computing to formal languages
+1956 MIT Lincoln Laboratories builds the TX-0, the first general-purpose computer to be built with transistors
+1956 Reynold Johnson at IBM introduces the hard drive
+1957 A team led by John Backus at IBM delivers a compiler for FORTRAN, the first high-level programming language
+1958 John McCarthy proposes the LISP family of functional programming languages
+1958 As part of the air-defense project SAGE, MIT Lincoln Labs links hundreds of radar stations in the first large-scale computer network
+1958 Jack St. Kilby at Texas Instruments and Robert Noyce at Fairchild Semiconductor propose the integrated circuit
+1959 In the seminal paper “Finite Automata and Their Decision Problems,” Dana Scott and Michael Rabin introduce the concept of nondeterminism into computer science
+1960 Tony Hoare invents the Quicksort algorithm, while a visiting student at Moscow State University
+1960 Irving Reed and Gustave Solomon give a systematic construction of error-correcting codes; later, Elwyn Berlekamp and James Massey will discover an efficient decoding procedure
+1960 Ray Solomonoff proposes measuring the complexity of a string by the length of the shortest program that generates it; Andrey Kolmogorov and Gregory Chaitin will later arrive at similar ideas independently
+1961 UNIMATE, the first industrial robot, begins work at General Motors
+1961 A team led by MIT professor Fernando Corbato demonstrates the first computer time-sharing system
+1961 A team led by MIT student Steve Russell creates Spacewar!, the first computer game
+1962 While studying computer models of the weather, MIT professor Edward Lorentz discovers the phenomena that would later be popularized as “chaos theory”
+1963 At MIT, Joseph Weizenbaum develops ELIZA, the now-famous program that simulates conversation between a Rogerian psychotherapist and a patient
+1963 MIT graduate student Ivan Sutherland develops Sketchpad, the first Computer-Aided Design (CAD) software
+1963 The first edition of ASCII (American Standard Code for Information Interchange) is published
+1964 IBM releases the System/360, one of the first computers based on integrated circuits. Fred Brooks, the lead developer, later describes the lessons learned in his book “The Mythical Man-Month”
+1964 At Dartmouth, John Kemeny and Thomas Kurtz create the BASIC programming language
+1964 Seymour Cray releases the CDC 6600, the first of many record-breaking supercomputers
+1964 American Airlines and IBM debut SABRE, the first computer-based travel reservation system
+1965 AT&T debuts 1ESS, the first electronic telephone switching system, in Succasunna, New Jersey
+1965 Intel cofounder Gordon Moore enunciates Moore’s Law, that the number of transistors per integrated circuit doubles roughly every two years
+1965 At IBM, James Cooley and John Tukey rediscover and popularize the Fast Fourier Transform (versions of which were known to Gauss and others)
+1965 Juris Hartmanis and Richard Stearns prove the existence of an infinite hierarchy of harder and harder computational problems
+1965 MIT student Richard Greenblatt begins developing Mac Hack, the first computer chess program to succeed in tournament play. Mac Hack also defeats the AI skeptic Hubert Dreyfus, who had famously claimed that computers would never play high-quality chess
+1965 Edsger Dijkstra introduces semaphores, which allow multiple concurrently-running programs to share the same resource
+1966 Texas Instruments unveils the first electronic handheld calculator
+1966 The first cash-dispensing ATM is installed in Tokyo
+1967 At SRI, Douglas Engelbart and Bill English apply for a patent for the first computer mouse
+1967 Andrew Viterbi invents the Viterbi algorithm for maximum-likelihood estimation in Hidden Markov Models; the algorithm will find major applications in speech recognition, bioinformatics, and both the CDMA and GSM cellular-phone standards
+1967 In Norway, Ole-Johan Dahl and Kristen Nygaard develop Simula 67, considered the first object-oriented programming language and a major influence on Smalltalk and later C++
+1968 Donald Knuth publishes Volume 1 of “The Art of Computer Programming”
+1968 Edsger Dijkstra publishes his now-famous article “Go To Statement Considered Harmful,” igniting an acrimonious debate about programming practices
+1968 The movie “2001: A Space Odyssey” introduces the world to HAL
+1968 Work begins at MIT on Macsyma, the first computer algebra system
+1969 Victor Scheinman builds the Stanford Arm, the first electronic computer-controlled robotic arm
+1969 ARPAnet, the precursor of the Internet, links UCLA, SRI, Santa Barbara, and Utah (MIT joins in 1970)
+1969 At Bell Labs, Ken Thompson and Dennis Ritchie create UNIX, and begin developing the C programming language
+1969 Arthur Bryson and Yu-Chi Ho introduce back-propagation, a learning technique for neural networks that is largely ignored until the 1980s.  Meanwhile, Marvin Minsky and Seymour Papert publish “Perceptrons,” a book that introduces important mathematical techniques into computer science, but has also been accused of “killing” neural-net research for more than a decade
+1969 The Apollo Guidance Computer plays a crucial role in steering Neil Armstrong and Buzz Aldrin to the lunar surface
+1970 John Horton Conway invents the Game of Life cellular automaton; it is estimated that millions of dollars of computer time are wasted watching Lifeforms evolve
+1970 E. F. Codd proposes the relational database management system (RDBMS)
+1970 Yuri Matiyasevich, building on work of Julia Robinson, Martin Davis, and Hilary Putnam, shows the nonexistence of an algorithm to solve Diophantine equations, negatively resolving Hilbert’s Tenth Problem and demonstrating Turing-universality in one of the oldest parts of mathematics
+1971 Stephen Cook and Leonid Levin independently prove that the Satisfiability problem is NP-complete; a paper by Richard Karp a year later demonstrates the pervasiveness of the NP-completeness phenomenon
+1971 IBM commercially releases the floppy disk
+1971 Ray Tomlinson sends the first email message on ARPANET
+1971 Bob Thomas at BBN Technologies creates the first experimental computer virus
+1972 Atari releases Pong
+1973 At Xerox PARC, Alan Kay and collaborators create the Alto, featuring the first graphical user interface (GUI) with windows, icons, and menus
+1973 Robert Metcalfe at Xerox PARC creates Ethernet
+1974 MIT professor Barbara Liskov and students begin work on CLU, a predecessor of modern object-oriented programming languages
+1976 Kenneth Appel and Wolfgang Haken prove the Four-Color Map Theorem, the first major theorem to be proved using a computer
+1975 Bill Gates and Paul Allen adapt BASIC to the MITS Altair microcomputer
+1975 Inspired by work of Ralph Merkle, Stanford researchers Whitfield Diffie and Martin Hellman announce the first protocol for public key exchange (which had been discovered previously at the British GCHQ, but kept classified)
+1975 Robert Kahn and Vint Cerf test the new TCP/IP protocol between Stanford and University College London
+1975 At IBM, John Cocke advocates RISC processor architecture, and begins work on the 801 to implement it
+1977 Ronald Rivest, Adi Shamir, and Leonard Adleman develop the public-key encryption system that they call RSA, and announce it via Martin Gardner’s Mathematical Games column in Scientific American
+1977 Robert Solovay and Volker Strassen publish an efficient randomized algorithm for primality testing, demonstrating both the feasibility of RSA and the power of randomized algorithm; shortly afterward, Gary Miller and Michael Rabin find a more efficient such algorithm
+1977 Steve Jobs and Steve Wozniak release the Apple II
+1977 William Kahan puts forward a draft proposal for the IEEE floating-point standard
+1977 In Israel, Abraham Lempel and Jacob Ziv propose the data compression algorithm that (after improvements by Terry Welch and others) becomes the basis for PKZIP and most other general-purpose compression software
+1978 Intel releases the 8086, the first in the line of x86 processors
+1978 Donald Knuth begins developing the TeX computer typesetting system, which will eventually become the lingua franca of science
+1979 Dan Bricklin and Bob Frankston release VisiCalc, the first personal spreadsheet program and “killer app” for the Apple II
+1980 Duke University graduate students Tom Truscott and Jim Ellis create Usenet
+1981 Nintendo achieves its first video game success with Donkey Kong, designed by Shigeru Miyamoto
+1981 The IBM PC is released, running Microsoft’s MS-DOS
+1981 Richard Feynman points out the exponential difficulty of simulating quantum physics with a conventional computer, and speculates that a quantum-mechanical computer would do better; a few years later; David Deutsch will publish his construction of a universal quantum Turing machine
+1982 Work on pseudorandom generators by Manuel Blum, Silvio Micali, Shafi Goldwasser, and Andy Yao begins the modern era of complexity-based cryptography, which will lead over the next decade to notions such as zero-knowledge, interactive proofs, and probabilistically checkable proofs
+1982 Sony and Philips commercially release the compact disc
+1982 Michael Fischer, Nancy Lynch, and Michael Paterson prove that it’s impossible to reach consensus in an asynchronous distributed system if there’s even a single faulty processor
+1983 Bjarne Stroustrup at Bell Labs develops C++, which is to become the dominant object-oriented programming language
+1984 With its iconic Super Bowl commercial, Apple announces the Macintosh, the first consumer machine with a mouse/windows interface
+1984 Robert Axelrod publishes “The Evolution of Cooperation,” a classic book that uses computer experiments with the Iterated Prisoners’ Dilemma to shed light on human nature
+1984 Leslie Valiant at Harvard proposes PAC (Probably Approximately Correct) learning, which becomes the central mathematical framework for machine learning, and helps to explain why Occam’s Razor “works”
+1985 Microsoft releases Windows
+1985 Richard Stallman publishes his GNU Manifesto, setting out the principles of the free-software movement
+1986 Thinking Machines begins shipping the CM-1 Connection Machine, considered the first massively-parallel supercomputer
+1988 While a graduate student at Cornell, Robert Morris creates a computer worm that cripples the Internet (though that wasn’t Morris’s intention)
+1989 Mike Godwin formulates Godwin’s Law: “As an online discussion grows longer, the probability of a comparison involving Nazis or Hitler approaches 1”
+1990 At CERN in Geneva, Switzerland, Tim Berners-Lee creates the World Wide Web
+1990 The IP=PSPACE Theorem, proved by Carsten Lund, Lance Fortnow, Howard Karloff, Noam Nisan, and Adi Shamir, shows the unexpected power of interactive protocols and opens a new era in the theory of computing
+1990 The discovery of boosting—a technique for combining the predictions of different learning algorithms—by Michael Kearns, Rob Schapire, and Yoav Freund, starts a revolution in the theory and practice of machine learning
+1990 Microsoft releases its first Office application suite, consisting of Word, Excel, and PowerPoint
+1991 At Los Alamos National Laboratory, Paul Ginsparg founds the arXiv, ushering in the era of rapid online dissemination of scientific research
+1991 The Linux kernel is designed by Finnish student Linus Torvalds
+1991 Phil Zimmermann releases Pretty Good Privacy (PGP), which makes “military-grade” public-key encryption easily available. After the Customs Service opens a criminal investigation, Zimmermann becomes an Internet folk hero
+1993 A team headed by Marc Andreessen at the University of Illinois Urbana-Champaign releases NCSA Mosaic, the browser credited with popularizing the Web
+1993 Joel Furr first uses the word “spam” to mean “excessive multiple postings” (in that case, to Usenet newsgroups)
+1993 With 24 satellites in orbit, the Global Positioning System achieves “initial operational capability.”  Originally designed by the US Department of Defense for military applications, GPS quickly finds numerous civilian uses including computerized car navigation
+1994 Peter Shor proves that a quantum computer, if built, would be able to factor numbers efficiently, launching quantum computing as an active research field
+1994 Thomas Nicely discovers the Pentium FDIV bug; the ensuing controversy and costly recall by Intel underscore the need for hardware verification
+1995 Pixar releases Toy Story, the first feature film made entirely with computer-generated imagery
+1995 Lee Zehrer launches Match.com, the first major online dating service
+1995 Amazon.com is launched by Jeff Bezos and sells its first book
+1995 The Institute for Genomic Research uses whole-genome shotgun sequencing—a technique dependent on massive computer power—to sequence the genome of the first free-living organism, the bacterium Haemophilus influenzae
+1996 Stanford graduate students Larry Page and Sergey Brin begin developing Google
+1997 IBM’s Deep Blue computer defeats human world champion Garry Kasparov
+1997 Rob “Commander Taco” Malda founds Slashdot, which hosts freewheeling web-based conversations of the sort that would later be commonplace on blogs
+1997 NASA’s Sojourner robotic rover moves semi-autonomously across the surface of Mars for 83 days, sending spectacular images back to Earth
+1999 Widespread fear of the “Y2K millennium bug” underscores society’s dependence on legacy computer systems. Later, many will argue the fears were overblown
+2000 The first major denial-of-service (DoS) attack is launched against CNN, Yahoo, and eBay
+2000 Putting an unexpected practical twist on Alan Turing’s ideas from 1950, Manuel Blum, Luis von Ahn, and John Langford at Carnegie Mellon articulate the notion of CAPTCHAs (Completely Automated Public Turing tests to tell Computers and Humans Apart), the challenges—usually involving reading distorted text—that are used by numerous websites to discourage spam-bots
+2001 Larry Sanger and Jimmy Wales launch Wikipedia
+2001 Bram Cohen develops BitTorrent, the controversial peer-to-peer file sharing protocol now estimated to account for 27-55% of all Internet traffic
+2001 In the wake of the 9/11 attacks, news websites continue running smoothly in part because of routing algorithms designed by Akamai Technologies. Meanwhile, former MIT student Danny Lewin, who cofounded Akamai with Professor Tom Leighton, is on American Airlines flight 11 when it crashes into the World Trade Center
+2002 At IIT Kanpur, Manindra Agrawal and his students Neeraj Kayal and Nitin Saxena announce a deterministic polynomial-time algorithm for primality testing
+2004 Harvard sophomore Mark Zuckerberg launches Thefacebook.com
+2005 YouTube is launched, beginning an era of online video-sharing
+2007 Apple releases the iPhone
+2010 Some of Iran’s centrifuges for uranium enrichment are destroyed by the Stuxnet worm, in the first known large-scale cyberattack to target physical infrastructure
+2011 Making essential use of Facebook and Twitter as organizing tools, protesters in Egypt force the resignation of President Hosni Mubarak after 30 years of rule
+2011 IBM’s Watson computer defeats all-time human champions Ken Jennings and Brad Rutter on Jeopardy
+
+Email, RSS Follow
+
+This entry was posted on Friday, February 11th, 2011 at 8:45 am and is filed under Nerd Interest. You can follow any responses to this entry through the RSS 2.0 feed. Both comments and pings are currently closed.
+182 Responses to “Timeline of computer science”
+
+    Dr. Lewis Creed Says:
+    Comment #1 February 11th, 2011 at 10:01 am
+
+    Dear Scott, magnificent list with two exceptions:
+
+    First, you list Ada Lovelace as the world’s first computer programmer in 1842. But according to Doron Swade, THE expert on all things Babbage, this is not so. Refer to his wonderful talk at Google ( http://www.youtube.com/watch?v=7K5p_tBcrd0 ) beginning at the 36.29 mark.
+
+    Second, I will not accept any timeline without YOU appearing on it at some point. Modesty serves no point here. We want a comprehensive timeline. So, please add one of your many achievements in quantum computation to the list.
+
+    Finally, I’m not sure if you give Donald Knuth enough of a voice. What about his Christmas Tree lectures? What about his contributions to discrete mathematics?
+    rrtucci Says:
+    Comment #2 February 11th, 2011 at 10:02 am
+
+    Feb 15. 2011, Watson defeats Ken Jennings at Jeopardy
+    Robert Says:
+    Comment #3 February 11th, 2011 at 10:29 am
+
+    Very good, a few random thoughts:
+
+    Perhaps slashdot should be credited as the first popular blog? (I think it started in 1997).
+
+    Should the first randomized algorithm be mentioned? (Miller-Rabin or Solovay-Strassen I believe)
+
+    Maybe iPad belongs here – 1st tablet to gain market acceptance.
+
+    Perhaps one of MP3, napster, iPod or iTunes deserve a mention – these were pretty revolutionary in their way.
+    Steve Huntsman Says:
+    Comment #4 February 11th, 2011 at 10:38 am
+
+    FYI “Robert Tapan Morris” should be “Robert Tappan Morris”
+    Steve Huntsman Says:
+    Comment #5 February 11th, 2011 at 10:43 am
+
+    Also calling Stuxnet “the first known cyberattack to target physical infrastructure” suggests that you are ignoring a 2000 incident in Queensland, Australia that is publicly known. While in a different league in terms of its sexiness, it’s still worth noting: http://en.wikipedia.org/wiki/SCADA#Security_issues
+    gowers Says:
+    Comment #6 February 11th, 2011 at 10:45 am
+
+    I enjoyed that a lot. If it had been me I would have come up with a slightly different form of words for the entry on FFT, to make it clear that Cooley and Tukey rediscovered the algorithm rather than merely popularizing it. (Of course, then there is the issue that many other people rediscovered it — for that reason I don’t actually have a concrete suggestion for how to express the point economically.)
+    Zach Says:
+    Comment #7 February 11th, 2011 at 11:05 am
+
+    I enjoyed the list and shared it with some buddies of mine. However,
+    what about Ralph Merkle? I think he should appear with the Diffie-Hellman bullet. Hellman credits Merkle for helping to start public key cryptography along with Diffie.
+    Nir Says:
+    Comment #8 February 11th, 2011 at 11:10 am
+
+    Scott, most computers today are parallel (multicore). Most multicore software is written with locks, software/hardware devices that solve mutual exclusion. The mutual exclusion problem and its first solution are Dijkstra’s biggest contribution to computer science, not his shortest path alg….please….
+
+    E. W. Dijkstra. Solution of a problem in concurrent programming control. Communications of the
+    ACM, 8(9):569, 1965.
+    Ross Snider Says:
+    Comment #9 February 11th, 2011 at 11:18 am
+
+    This was really interesting. There are some curiosities. I’m not sure if the 1895 on slot machines should count or that Mechanical Turk should count. Nor am I sure that the release of “2001: A Space Odyssey” counts as one of the “most important events in CS history”. There are a couple more entries with this flavor. I suppose some of these might count as stand-ins for “CS/science/industry gains steadily growing utopic status in the mind of the layman?”
+
+    I would like to suggest adding Gentry’s breakthrough in Fully Homomorphic Encryption, which I think is something 20 years down the line we’ll identify as something that dramatically changed our relationship to information.
+
+    Loved the ‘very’ historical bits; that you’ve included the ‘grandfather algorithms’ and ancient computing machines.
+    CJ Nackel Says:
+    Comment #10 February 11th, 2011 at 11:31 am
+
+    I agree with rrtucci. You may want to wait a week to see if Watson needs to be added to the list.
+    Scott Says:
+    Comment #11 February 11th, 2011 at 11:57 am
+
+    gowers and Steve Huntsman #4: Thanks, fixed!
+    Scott Says:
+    Comment #12 February 11th, 2011 at 12:02 pm
+
+    rrtucci and CJ Nackel: If Watson wins, then I’ll add it! 🙂
+    Scott Says:
+    Comment #13 February 11th, 2011 at 12:09 pm
+
+    Ross Snider: I should tell you that one of my instructions was to include some funny / odd / amusing entries!
+
+    I agree, though, the first slot machine will probably get the ax when I produce the final list.
+
+    HAL, on the other hand, was a pretty big cultural reference point. I’d like to delete it, but I’m sorry, Ross, I just can’t do that… 🙂
+    Scott Says:
+    Comment #14 February 11th, 2011 at 12:16 pm
+
+    As for Gentry’s homomorphic encryption: if I were putting together the timeline in (say) 2020, and if by then Gentry’s scheme had (a) been made practical and (b) withstood attack, then absolutely, I would add it.
+    Scott Says:
+    Comment #15 February 11th, 2011 at 12:20 pm
+
+    Zach #7: Added Ralph Merkle, thanks!
+    Scott Says:
+    Comment #16 February 11th, 2011 at 12:23 pm
+
+    Steve Huntsman #5: I didn’t know about that incident in Australia–thanks for the link!
+
+    I changed “first cyberattack…” to “first large-scale cyberattack…” in the Stuxnet entry to increase its truthiness.
+
+    In the meantime, any opinions on whether the Australian incident deserves its own entry?
+    Mike Says:
+    Comment #17 February 11th, 2011 at 12:24 pm
+
+    “1994 Peter Shor proves that a quantum computer, if built, would be able to factor numbers efficiently, launching quantum computing as an active research field.”
+
+    Scott,
+
+    I don’t disagree with this entry, but I wonder how, if this qualifies, Deutsch’s 1985 paper fails to make the grade. Maybe it didn’t amount to a “launch”, but surely it was the most important key to building the launching pad.
+    Ross Snider Says:
+    Comment #18 February 11th, 2011 at 12:28 pm
+
+    Scott, I simply mean that Gentry has now renewed the vigor for the search – I myself am doubtful that his scheme will be made practical without major alterations. I bet that in twenty or thirty years we’ll have found either a different scheme or modified Gentry’s scheme _radically_.
+
+    After the first startup based on FHE makes it Google-big and changes our relationship to information we’ll look back and thank Gentry and everyone who made his work possible for pulling aside that curtain.
+
+    I’ll give you that this is a tad speculative (look how long it took us to find results like AKS). In either case FHE the _coolest result ever_ and if you phrase it well will look really cool on the timeline.
+
+    Alright, enough FHE pimping from me. Thanks for the swift reply. 🙂
+    wolfgang Says:
+    Comment #19 February 11th, 2011 at 1:07 pm
+
+    So your list has Godwin’s Law but neither Wikipedia nor WikiLeaks?
+
+    And where is Shtetl-optimized on this list?
+    Vadim Pokotilov Says:
+    Comment #20 February 11th, 2011 at 1:10 pm
+
+    I would add the 1984 publication of William Gibson’s Neuromancer. Though Gibson coined the term “cyberspace” in an earlier short story (Burning Chrome), Neuromancer introduced the concept of a worldwide network to the masses, and launched the cyberpunk genre.
+    wolfgang Says:
+    Comment #21 February 11th, 2011 at 1:15 pm
+
+    ooops, Wikipedia is actually there, I overlooked it.
+    Scott Says:
+    Comment #22 February 11th, 2011 at 1:25 pm
+
+    Mike #17: OK, I added a sentence about Deutsch to the 1981 Feynman entry! So, now there’s one entry about the concept of QC, and one about the evidence that it actually gives a speedup for something. To be honest, I don’t think quantum computing deserves more than two entries yet 🙂
+    Mike Says:
+    Comment #23 February 11th, 2011 at 1:32 pm
+
+    Scott #22:
+
+    Thanks for the addition Scott. However, didn’t the Deutsch-Jozsa algorithm provide the first “evidence” that QC actually gives a speed up?
+
+    Anyway, I think quantum computing deserves at least two entries, for purely philosophical reasons alone!! 😉
+    Vadim Pokotilov Says:
+    Comment #24 February 11th, 2011 at 1:39 pm
+
+    Quantum computing deserves several entries, but every time you look at the list you should only see one of them.
+    Mike Says:
+    Comment #25 February 11th, 2011 at 1:43 pm
+
+    “Quantum computing deserves several entries, but every time you look at the list you should only see one of them.”
+
+    Vadim,
+
+    Actually, I think that every time one of you looks at the list you see one of them. 🙂
+    Scott Says:
+    Comment #26 February 11th, 2011 at 1:44 pm
+
+    Vadim: “Cyberpunk” was one of several developments that I considered and left out; others include
+
+    – Ted Nelson’s Project Xanadu
+    – Doug Lenat’s CYC
+    – Japan’s Fifth Generation computing project
+
+    All of these struck me as having the curious property of trying to leap so far ahead of their time that they then got stuck somewhere, where they remained as the Train of History chugged past them.
+
+    Or maybe I’m wrong, and one or more of these developments did help steer the ToH? If so, please provide links!
+    Scott Says:
+    Comment #27 February 11th, 2011 at 1:49 pm
+
+    Mike #22:
+
+    However, didn’t the Deutsch-Jozsa algorithm provide the first “evidence” that QC actually gives a speed up?
+
+    I would say no, since DJ gives no asymptotic advantage over a randomized algorithm. (The first such advantage was shown by Bernstein-Vazirani in 1993, though only for an oracle problem.) Certainly DJ was very important in terms of the followup work it led to.
+    Mike Says:
+    Comment #28 February 11th, 2011 at 1:57 pm
+
+    Scott #27:
+
+    Thanks. Understood.
+
+    Also, my response to Vadim #23 was clearly wrong.
+
+    In the spirit of QC, what I should have said was that every time one of you looks at the list you “may or may not see one or more of them.”
+    Scott Says:
+    Comment #29 February 11th, 2011 at 1:58 pm
+
+    Dr. Lewis Creed:
+
+    I will not accept any timeline without YOU appearing on it at some point. Modesty serves no point here.
+
+    I initially put in the founding of Shtetl-Optimized in late 2005, but took it out since I didn’t want the other 149 entries to pale in comparison.
+    Vadim Pokotilov Says:
+    Comment #30 February 11th, 2011 at 2:03 pm
+
+    I’m not sure that cyberpunk failed, it’s been a popular genre, with The Matrix, unfortunately, as its most commercially successful work.
+
+    Sure, the technology in cyberpunk hasn’t been realized, but to me that’s not the real point. After all, we don’t have HAL-like computers, either. The reason I think cyberpunk deserves to make the cut? Computers, networks, avatars, and hacking are now all reasonable subjects for successful works of fiction.
+    Mike Says:
+    Comment #31 February 11th, 2011 at 2:14 pm
+
+    By the way Scott, your blog is a whole lot more fun when you’re not wasting time doing research, teaching classes and spending time with students, friends and family.
+    John Sidles Says:
+    Comment #32 February 11th, 2011 at 2:45 pm
+
+    I maintain a list of roadmap-driven global-scale enterprises that were enabled by computation, with a view toward identifying opportunities for *new* global enterprises that are computationally enabled.
+
+    Scott’s extraordinarily well-considered list encompasses almost all the global-scale enterprises on my list: Turing’s bombes, check; Feynman weapons simulations: check; von Neumann architecture: check; shotgun sequencing; check … and many more … it’s an awe-inspriing list.
+
+    One fairly prominent omission (AFAICT) is the 1953 report of von Neumann’s Strategic Missile Evaluation Committee (SMEC); an comprehensive account is Neil Sheehan’s A Fiery Peace in a Cold War. The SMEC roadmap launched the Space Age; its enabling computational elements were von Neumann’s PDE methods for shock waves and on Neumann’s the computing hardware that ran them.
+
+    Thus in a well-defined sense, von Neumann was not only the “Father of the Computer Age”, he was the “Father of the Space Age” … this is the argument for the convening of SMEC having a place on the list.
+
+    Another well-defined computational milestone was the 1994 first-flight of the Boeing 777 — the first commercial airliner to be digitally designed end-to-end, digitally simulated end-to-end, and digitally controlled end-to-end.
+
+    Nowadays all commercial aircraft follow this computational enterprise model … in fact, pretty much all global-scale commercial enterprises of any kind (except in medicine … hmmm … maybe someday?) have embraced this computational model.
+
+    And finally, you might consider adding Ronald Reagan and Bill Clinton to your list … their joint decision to make GPS a public utility created yet another computationally enabled global enterprise, namely, satellite navigation.
+    Austin Says:
+    Comment #33 February 11th, 2011 at 2:46 pm
+
+    Thanks for the birthday present Scott! (Well, you were one day late…)
+
+    My vote goes to IBM’s Blue Gene project, which was the first biologically realistic simulation of a non-trivial brain circuit (the neo-cortical column of the juvenile rat.)
+    Henry Says:
+    Comment #34 February 11th, 2011 at 2:52 pm
+
+    Hi Scott, excellent timeline! I would like to put forth a plug for the invention of DNA computing in 1994, which ties together biotechnology/nanotechnology/nanoscience with computer science: http://en.wikipedia.org/wiki/DNA_computing
+    Austin Says:
+    Comment #35 February 11th, 2011 at 3:14 pm
+
+    That should read “blue brain project”.
+    John Says:
+    Comment #36 February 11th, 2011 at 4:21 pm
+
+    As important as they are, a lot of these events are actually antecedents to Computer Science, which didn’t become a recognized academic field until the second half of the 20th Century. Would be interesting to know when the first CS degree was awarded and when CS curriculum standards were published (see the ACM). And how about some events with vast commercial significance, such as client-server computing and now cloud computing?
+    Scott Says:
+    Comment #37 February 11th, 2011 at 5:03 pm
+
+    Nir #8: OK, I’ve added Dijkstra’s invention of semaphores! (I might’ve been subconsciously biased against them, ever since they were inflicted on me in an undergrad operating systems class…)
+
+    To balance it, I removed Dijkstra’s “GO TO considered harmful” article. Probably a good trade for him. 🙂
+    Scott Says:
+    Comment #38 February 11th, 2011 at 5:13 pm
+
+    I’m not sure if you give Donald Knuth enough of a voice.
+
+    Well, he gets two full entries to himself, which puts him in the rarefied company of Gödel, Shannon, Feynman, Dijkstra, Grace Murray Hopper, and Eckert & Mauchly.
+
+    The only person I gave three entries to was Turing (Peace Be Upon Him).
+    Gil Kalai Says:
+    Comment #39 February 11th, 2011 at 5:37 pm
+
+    This amazing story of our times is read like a thriller, and is also quite moving. Wonderful!
+    rs Says:
+    Comment #40 February 11th, 2011 at 5:45 pm
+
+    The list looks great! Thanks for putting it up!
+
+    I don’t agree, however, with the entries that refer to the introduction of popular terms, such as `debugging’ and `bit’. What’s in a name, after all? It seems probable to me that even if these names hadn’t been invented, the concepts they refer to would still exist today.
+    mikero Says:
+    Comment #41 February 11th, 2011 at 6:00 pm
+
+    Instead of 23andMe.com, perhaps the completion of the Human Genome Project would be a more apt representative of the emergence of bioinformatics / genomic data processing.
+    David Mathers Says:
+    Comment #42 February 11th, 2011 at 6:46 pm
+
+    1920 Moses Schönfinkel introduces Combinatory Logic
+
+    1932 Alonzo Church publishes A set of postulates for the foundation of logic, introducing the lambda calculus
+
+    http://maths.swan.ac.uk/staff/jrh/papers/JRHHislamWeb.pdf
+    tef Says:
+    Comment #43 February 11th, 2011 at 6:49 pm
+
+    chord – or the development in dhts
+    bittorrent – application layer multicast
+    Martin Says:
+    Comment #44 February 11th, 2011 at 6:59 pm
+
+    I don’t think you can call the Z1 a stored-program computer.
+    Paul Beame Says:
+    Comment #45 February 11th, 2011 at 7:04 pm
+
+    The 1973 item on GUI’s could use inclusion of the name of the machine: the Xerox Alto to emphasize that this was something actually engineered rather than just an idea.
+
+    Some interesting choices. If you had to do the same for theory alone it would be interesting what you would include. Some obvious items that:
+    Strassen’s algorithm for matrix mult
+    Khachian: LP in P
+    Valiant introduces PAC learning
+    PCP theorem
+    David Mathers Says:
+    Comment #46 February 11th, 2011 at 7:13 pm
+
+    “1974 MIT professor Barbara Liskov and students begin work on CLU, a predecessor of modern object-oriented programming languages”
+
+    That’s the ADT branch of oop.
+
+    These 2 events seem at least as important to me:
+
+    1967 Kristen Nygaard and Ole-Johan Dahl present their paper on Class and Subclass Declarations at the IFIP Working Conference on simulation languages. This paper becomes the first formal definition of Simula 67, the predecessor of all object-oriented programming languages
+
+    And the message passing branch of oop:
+
+    1972 Alan Kay and Dan Ingalls develop Smalltalk 72, a predecessor of modern object-oriented programming languages
+    proaonuiq Says:
+    Comment #47 February 11th, 2011 at 7:26 pm
+
+    Nice !
+
+    I miss packet switching from Baran, Davies and Kleinrock. Maybe that counts more as communications. Also some breaktroughs in chip architecture and Microsoft Office (the first horizontal software suite for massive comssumption) and polymath-like collaborative science.
+
+    Anyway Systems (34) and Application software (36) win by far in the list, languages beeing the cinderella. It should be noted that I counted the Mechanical turk as a system (if a cyborg is an artificial system that pass as human, wasn´t the MechTurk an inverse cyborg: a human operated system that passed as artificial ?) and virus, worm, and others harmfull software devices as applications.
+
+    The last two decades has been the hegemony of network applications, (great applications!): www, amazon, google, arxiv, facebook, wikipedia, blogs and blog comments…
+    I expect in the near future some kind of combination of arxiv, polymath and croudfinance in order to bring us a trully needed ideas market.
+    Chris Chiesa Says:
+    Comment #48 February 11th, 2011 at 7:41 pm
+
+    I didn’t read your list; too long. Things I would include if they’re not already there:
+
+    – whatever significant milestone you like, that mentions Digital’s VAX processor and VMS operating system; it introduced features (such as clustering and various security features) that in other OSes have not yet reached the level of what VMS had in the 1970s
+
+    – Gödel’s Incompleteness Theorem which proved that not everything was algorithmically computable
+
+    – Turing’s proof of the feasibility of a universal computing machine
+
+    – The Lambda Calculus; I forget who, and I don’t understand it myself
+
+    – I’m tempted to insert some obscure, egotistical, reference to myself or my college buddies, some of whom were considered “VAX Gods” by our classmates. LOL
+    mark grunig Says:
+    Comment #49 February 11th, 2011 at 7:50 pm
+
+    Awesome list! Very informative… Some other good ones:
+
+    1947 – George Dantzig create the simplex method for linear programming
+
+    1955 – Allen Newell, Herbert Simon, and J. C. Shaw develop the first automated theorem prover which they call Logic Theorist.
+
+    1960 – Ray Solomonoff’s paper on algorithmic probability launches the study of algorithmic information theory (later indepedently discovered by Kolmogorov)
+
+    1961 – The Vostok 1 spacecraft uses an onboard computer to control re-entry in the first manned spaceflight
+
+    1962 – Paul Baran proposes a de-centralized and packet-switched computer network to maintain communications systems in the event of a nuclear attack. These concepts are later incorporated into the design of the internet
+
+    1969 – Stephen Wiesner formulates the principles of quantum cryptography
+
+    1985 – The first .com domain name registered (symbolics.com)
+
+    1992 – PCP theorem establishes landmark results in the areas of proof verification and approximation
+
+    1994 – Adleman demonstrates the first biological computer, using strands of DNA molecules to solve TSP
+
+    2007 – After 18 years of computation, Schaeffer and colleagues provide a complete solution to the game of checkers proving it results in a draw if neither player makes a mistake
+    Paul Beame Says:
+    Comment #50 February 11th, 2011 at 7:53 pm
+
+    P.S. The item on Turing in 1936 seems to miss the universal TM which is one of the key reasons along with the undecidability why his work is almost exclusively cited even though Post’s paper appeared in the same journal issue. The universal TM prefigures von Neumann in having programs as data and introduces, in effect, the first programming language interpreter.
+    John Sidles Says:
+    Comment #51 February 11th, 2011 at 8:24 pm
+
+    Hmmmm … there is no mention on the list of any computed imaging and/or spectroscopy and/or crystallographic and/or synthetic aperture achievements. These various computational imaging modalities have won multiple Nobel Prizes in physics, chemistry, and medicine … perhaps a good candidate is Godfrey Hounsfield’s 1971 first-ever brain scans, achieved via computed x-ray tomography. These scans used reconstruction algorithms that were first conceived by Johann Radon in a general mathematical context, and later conceived independently in a medical imaging context Allan MacLeod Cormack (who shared the Nobel Prize in Medicine award with Hounsfield).
+    Dan Spielman Says:
+    Comment #52 February 11th, 2011 at 10:03 pm
+
+    While you might not want to mention Shannon 3 or 4 times, he wrote another stellar paper in 1949 in which he suggested basing cryptography on computationally hard problems (since he understood that information-theoretic security was expensive), and introduced circuit complexity to model computational hardness.
+    Oh please Says:
+    Comment #53 February 11th, 2011 at 10:19 pm
+
+    the iphone?
+
+    What?
+
+    That’s an adoption thing. Everything it did existed prior. Smart phones were more capable and more open and had apps.
+
+    That’s got no CS.
+    Tarek Hegazy Says:
+    Comment #54 February 12th, 2011 at 12:04 am
+
+    Great list indeed, thank you.
+
+    I wouldn’t leave this one out though:
+
+    25th of Jan 2011: In Egypt, using Facebook.com and Twitter.com, Egyptian youth start the first ever Internet-launched and organized-revolution, resulting in the resignation of president Husni Mubarak on the 11th of Feb 2011 after nearly 30 years in power.
+    Raoul Ohio Says:
+    Comment #55 February 12th, 2011 at 12:48 am
+
+    Excellent List.
+    1. Being a nitpicking kind of guy, here is one: Several computer languages were listed: Fortran, C, C++, Lisp, and Basic. Basic? WTF? In the 60’s and 70’s, Basic was widely called “Fortran for Dummys”. What did it offer? No one had any idea why it was considered a big deal. It might have been a good thing for high school students, where unfortunately Bill Gates became a big fan, leading to Microsoft promoting it to this day. Think of how much better off MS would be if all the VB programmers in the world were using VC++ or C#.
+
+    In any event, Java is vastly more influential than Basic. Other languages, such as APL, Pascal, Perl, and Python might be more deserving than Basic.
+
+    I should confess that on my first PC, I was trying to think of something to do with color output, and started computing fractals using Lehey Fortran. LF was lousy at trying to color pixels, so I put the color data in a file, and read it into GW-Basic to color each pixel. This worked better with Quick Basic. But putting the entire project in Turbo Pascal was way better. I would like to run some of those programs today in a DOS box, but unfortunately I used some assembly code to figure out what display modes were available on the graphics card, and that always crashes Windows.
+
+    2. It might be misleading to say the “pace of innovation is slowing down”, or whatever. Lots of things are not recognized as important until much later.
+    Raoul Ohio Says:
+    Comment #56 February 12th, 2011 at 12:57 am
+
+    How about Wired Magazine?
+    Raoul Ohio Says:
+    Comment #57 February 12th, 2011 at 12:59 am
+
+    How about the first university CS department?
+    How about the first CS Ph. D.?
+
+    Does anyone know these answers?
+    Raoul Ohio Says:
+    Comment #58 February 12th, 2011 at 1:06 am
+
+    How about Donald Knuth’s first paper? I recall it, and wish I had saved it. When you are 12 years old or so, you don’t think about the long term.
+
+    The paper “Potrzebie System of Weights and Measures.” appeared in Mad Magazine in 1957. It was a rethinking of the metric system based on the properties of Mad Mag. I can’t find an online version. Anyone know of one?
+    Raoul Ohio Says:
+    Comment #59 February 12th, 2011 at 1:13 am
+
+    I vote to put “GOTO considered harmful” back. It is certainly the key point in the history of software engineering.
+
+    Check out
+
+    http://www.amazon.com/Selected-Writings-Computing-Personal-Perspective/dp/3540906525/ref=sr_1_3?s=books&ie=UTF8&qid=1297490997&sr=1-3
+
+    Dijkstra had an extremely sharp wit, and appears not to have minded offending anyone. For some reason, Springer-Verlag sent me a copy of this back when I had time to read books for fun.
+    Raoul Ohio Says:
+    Comment #60 February 12th, 2011 at 1:20 am
+
+    proaonuiq has a good point about MS Office. TSC guys like Scott like to do all their work in LaTex with emacs, but most people get huge amounts of work done with MSO.
+
+    A couple decades ago, it was beneath my dignity to use MS products, and I was soldering along with Word Perfect, Quattro Pro, etc. At some point you realize that fighting MS is like pushing a garbage truck up a hill; you have better fights to fight.
+    asdf Says:
+    Comment #61 February 12th, 2011 at 5:38 am
+
+    150 BC – Gaussian elimination invented in China (per Wikipedia)
+
+    1622 — William Oughtred invents the slide rule, http://oughtred.org/history.shtml
+
+    1932 — Marian Rejewski and colleagues in Poland break the German Enigma cipher and invent the “Bombe”, an electromechanical computer for cranking out Enigma solutions on a production scale. These are later built by the 100’s in Bletchley Park, one of the first large scale mechanized computing projects, with Alan Turing playing an important role (that you already mention). Bletchley work also leads to development of Colossus. Rejewski’s initial group-theoretic attack is later sometimes called “The Theorem that Won World War II”.
+
+    1958 – AT&T Bell 101 modem, the first commercial dialup modem (110 baud), soon replaced by the 300 baud Bell 103, which standard was still supported by new modems in the 1990’s and maybe even now.
+
+    1960 – Reed-Solomon code, makes large-block error correction more practical than Hamming codes(?).
+
+    1965 – Tony Hoare invents the null pointer, which he later calls a “billion dollar mistake” because of all the havoc caused by programs erroneously dereferencing them. (http://en.wikipedia.org/wiki/Null_pointer)
+
+    1965 – 1ESS (Electronic Switching System #1) deployed in New Jersey
+
+    1969 – Robert Floyd publishes “Assigning meaning to programs”, the origin of Floyd-Hoare logic and software provability.
+
+    1972 – I was also going to mention x-ray tomography but John Sidles beat me to it/il
+
+    1972 – Per Martin-Löf develops Intuitionistic Type Theory, now the basis of dependently-typed programming languages allowing writing programs as proofs per the Curry-Howard correspondence.
+
+    1968 – Carterfone decision (13 F.C.C.2d 420) – FCC ruling allows subscribers to attach their own equipment to the phone system (former AT&T monopoly), leading to inexpensive dialup modems etc, making dialup networking possible, leading to BBS’s and telecommuting.
+
+    November 1971 – Intel 4004, first single-chip microprocessor
+
+    1972 – HP-35 calculator, a real landmark even though you already mention some earlier calculators. Alternatively, HP-65 programmable pocket calculator arrives in 1974.
+
+    1972 – PLATO IV interactive computer system, later imitated by Xerox PARC which itself is later imitated by Apple
+
+    1976 – NBS publishes Data Encryption Standard, later deeply regretted since it turned serious cryptography loose in the world
+
+    1982 – LLL algorithm
+
+    More later, maybe. Here is a list of important algorithms per NIST: http://math.nist.gov/mcsd/highlights/krylov.html
+    Kevin Reid Says:
+    Comment #62 February 12th, 2011 at 9:08 am
+
+    Some suggestions:
+
+    ELIZA specifically emulates a Rogerian psychotherapist.
+
+    Did Robert Morris really inadvertently create the first computer worm? The most detailed story I recall had that he deliberarely created and released it, but set the replication parameters far too high, resulting in unintended DoS effects.
+
+    Smalltalk or its ancestors should be added to the list.
+    Bram Cohen Says:
+    Comment #63 February 12th, 2011 at 9:55 am
+
+    A nit about Robert Morris – he was in fact trying to create a worm and release it in the wild (your phrasing implies otherwise) but it became far more destructive than he intended.
+
+    You make no mention of TCP or, ahem, any higher level networking protocols.
+    Bram Cohen Says:
+    Comment #64 February 12th, 2011 at 9:56 am
+
+    Er, wait, you do mention TCP, my bad. There are some interesting things in p2p, but I wonder how seriously they’re taken in academic circles.
+    John Sidles Says:
+    Comment #65 February 12th, 2011 at 11:29 am
+
+    Hmmm … Scott’s list can be read as a timeline of innovation associated to computer science. As Scott notes:
+
+        The past decade [of CS innovation] has been a particularly arid one, producing little of note besides Facebook, Wikipedia, YouTube, and the iPhone.
+
+    The White House has (in effect) acknowledged that Scott is right … by launching a White House website called “Advise the Advisor”.
+
+    The White House’s very first question was “What is blocking innovation?”
+
+    Supposing that reason is a mathematical fact, that “the Complexity Zoo grew too large for individual human comprehension” … well … in that case, as Scott says, “it is what it is” … and perhaps CS/CT has not much more to say.
+
+    What the White House wants to create, though, is a broader vision … is a concrete roadmap for restoring the innovative vigor that Scott’s list ascribes to the 1950-1970s.
+
+    Can Shtetl Optimized readers help? What lessons does Scott’s timeline suggest?
+    Scott Says:
+    Comment #66 February 12th, 2011 at 11:54 am
+
+    Bram and Kevin: Yeah, I knew the Robert Morris story, but my challenge was how to tell it one sentence! I’ll try harder…
+
+    Peer-to-peer is definitely a candidate for inclusion.
+    Thomas S Says:
+    Comment #67 February 12th, 2011 at 11:54 am
+
+    Great list! Some suggestions:
+
+    * Email (1960s)?
+
+    * A question: How did Diffie-Hellman (1975) work before Solovay-Strassen (1977)? How did they generate the required field? I’m guessing they used Berlekamp’s algorithm (1967) for finding irreducible polynomials. Perhaps that deserves a reference?
+
+    * The prime number theorem (conjectured by teenaged Gauss and others in the 1790s; proved 1896) or the weaker Chebyshev’s theorem (1850s) is an important and highly nontrivial ingredient in RSA. Without it we can’t prove that randomly guessing numbers quickly finds a prime.
+
+    * Shouldn’t it be University *of* Cambridge?
+    Thomas S Says:
+    Comment #68 February 12th, 2011 at 11:56 am
+
+    Oops. That should be group, not field. Though my understanding (?) is that a field is used anyway.
+    Scott Says:
+    Comment #69 February 12th, 2011 at 11:58 am
+
+    Raoul #60: Actually, I use Office too (Word and PowerPoint), and never learned vi or emacs. I compose TeX using Scientific Workplace and WinEdt.
+
+    You’re right that Office is a good candidate for inclusion.
+    Scott Says:
+    Comment #70 February 12th, 2011 at 12:03 pm
+
+    Dan Spielman #52: Yes, I’ll be teaching Shannon’s counting argument for circuits and his result on optimality of the one-time pad in my undergrad class this semester!
+
+    They’re both clear candidates for inclusion.
+
+    Speaking of which: thanks so much, everyone, for making my job of getting down to 150 entries so much harder… 😉
+    Scott Says:
+    Comment #71 February 12th, 2011 at 12:11 pm
+
+    Tarek Hegazy #54: Indeed we witnessed a great event in world history yesterday, up there with the fall of the Berlin Wall.
+
+    But was it really the first political upheaval organized with Web-based social networking? What about the “Orange Revolution” in the Ukraine or the election protests in Iran? (OK, maybe we should only count successful upheavals…)
+    Scott Says:
+    Comment #72 February 12th, 2011 at 12:16 pm
+
+    Oh please #53: Yeah, I hesitated about including the iPhone, for exactly the reasons you say. Like Windows, it was important not because of innovation but because of widespread adoption.
+
+    Can anyone suggest a better smartphone milestone than the iPhone? (Maybe the introduction of the BlackBerry?)
+    Scott Says:
+    Comment #73 February 12th, 2011 at 12:24 pm
+
+    Mikero #41:
+
+    Instead of 23andMe.com, perhaps the completion of the Human Genome Project would be a more apt representative of the emergence of bioinformatics / genomic data processing.
+
+    Well, I already have an entry for the first use of whole-genome shotgun sequencing, and at the very least I’ll add an explicit mention of the Human Genome Project to that.
+
+    To me, though, the introduction of DNA analysis services that anyone can use really is a qualitatively new milestone, even if it’s less interesting biologically. (It’s very much analogous to the IBM System/360 vs. the MITS Altair.)
+    Chad Brewbaker Says:
+    Comment #74 February 12th, 2011 at 12:37 pm
+
+    Atanasoff?
+    John Moore Says:
+    Comment #75 February 12th, 2011 at 12:37 pm
+
+    Fascinating list…
+
+    A few comments…
+
+    ca 1960 – Steve Russell invents the video game on PDP-1
+    ca ?? DEC introduces the minicomputer
+    ca 1968 First demonstration of a hypertext system
+    ca 1970 SAIL invents the first text adventure game
+
+    Also, I think the perceptron entry is significant primarily because it suppressed the development of useful (as opposed to provable) AI ideas for decades.
+    Len Ornstein Says:
+    Comment #76 February 12th, 2011 at 12:49 pm
+
+    Scott
+
+    If you choose to use “Perceptrons” for Minsky’s contribution (where his prognostication was largely negative – obstructive) as a landmark, you must also add something like the introduction of Back-Propagation, in 1986, by Rummelhart, Hinton and Williams, which turned around the whole field of neural network research and its applications!
+    Peter Coffee Says:
+    Comment #77 February 12th, 2011 at 1:25 pm
+
+    Rather than the invention of the laser printer, I could see something like the introduction of PostScript as a CS event. But the laser printer per se doesn’t seem to fit here.
+
+    You could possibly argue the iPhone as a milestone representing introduction of the general-purpose browser into the handheld form factor. Not an endorsement.
+
+    You could also use the Aug. 12, 2010 face-off between RIM and the government of India over BlackBerry privacy — apropos of the earlier mention of PGP.
+
+    Absolutely agree with others who urge that Smalltalk, or perhaps better Simula I in 1965, belongs on this list.
+    David Koontz Says:
+    Comment #78 February 12th, 2011 at 2:12 pm
+
+    circa 300 BC – first optical communication
+
+    A clepsydra is a water clock which if paired with a similar device could be used to sends prearranged signals via light signals. Yes this is the beginning of optic communication systems. Image that the device, a container was inscribed with messages at varying heights of water, the container had a hole & plug in the bottom. Upon signaling the two water clocks would be unplugged at the same time (synchronized by the light signal) when the light was extinguished the hole would be plugged. Given the same flow rates the water level would be identical and the height would indicate the message at that level. Pure genius, but quite a lot of preparation work to send a signal of prearranged messages. And the cycle time was quite high – one had to refill the two containers with water.
+
+    This is not much different than current signaling technology. The prearranged messages are now 1 or 0, on or off. However the signaling rate is much higher (mega hertz) not to mention multiple channels of concurrent signals.
+    John Sidles Says:
+    Comment #79 February 12th, 2011 at 2:46 pm
+
+    Regarding Scott’s choice of whole-genome sequencing as a epochal idea in computer science, and the 1995 whole-organism sequencing of Haemophilus influenzae as a milestone …
+
+    As a “major event in computer science history”, this I thought was one of Scott’s most inspired choices.
+
+    The enterprise was conceived largely by Hamilton Smith and was implemented largely in service of Craig Venter’s genomic vision. Although this project was repeatedly turned down in NIH peer review, and Hamilton Smith’s research team was dubious about both its feasibility and desirability, it proved outstandingly successful.
+
+    By 1999, with TIGR’s spin-off genome project well underway, the TIGR team had acquired “the world’s largest computer in civilian hands … 4 gigabytes of RAM, 10 terabytes of storage, and 1 teraflop of computational capacity” … and was well-launched into one of history’s largest and most successful enterprises … the Human Genome Project.
+
+    Hmmm … that much computing power costs about as much as an automobile nowadays … a cheap automobile … and is so readily accessible to individuals, as to be essentially free in comparison to other costs of doing research.
+
+    Uhhh … so where are all the computation-enabled enterprises? Are our best-we-can-do successors to the Genome Project really …. FaceBook? … Black-Scholes trading? … and the iPhone?
+
+    ———–
+
+    As an aside, notably absent from the list are any achievements associated to the fundamental complexity-theoretic terms ‘natural*’, ‘relativ*’, and ‘oracl*’.
+
+    Is this omission intentional? What are its implications for those young complexity theorists who are asking themselves the question that Richard Hamming’s essay You and Your Research recommends: “What are the important problems in my field?”
+
+    Isn’t one purpose of compiling the MIT Computer Science Achievement list, to stimulate students to ask that question? … and to recognize that (fortunately!) it has many answers?
+    H A Helfgott Says:
+    Comment #80 February 12th, 2011 at 3:07 pm
+
+    Euclid’s Elements are not written algorithmically at all. Moreover, some of what we think of as instances of “Euclid’s algorithm” were completely nonobvious to people who read The Elements for the first two thousand years of their existence.
+
+    Classical Indian mathematics certainly had a much more algorithmic flavour, and in all probability deserves at least one citation. In number theory, the main things would be the kuttaka and the cakravala (see Wikipedia, Weil’s Number Theory: An approach… or Kim Plofker’s recent book on the subject).
+
+    Leaving my main field –
+
+    Shouldn’t Church, Haskell and other logicians working in the 30s also get a citation for several reasons, not the least one being that their work has strongly influenced some highly elegant programming languages that see actual use? (Church already gets a citation, but that’s just within parentheses, for doing something that Turing was also doing.)
+
+    Since Dantzig’s here (very much deservedly), shouldn’t Leonid Kantorovich also be here? He pretty much founded linear programming, unless I am very mistaken.
+    Carl Lumma Says:
+    Comment #81 February 12th, 2011 at 3:12 pm
+
+    No list can be perfect, but here are some thoughts:
+
+    * 1891 diagonalization (Cantor)
+    * 1960 algorithmic complexity/induction (Solomonoff)
+    * 1973 Forth/stack-based computing (Moore)
+    * Wikipedia is wrong about the first DDOS. Major publicized event occurred in 2000:
+    http://www.uniforum.chi.il.us/slides/ddos/sld005.htm
+    * 2004 Gmail (first modern web application)
+    * 2004 BigTable (first modern NoSQL database)
+    * 2006 Netflix Prize
+    * 2009 Wolfram Alpha
+    * 2009 QIP = PSPACE
+    * 2010 NEXP != ACC^0
+    David Koontz Says:
+    Comment #82 February 12th, 2011 at 3:25 pm
+
+    2001 eHub strategy – Steve Jobs
+
+    The 2001 MacWorld keynote where the wizard in black turtel neck sweater steps from behind the curtain to describe the eco-system and his eHub strategy which has pushed the fruit company into the largest market share 10 yrs later.
+    George Demirev Says:
+    Comment #83 February 12th, 2011 at 3:38 pm
+
+    I’d like to second here comment #72 : Atanasoff-Berry Computer was the first programmable electronic computer, not Colossus.
+    David Koontz Says:
+    Comment #84 February 12th, 2011 at 3:56 pm
+
+    circa 1880-1920 Women
+    “The first computers were people! That is, electronic computers (and the earlier mechanical computers) were given this name because they performed the work that had previously been assigned to people. “Computer” was originally a job title: it was used to describe those human beings (predominantly women) whose job it was to perform the repetitive calculations required to compute such things as navigational tables, tide charts, and planetary positions for astronomical almanacs.”
+    –John Kopplin
+    Keith Winstein Says:
+    Comment #85 February 12th, 2011 at 3:56 pm
+
+    Scott, I think your dating of 2001 for “The first major denial-of-service (DoS) attack” against register.com is too late — see http://news.cnet.com/2100-1023-236621.html for the February 2000 DDOS attack that crippled Yahoo.com.
+    Luca Aceto Says:
+    Comment #86 February 12th, 2011 at 3:58 pm
+
+    I really enjoyed reading this list. Kudos to Scott for penning it down in such a thoughtful and entertaining way.
+
+    For what it is worth, I second David Mathers (comment #46): Simula 67 and Smalltalk deserved to be mentioned when mentioning the birth of OOP. In fact, I believe that Simula 57 was the first-ever OO programming language.
+
+    IMHO, Kleene’s paper from 1956 introducing regular expressions and their connections with finite automata is also a strong contender for inclusion in the top 150 list.
+    John Sidles Says:
+    Comment #87 February 12th, 2011 at 4:48 pm
+
+    Greatest … Shtetl Optimized thread … ever … ! 🙂
+
+    I’d like to advance a few more reasons why the still-mysterious Antikythera Mechanism (c. 150 BCE) was a wonderful choice for Scott’s list. It is the prototype for a series of instruments described poetically by Milton:
+
+        Then staid the fervid wheels, and in his hand
+        He took the golden compasses, prepared
+        In God’s eternal store, to circumscribe
+        This universe, and all created things:
+        One foot he centered, and the other turned
+        Round through the vast profundity obscure
+
+    Today, the antikythera’s descendants live not only in our laboratories, but also in our fiction, for example as the titular technologies of Philip Pullman’s (fictional) trilogy His Dark Materials, namely, the alethiometer, the æsahættr, and the amber spyglass.
+
+    I have often wondered whether Pullman’s His Dark Materials might have been (in part) broadly conceived as an extended meditation upon complexity and information theory, in which the alethiometer is natural history, the æsahættr is logic, and the amber spyglass is cognition itself.
+
+    These mappings seem to me to be similarly important to Isaac Asimov’s robots (also on Scott’s list & IMHO yet another wonderful choice!) … although opinions may differ, of course. Pullman is reported to be near to completing a fourth novel in the series, provisionally titled The Book of Dust, which may partially clarify these issues.
+
+    Perhaps The Book of Dust too (like Pullman’s previous books) will help us to envision what the *next* 150 entries in Scott’s list may look like. As Blake (whom Pullman often quotes) put it, by the end of the 21st century, we will surely say: “What is now proved was once only imagined.” … which is a cheerful thought! 🙂
+    John Sidles Says:
+    Comment #88 February 12th, 2011 at 5:21 pm
+
+    Oh yeah … a minor correction … the phrase “nuclear centrifuges” is a technological solecism … better perhaps is “centrifuges for weapons isotope separation” … and we may hope that Scott’s list will remain posted long enough, and the the world will grow peaceful and prosperous enough, that a future generation of MIT students will need an explicit reminder of what “nuclear” means in this context.
+
+    Also, how many Shtetl Optimized readers can state the question that is associated to the Jeopardy answer “The chief inventor, designer, and developer of centrifuge methods for weapons isotope separation.”
+
+    The correct question is: “Who was Paul Adrien Maurice Dirac?”
+    Carl Lumma Says:
+    Comment #89 February 12th, 2011 at 5:24 pm
+
+    @#79 According to Wikipedia, Atanasoff-Berry was not programmable and Colossus was not Turing-complete. The first Turing-complete machine was the Z3, and the first entirely electronic such machine was ENIAC.
+    Carl Lumma Says:
+    Comment #90 February 12th, 2011 at 5:31 pm
+
+    @#82 Isotopic separation is neither needed for, nor is it the easiest method of, making nuclear weapons. In fact almost all warheads in the world today were made without isotopic separation, including those in North Korea. However it is needed to operate the world’s ~0.5TW of light-water reactors.
+    Frederick Ross Says:
+    Comment #91 February 12th, 2011 at 5:34 pm
+
+    Along with others, the object oriented kudos go to Alan Kay at al, and maybe the Simula guys before them. You might also mention that SketchPad was one of the major inspirations for OOP.
+
+    Linux may not be the proper choice for the first popular, freely available system. Linus’s first release was 25 August 1991, which was able to compile bash and gcc. It was still tethered to Minix as a development platform.
+
+    On 3 July 1991, Berkeley released the Networking Release 2 (Net/2) of BSD Unix, which was the first codebase which was unencumbered by AT&T code and entirely under the BSD license. It was missing six files required to compile, which several projects filled in nearly immediately in various ways, and was otherwise a complete operating system that has been the primary environment for hackers at Berkeley for some years, and was also the reference implementation of the new TCP/IP protocols for the Internet. It was the ancestor of NetBSD and FreeBSD (and NetBSD then gave rise to OpenBSD).
+    Gil Says:
+    Comment #92 February 12th, 2011 at 5:46 pm
+
+    It is good that any list like this (be it as important and as serious as it may be) will not be overlly perfect. If a list is perfect then not being included is terrible. Slight imperfections and slight biases are only for the better.
+    Blake Stacey Says:
+    Comment #93 February 12th, 2011 at 6:51 pm
+
+    On the same principle as listing Wikipedia instead of Cunningham’s WikiWikiWeb (1995), Toy Story instead of Tron (1982), Blaise Pascal instead of Wilhelm Schickard, etc.:
+
+    1972: Atari releases Allan Alcorn’s PONG, the first commercially successful video game
+    John Sidles Says:
+    Comment #94 February 12th, 2011 at 6:52 pm
+
+    To continue the theme of discerning literary themes in Scott’s list … Gil’s excellent post reminds us of a famous passage by the poet John Keats in a letter to his brother, which created a substantial literature associated to the phrase Negative Capability:
+
+        I had not a dispute but a disquisition with Dilke, on various subjects; several things dovetailed in my mind, & at once it struck me, what quality went to form a Man of Achievement especially in literature & which Shakespeare possessed so enormously – I mean Negative Capability, that is when man is capable of being in uncertainties, Mysteries, doubts without any irritable reaching after fact & reason.”
+
+    Here the point is that Scott’s list is certainly not a theorem, and only vaguely a history. Rather its role is to suggest a coherent narrative about computer science, and reconciling the contractions inherent in such narratives most definitely requires a Keatsian “negative capability.”
+
+    For young people especially, the most interesting narratives are transgressive narratives … and so we are not surprised that transgressive narrators like Milton, Keats, and Pullman all have had surprisingly much to say about Scott’s subject matter … and we are not surprised, but rather are pleased, that Scott was selected to compile it.
+
+    Scott’s list made me laugh several times … and yet was inspiring too … moreover (in Mark Twain’s words) Scott’s list “Told the truth, mainly. There was things it stretched, but mainly it told the truth” … and that is a wonderful achievement. 🙂
+    Reader Says:
+    Comment #95 February 12th, 2011 at 7:30 pm
+
+    Suggested emendations:
+
+    -Rule #3 (highlight individuals) is a mistake IMO. It boils down to partisan promotion of TCS / QC leaders.
+
+    -Asimov “laws of robotics” is a milestone in sci-fi, not in CS. Building the first (or other especially significant) robot, or a scientific paper codifying problems of robotics as a discipline (e.g., motion planning, agent-to-agent communication) would be a milestone.
+
+    -How Turing died is politically relevant but not a matter for a CS event list. Goedel also was a de facto suicide but this is not mentioned. von Neumann’s worries about his family members being killed by the Germans, and Levin’s emigration from the USSR, are also not mentioned. I would imagine that if “colorful deaths” or “anti-anti-homosexuality” are selection criteria for the list, then self starvation and anti-anti-Semitism should also make the cut. Suggestion: keep personalities and politics out of it.
+
+    (Opposite suggestion: if you do want personal trivia then Merkle was a student, as were Page and Brin, at the times of their listed innovations.)
+
+    Page and Brin did not invent the search engine, and Google as of the time of its invention was not a milestone. For search engines either primary credit should go to the original search engines, or Page and Brin should (along with Motwani) be listed for their actual contribution, which was Pagerank. Google as an iconic monopoly happened in later years based on other innovations made by other people. For Microsoft you list the forgotten Gates/Allen port of BASIC to the MITS Altair, rather than the events connected to the IBM PC or MS-DOS. This being an academic and chronological list, PageRank and the contribution of Motwani (i.e., the suggestion to use Markov chains) seem like more relevant facts about Google than its incorporation.
+
+    -Remove the word “celebrated” from item on Feynman’s QC lecture. It is fluff and other more celebration-worthy items are not described with this word. It is just advertising for your field. If Deutsch’s contribution is important give it a separate item instead of lumping it with Feynman. Otherwise Feynman’s lecture “initiated the field of quantum computing” or something like that, with the later contributions being a detail that is less important to mention.
+
+    Remove other QC / TCS fluff about something that “launched an important field” or “might launch a new field”. This leads to several-in-one items where contribution A spawns fields B,C and D. If B,C, or D are important enough to have their own entries in the 150, they should be listed, otherwise A can stand on its own (if not, why is it on the list?).
+
+    Not covered on list:
+
+    Nanotechnology
+
+    Adleman’s DNA computing
+
+    MPEG, JPEG or other references to image processing or digital film storage/transmission might be relevant.
+
+    Data compression (LZW, PKZIP)
+
+    Large or significant distributed computation (SETI-at-home, ZetaGrid).
+    Jan de Wit Says:
+    Comment #96 February 12th, 2011 at 7:33 pm
+
+    Scott, echoing Blake’s comment, I think Wilhem Schickard should be given a mention. He might not have been very influential (while he did write letters to Kepler) but he did invent a mechanical calculator in 1623, decades before Pascal.
+
+    If you read German, here’s a page with some more biographical info: http://www.mnf.uni-tuebingen.de/fachbereiche/informatik/informatik/fachbereich/wilhelm-schickard-institut-fuer-informatik/wilhelm-schickard.html (this URL brought to you by the Department of Redundancy Department!)
+    James Says:
+    Comment #97 February 12th, 2011 at 7:34 pm
+
+    I found the inclusion of TeX a bit of a stretch. It’s made the reading of mathematics preprints less painful, but I’m not sure it’s made a difference with anything else.
+    John Sidles Says:
+    Comment #98 February 12th, 2011 at 11:19 pm
+
+    I envy everyone who still has before them the pleasure of reading, for the first time, Donald Knuth’s Bull. AMS article Mathematical Typography (1972):
+
+        Fortunately the Stanford Library has a wonderful collection of books about printing, and I had the chance to read many rather rare source materials. I learned to my surprise that the idea of defining letters mathematically is by no means new, it goes back to the fifteenth century, and it became rather highly developed in the early part of the sixteenth. This was a time when there were Renaissance men who combined mathematics with the real world.
+
+    This beautiful, erudite, yet modest article makes clear why Knuth’s TeX was yet another great achievement of computer science, and of a great researcher.
+    Raoul Ohio Says:
+    Comment #99 February 12th, 2011 at 11:45 pm
+
+    TeX is the key event in the interaction of computers and books, and revolutionized scientific writing. Of course, in 2011, writing raw TeX might be regarded as macho posturing, kind of like “I do all my programming in assembly”, but maybe not.
+
+    John’s quote in #93 is a typical example of Knuth’s writing. Knowledge, scholarship, and humor come through on every page. Check it out.
+    dmfdmf Says:
+    Comment #100 February 12th, 2011 at 11:51 pm
+
+    What’s your goal with this list? If it is to titillate, placate or impress your contemporaries you should twist yourself into a pretzel to include more women and especially MIT contributors on the list, lest you be falsely accused of sexism and not being an MIT “team player”. However, if your goal is the long view (as best can be seen from the local epoch) then you should read Clay Shirky’s “Thinking the Unthinkable”.
+
+    It is clear that the invention of the internet (and by implication, the milestones that created it) should really be the standard of this list. Why? Because 500 or 1000 years from now, children will learn about the invention of the internet like we learned about the invention of the printing press 600 years ago. Its that big and Shirky explains why we are in the midst of the greatest social revolution since the printing press destroyed the power of the Catholic Church. Is it too early to use Egypt as an example? In modern vernacular — Dictators are sooooo 20th Century!
+
+    Unfortunately, your little corner of research, quantum computing and ?P=NP, is all promise and potential right now. Don’t get me wrong, I am rooting for you and your compatriots (love the blog, BTW) and hope that you crack that wide open. But that should be added to a future list only when the potential becomes the actual.
+    Anon Says:
+    Comment #101 February 13th, 2011 at 12:36 am
+
+    The persian mathematician Al Khwarizmi, based on whose name the word algorithm was coined should be included.
+    http://en.wikipedia.org/wiki/Mu%E1%B8%A5ammad_ibn_M%C5%ABs%C4%81_al-Khw%C4%81rizm%C4%AB
+    Jr Says:
+    Comment #102 February 13th, 2011 at 6:05 am
+
+    I’d skip the the Antikythera mechanism, since it seems to have no effect on what came later.
+    casr Says:
+    Comment #103 February 13th, 2011 at 6:07 am
+
+    Atlas Computer in Manchester. Pioneered the idea of paging.
+    Bruce Kapron Says:
+    Comment #104 February 13th, 2011 at 12:31 pm
+
+    In his habilitation thesis, Leibniz cites the work of Ramon Llull (thirteenth century) as a source for his ideas about a system of universal reasoning. Llull was also an early researcher on voting theory. He definitely seems significant as an early figure, especially given his influence on Leibniz.
+
+    Going back even further (any maybe this one is more tenuous,) the Sanskrit grammarian Panini (4th century BCE) invented a grammatical notation which supported recursion. The claim is often made that his notation is Turing complete, although I have never seen a rigorous proof of this. And of course these connections were realized after the significance of Turing’s work made them interesting.
+
+    While it is easy enough to argue that these historical figures are not really part of the history of computing, I do think that they are as relevant as Euclid or al-Khwarizmi, and do belong with them (and quite a few others!) as part of the pre-history of computing.
+    John Sidles Says:
+    Comment #105 February 13th, 2011 at 12:33 pm
+
+    Jr. says: I’d skip the Antikythera mechanism, since it seems to have no effect on what came later.
+
+    Perhaps the Antikythera Mechanism had little direct effect on formal mathematics (yet who knows? … so much knowledge was lost during Europe’s Dark Age).
+
+    However, the iconography associated to computational mechanisms has exerted enormous cultural influence over the centuries … cumulatively, perhaps more cultural influence than any other single item on Scott’s list.
+
+    So let’s leave the Antikythera Mechanism on the list, to represent computational knowledge lost to the passage of time, and thereby to remind us of the need to guard against future losses of knowledge.
+    Sniffnoy Says:
+    Comment #106 February 13th, 2011 at 3:08 pm
+
+    Quick nitpick: There’s a failure of parallelism in the complexity-based cryptography entry.
+    Keith Winstein Says:
+    Comment #107 February 13th, 2011 at 3:41 pm
+
+    Also, how about the Viterbi algorithm? This may be up there with Quicksort and the FFT as one of the most important algorithms of 1950-present, especially if you credit it with successes like the digital cell phone. Certainly more important than 23andme.
+    Vijay D Says:
+    Comment #108 February 13th, 2011 at 4:29 pm
+
+    Dear Scott,
+
+    An interesting read. Thanks for sharing!
+
+    William Stanley Jeavons: Formulated Boole’s mathematical view of logic in algebraic terms. This formulation was en route to Shannon’s work. WSJ built a “logic piano”, literally a theorem prover, that constructed truth tables for logical formulae with up to four terms. It was made of wood.
+
+    Liquid Crystal Displays. Not sure which event. George Gray’s paper on the subject? Hitachi’s use of In-Plane Switching?
+    Jr Says:
+    Comment #109 February 13th, 2011 at 4:29 pm
+
+    I would add Lamé analysis of the Euclidean algorithm.
+    Sam Tetruashvili Says:
+    Comment #110 February 13th, 2011 at 4:34 pm
+
+    Why no mention of CAPTCHAs?
+    Alessandro Says:
+    Comment #111 February 13th, 2011 at 5:38 pm
+
+    Why doesn’t this post appear in google reader?
+    Douglas Knight Says:
+    Comment #112 February 13th, 2011 at 6:59 pm
+
+    Several of the entries on individual computers fail to indicate why they were historic (Mark I, EDSAC, ENIAC). The easiest way to solve this problem is to eliminate them.
+    igblan Says:
+    Comment #113 February 13th, 2011 at 8:40 pm
+
+    As a sometime programming language designer and implementor, I would inevitably say that innovations in general-purpose programming concepts should trump some specific algorithms. For example, the simplex method is applicable only to problems in LP (and I have never used it in 35 years of professional work), while the closed subroutine is fundamental to all computation since its invention.
+
+    So: the closed subroutine is first described in “Wilkes, M. V.; Wheeler, D. J., Gill, S. (1951). Preparation of Programs for an Electronic Digital Computer. Addison-Wesley”, according to Wikipedia.
+
+    I would also suggest that the call stack was a fundamental innovation (with hardware support from the PDP-8 onwards), particularly because it removed early barriers to recursive programming.
+
+    More tentatively I would suggest the lexical closure, although it did not make it into C, C++ or Java (more’s the pity). I suppose the more fundamental idea is the first-class function, which is probably a LISP innovation (lazy of me not to do the research).
+
+    And finally, continuations, best known for their application to exception-handling and coroutines.
+    Mark Says:
+    Comment #114 February 13th, 2011 at 9:02 pm
+
+    The Metropolis -Hastings algorithm?
+
+    From the wiki “The algorithm was named after Nicholas Metropolis, who was an author along with Arianna W. Rosenbluth, Marshall N. Rosenbluth, Augusta H. Teller, and Edward Teller of the 1953 paper Equation of State Calculations by Fast Computing Machines which first proposed the algorithm for the specific case of the Boltzmann distribution;[1] and W. Keith Hastings,[2] who extended it to the more general case in 1970.[3] The Gibbs sampling algorithm is a special case of the Metropolis–Hastings algorithm which is usually faster and easier to use but is less generally applicable.”
+    Doug Says:
+    Comment #115 February 13th, 2011 at 11:39 pm
+
+    I’d include Napster in place of Bittorrent.
+    Richard Says:
+    Comment #116 February 13th, 2011 at 11:46 pm
+
+    I’m curious about your decision to include the IP=PSPACE result but not the first papers that introduce the notion of interactive proof systems (by Goldwasser, Micali and Rackoff, and by Babai), nor the PCP result.
+    Anon Says:
+    Comment #117 February 13th, 2011 at 11:49 pm
+
+    “1971 Stephen Cook in the US, and …”
+
+    A minor point, but his affiliation in the paper is University of Toronto.
+    Scott Says:
+    Comment #118 February 14th, 2011 at 12:48 am
+
+    A minor point, but his affiliation in the paper is University of Toronto.
+
+    Oops! I guess the story is that he was at Berkeley when he proved Cook’s Theorem, but was then denied tenure (!!) and had moved to Toronto by the time the paper appeared?
+    Scott Says:
+    Comment #119 February 14th, 2011 at 12:55 am
+
+    I’m curious about your decision to include the IP=PSPACE result but not the first papers that introduce the notion of interactive proof systems (by Goldwasser, Micali and Rackoff, and by Babai), nor the PCP result.
+
+    Richard: Yeah, I’ve taken some flak for that, and I’ll happy to reconsider.
+
+    My thinking was that IP=PSPACE was important both because it ultimately led to the PCP Theorem, and because it marked the first major crack in the relativization barrier. So, if I had only one entry to “spend” on the entire topic of interactive proofs and PCPs, then IP=PSPACE seemed like the best choice, the one that touched on the largest number of other things.
+
+    If you disagree with me, which one event would you pick?
+
+    (Alternatively, I could give PCPs and interactive proofs two or three entries—but then I’d need to take out something else, like, say, the invention of the transistor. 🙂 )
+    Richard Says:
+    Comment #120 February 14th, 2011 at 1:18 am
+
+    Scott: Looking more carefully, I now see that you kind of acknowledge the initial work on interactive proofs by your 1982 entry:
+
+    1982 Work on pseudorandom generators by Manuel Blum, Silvio Micali, Shafi Goldwasser, and Andy Yao begins the modern era of complexity-based cryptography, which will lead over the next decade to notions such as zero-knowledge, interactive proofs, and probabilistically checkable proofs
+
+    I didn’t notice an entry that really does justice to the theory of hardness of approximation algorithms.
+
+    I often wondered how to best appreciate the significance of the IP=PSPACE result, and I guess that “breaking through the relativization barrier” is a good way to do this. Though this might be hard to convey to a general CS audience (for me at least; I suspect that you would have a lovely way of making this point).
+    igblan Says:
+    Comment #121 February 14th, 2011 at 1:37 am
+
+    Since most suggestions are for additions, I shall help by suggesting a deletion.
+
+    The Apple II. At the time and for a few years afterwards, every industrialized nation on the planet had its own microcomputer industry, each with dozens of small companies designing, making and marketing 8-bit micros. I would say most were superior to the Apple II, especially those based on the 8080/Z80 and CP/M, whose programs were therefore portable.
+
+    I don’t know of any other country apart from the US in which the Apple II was selected for national school use. Here in the UK, for example, it was the BBC Micro, made by Acorn. I expect most countries wanted a homegrown product in education. All I’m sayin’ is: be careful not to be too US-centric when looking at specific products from 1975-1990.
+
+    That the Apple II is remembered as “big” is down to two things: (1) VisiCalc, whose entry mentions it anyway; and (2) it allowed Apple to have the money to develop the Mac. That’s commercial history, not CS history.
+    Anon (#112) Says:
+    Comment #122 February 14th, 2011 at 1:46 am
+
+    Oops! I guess the story is that he was at Berkeley when he proved Cook’s Theorem, but was then denied tenure (!!) and had moved to Toronto by the time the paper appeared?
+
+    He left Berkeley for Toronto in 1970 and in his Turing Award Lecture, he wrote “In 1971 [18], I introduced the notion of NP-complete and proved 3-satisfiability and the subgraph problem were NP-complete.”
+
+    This doesn’t definitively answer where he actually proved the theorem but suggests that you might reconsider the wording. It seems that you want to include the location because of Levin. If so, maybe “in North America” is an easy edit.
+
+    Anyway, it minor.
+    Sniffnoy Says:
+    Comment #123 February 14th, 2011 at 4:33 am
+
+    I would cut Windows (since you already have an entry for GUI), Amazon, Match.com, and Godwin.
+    Scott Says:
+    Comment #124 February 14th, 2011 at 5:39 am
+
+    dmfdmf #97:
+
+    What’s your goal with this list? If it is to titillate, placate or impress your contemporaries you should twist yourself into a pretzel to include more women and especially MIT contributors on the list, lest you be falsely accused of sexism and not being an MIT “team player”.
+
+    I’ve already gotten “why wasn’t I included?” complaints, and political pressure is indeed something I worried about. One of my main goals in opening the list for public criticism was to help circumvent those things!
+
+    I was happy to get both a decent representation of women in the timeline (Ada Lovelace, Grace Murray Hopper, Barbara Liskov, Julia Robinson, Nancy Lynch, Shafi Goldwasser), and plenty of MIT representation (well … at least from the 50s, 60s, and 70s), without any need for conscious “affirmative action” on either count. I hope to keep things that way.
+    András Salamon Says:
+    Comment #125 February 14th, 2011 at 12:22 pm
+
+    Given that you need to drop 15 entries, I suggest you omit the duck and mechanical turk (so much for the 18th century), ENIAC/Mark I/EDSAC, UNIVAC’s release, ASCII, BASIC as a separate entry (it may still merit a mention in the Microsoft entry), the iPhone, and Slashdot. That’s 10 down, five to go.
+    anon Says:
+    Comment #126 February 14th, 2011 at 1:04 pm
+
+    What about the abacus?
+    András Salamon Says:
+    Comment #127 February 14th, 2011 at 1:08 pm
+
+    One impression about the list is that it is still too CS-self-absorbed. Given that you omitted things like the first CS degree, it might make sense to prune further some of the things of interest only to insiders. There are still too many languages and theoretical advances that have not yet been broadly applied, instead you could add a few events where CS interacted on a deep level with society. For instance, the impact on the worldwide Internet of changes to regulation of the NSFNet backbone in the USA in 1994/5, was perhaps more important than some of the CS-internal events: the removal of the restricted AUP was a pre-requisite for the flowering of the commercial Internet. Other such examples were mentioned by others above, such as allowing modems to be connected to the AT&T monopoly network: this shifted the legal environment worldwide in favour of open networks over the following decades. Unfortunately, as with most things in “real life”, many of these salient legal events are horribly messy, drawn-out, and difficult to assign clear places in a cause-and-effect chain, even if one agrees about their importance.
+    kiliva Says:
+    Comment #128 February 14th, 2011 at 2:17 pm
+
+    Throw out:
+
+    *1944 The Mark I, designed by Howard Aiken, begins operations at Harvard – unrealistic, pro-Harvard bias; also, so wrong on MIT community; Harvard can be mentioned in
+    Mark II with “bug” and “debugging””, their proper place
+    *1949 The EDSAC, built by Maurice Wilkes, begins operations at Cambridge University – Though Cambridge is far less obnoxious than Harvard, you can throw EDSAC (and mention of Wilkies) into ENIAC entry. EDSAC is successor of ENIAC after all; Why favor Brits, and not mention Russian, Chinese, French or Albanian first computers?
+    *1951 MIT’s Whirlwind I computer goes online. Designed by Jay Forrester, Whirlwind features magnetic core memory and vacuum tubes that last 1000 times longer than those previously available – OK, magnetic core makes sense, but newer, better vacuum tubes are just soo arbitrary. Because it mentions MIT, this could stay though
+    * 1952 Based on analysis of early returns, a UNIVAC computer borrowed by CBS News predicts that Dwight Eisenhower will defeat Adlai Stevenson in the presidential election – You already have an entry for US elections from decades before, and this particular application is nothing stellar; don’t be media who-e; if you want, you can mention this in UNIVAC entry – say, this fine first commercial computer was later vulgarly abused by CBS news media in election frenzy
+    *1956 Dartmouth hosts the first conference on artificial intelligence, bringing the term AI into use – does origin of every term in CS deserve an entry? Also, entry about a CONFERENCE, contrary to your praiseworthy principles; AI could be mentioned in an entry about Turing test in 1950 – by saying, in 1956, at some conference at insignificant Ivy league school, AI was named, though it was SIRED by Turing 6 years before; besides, Dartmouth was mentioned in entry about that fine sophisticated computer language called “BASIC”, though a short additional note about GiGo would also be appropriate there
+    *1968 Edsger Dijkstra publishes his now-famous article “Go To Statement Considered Harmful,” igniting an acrimonious debate about programming practices – Dijkstra has too much weight. This should go in the entry about BASIC, possibly with GiGo disclaimer
+    *1970 Yuri Matiyasevich – not to throw this out, but could mention that this guy was Russian, or rather Soviet – just to pay some credit to the other side of the iron curtain, thanks to which (i.e. curtain) science was funded so amply in the golden age of Cold War
+    *1975 Bill Gates and Paul Allen adapt BASIC to the MITS Altair microcomputer – we all hate Bill Gates, but picking BASIC for a representative entry is a tad too unkind, a frankly undeserved insult to this poor old marketing pusher PLUS it wastes an entry. Mention him with DOS in the entry about IBM PC DOS, this is his true measure and most significant contribution (for what it’s worth)
+    *1989 Mike Godwin formulates Godwin’s Law: “As an online discussion grows longer, the probability of a comparison involving Nazis or Hitler approaches 1″ – we could do without this; this is just trivia and witticism of no special importance, not a significant CONTRIBUTION to development or understanding of anything
+    *1993 Joel Furr first uses the word “spam” to mean “excessive multiple postings” (in that case, to Usenet newsgroups) – you seem to like to trace origin of jargon, but this event is hardly significant
+    *1995 The Institute for Genomic Research uses whole-genome shotgun sequencing—a technique dependent on massive computer power—to sequence the genome of the first free-living organism, the bacterium Haemophilus influenzae – this is certainly significant, but is this that much CS related? No more than Sputink launching, for sure
+    *2001 In the wake of the 9/11 attacks, news websites continue running smoothly in part because of routing algorithms designed by Akamai Technologies. Meanwhile, former MIT student Danny Lewin, who cofounded Akamai with Professor Tom Leighton, is on American Airlines flight 11 when it crashes into the World Trade Center – this is artificial entry. You seem to want to add something related to 9/11, but this entry is forced
+
+    There is one thing missing – home computers in the 80s, era completely missed. Clive Sinclair deserves an entry, and his Spectrum was extremely important in Europe
+    proaonuiq Says:
+    Comment #129 February 14th, 2011 at 3:11 pm
+
+    Before these new inclusions I made some statistics.
+    –trivia: 13
+    –computation models/theory: 20
+    –ds+algorithms: 11
+    –hardware/components:9
+    –systems: 34
+    –programming languages: 6
+    –system software: 14
+    –application software: 36
+    I know, it does not add 150 and the categories are fuzzy but might help for this “hard” decision. While it seems that systems and applications are oversized, i would not cut there.
+    Bram Cohen Says:
+    Comment #130 February 14th, 2011 at 7:39 pm
+
+    I’ll nominate Asimov’s laws of robotics for deletion. They aren’t important in CS, and only really apply in Asimov’s science fiction universe.
+    Kenneth W. Regan Says:
+    Comment #131 February 14th, 2011 at 11:26 pm
+
+    I second John Sidles above on “natural”, i.e. Razborov-Rudich.
+    Charles Says:
+    Comment #132 February 14th, 2011 at 11:36 pm
+
+    I would cut:
+    1737 Jacques de Vaucanson builds a mechanical duck able to flap its wings, eat grain, and “defecate”
+
+    1770 Wolfgang von Kempelen unveils the Mechanical Turk, a “chess-playing automaton” secretly operated by a human. The hoax is only revealed 50 years later
+
+    1948 Norbert Wiener publishes “Cybernetics: Or Control and Communication in the Animal and the Machine”
+
+    1950 CSIRAC, in Australia, becomes the first computer to play music
+
+    1952 Based on analysis of early returns, a UNIVAC computer borrowed by CBS News predicts that Dwight Eisenhower will defeat Adlai Stevenson in the presidential election
+
+    1961 UNIMATE, the first industrial robot, begins work at General Motors
+
+    1962 While studying computer models of the weather, MIT professor Edward Lorentz discovers the phenomena that would later be popularized as “chaos theory”
+
+    1963 At MIT, Joseph Weizenbaum develops ELIZA, the now-famous program that simulates conversation between a Rogerian psychotherapist and a patient
+
+    1963 The first edition of ASCII (American Standard Code for Information Interchange) is published
+
+    1964 At Dartmouth, John Kemeny and Thomas Kurtz create the BASIC programming language
+
+    1965 AT&T debuts 1ESS, the first electronic telephone switching system, in Succasunna, New Jersey
+
+    1968 The movie “2001: A Space Odyssey” introduces the world to HAL
+
+    1970 John Horton Conway invents the Game of Life cellular automaton; it is estimated that millions of dollars of computer time are wasted watching Lifeforms evolve
+
+    1971 IBM commercially releases the floppy disk
+
+    1982 Sony and Philips commercially release the compact disc
+
+    1985 Richard Stallman publishes his GNU Manifesto, setting out the principles of the free-software movement
+    dmfdmf Says:
+    Comment #133 February 15th, 2011 at 12:25 am
+
+    Looks like the hard part of “killing your darlings” has been reached.
+
+    http://everything2.com/title/Kill+your+darlings
+    Raoul Ohio Says:
+    Comment #134 February 15th, 2011 at 1:04 am
+
+    RO cut list recommendations:
+
+    1. Keep Windows. It is vastly more than a GUI, it is a platform on which 95% of the world’s info processing work is done, with reasonable consistency and back compatibility. Making this work is vastly more challenging than the task of a competing, expensive but cool, OS that only works for a highly restricted class of programs.
+
+    2. Drop Basic.
+
+    3. Drop Asimov’s laws. Robotics is not CS.
+
+    4. Keep ASCII, but incorporate it with unicode. I think ASCII goes back to 1880 (or so) teletype machines, a forerunner of the internet.
+
+    5. Someone suggested the abacus. Although late, that is an excellent idea.
+
+    A good thing to remember: Shorter and simpler is usually better. If you are going into what the 150 items mean, give bonus points for anything that is easy to explain.
+
+    proaonuiq’s statistics are interesting. One is tempted to say “pitch the trivia, and you are almost done.”. But many readers of this list are likely to be nontechnical people, who will only enjoy the trivia. Perhaps keep half the trivia, certainly the “first bug”.
+    Barbara Says:
+    Comment #135 February 15th, 2011 at 2:36 am
+
+    Scott, here is a small CS student project. First invite even more possible entries and collect them on a website. Then let people vote the x most important ones and look at the statistics. Of course, such non-secure voting requires some (unjustified?) trust in your blog audience…
+    inkspot Says:
+    Comment #136 February 15th, 2011 at 2:32 pm
+
+    (1) The early ATMs had nothing to do with computing or computers; it’s more than a stretch to include them on your list.
+
+    (2) (OK, I’m committing lese-Turing. Tin hats all round.) Tommy Flowers had more to do with the development of computers than Turing. By the time of the major breakthroughs in 1943 Turing was at Bell Labs working on problems of secure speech transmission. Of course, Flowers was working-class and an engineer (“my dear, have you seen his fingernails? Too oily for words”) which, in the British class system, made him (and still makes him) quite beyond the pale. Don’t be taken in.
+
+    (3) Problems of secure speech transmission came back and influenced the invention, by Ellis and Cocks, of PKC. Ellis was heavily influenced by an anonymous Bell Labs report suggesting that the recipient add known noise to the channel.
+    Eric Jablow Says:
+    Comment #137 February 15th, 2011 at 7:52 pm
+
+    Perhaps you should reference Douglas Engelbart’s 1968 demonstration of a shared, distributed, mouse-driven system with video-conferencing, WYSIWYG editing, version control, context-sensitive help, hyperlinks, and outlining, instead of his 1967 mouse patent. After all, it’s what one does with technology that’s important.
+    John Sidles Says:
+    Comment #138 February 15th, 2011 at 9:45 pm
+
+    I propose that Scott *expand* his list to 175 entries total … 150 mainstream selections that reflect a reasonable public consensus … and then (as the reward for his labor), in a small-type inset to the main, Scott’s personally-picked Salon des CS Refusés.
+
+    I would *very* much enjoy reading Scott’s (or anyone’s) hand-picked list of “Twenty-five accomplishments in computer science that are reasonable candidates to be regarded as seminal a century from now, whose implications are still unfolding.”
+
+    For example, the Salon des CS Refusés would naturally accommodate a TCS accomplishment that Ken Regan and I both admire, namely Razborov-Rudich.
+
+    After all, everyone remembers the Salon des Refusés of 1863 … no-one remembers the Paris Salon that spawned it.
+    Raoul Ohio Says:
+    Comment #139 February 16th, 2011 at 12:46 am
+
+    John, the time for 175 entries is 2036!
+    Ilan Says:
+    Comment #140 February 16th, 2011 at 3:03 pm
+
+    Regarding Abu Abdallah Muhammad ibn Musa al-Khwarizmi writes “On the Calculation with Hindu Numerals”, the word “algebra” is not named after al-Khwarizmi. It is named after the the book. http://en.wikipedia.org/wiki/The_Compendious_Book_on_Calculation_by_Completion_and_Balancing
+    LH Says:
+    Comment #141 February 16th, 2011 at 5:11 pm
+
+    Release of Android as open source software? The uptake and effect on the mobile computing world is absolutely insane. A completely disruptive game-changer.
+    j. Says:
+    Comment #142 February 16th, 2011 at 5:13 pm
+
+    You mention Pixar and Toy Story. This is a nice opportunity to add info on Debian, perhaps the most influential Linux distribution. So these would actually be two separate entries combined in one. You get 2 for the price of 1.
+    Harry Lewis Says:
+    Comment #143 February 16th, 2011 at 5:51 pm
+
+    Tough job! And a really interesting list. My $.02 from up the river:
+
+    I’d tend to accept the criticism that maybe the Mark I doesn’t belong on this list. It was an evolutionary dead end as an architecture, though Aiken emphasis on business computing was influential.
+
+    On the other hand I’d defend putting the Gates-Allen development of 8080 BASIC on the list (cross-assembled on Harv-10 before they had ever seen the chip). This was a pivotal demonstration of what was going to be possible in the future at a time when a lot of people thought that microcomputers were toys.
+
+    Our other drop-out star, Mr. Zuckerberg? He’s probably the right person to credit with social networking because he made it ubiquitous, though he surely wasn’t the first. Friendster had 3 million users when Facebook launched. But in this world you deserve credit for actually making things happen.
+
+    It is tricky to think about how to handle ideas that didn’t really go anywhere directly though they were astonishingly visionary. Capek’s robots are one. Similarly, I love HG Wells’ 1937 anticipation of search engines and the Web: “There is no practical obstacle whatever now to the creation of an efficient index to all human knowledge, ideas and achievements, to the creation, that is, of a complete planetary memory for all mankind. And not simply an index; the direct reproduction of the thing itself can be summoned to any properly prepared spot. …. The whole human memory can be, and probably in a short time will be, made accessible to every individual.” But probably neither of these counts as a milestone in of CS.
+    Daniel Says:
+    Comment #144 February 16th, 2011 at 7:17 pm
+
+    Well, Watson’s a winner. I’d also add Kinect, for heralding (and mass marketing) the introduction of gesture computing (as well as live facial recognition and multiple voice recognition / processing). Why? Well, Kinect+Watson=HAL, to a UI designer anyway 🙂
+
+    I suspect we’ll look back at both as seminal events.
+    Paul Beame Says:
+    Comment #145 February 17th, 2011 at 12:07 am
+
+    He left Berkeley for Toronto in 1970 and in his Turing Award Lecture, he wrote “In 1971 [18], I introduced the notion of NP-complete and proved 3-satisfiability and the subgraph problem were NP-complete.”
+
+    It would be good to ask Steve Cook himself but one tidbit that Steve mentioned to a group of us at SODA a few years ago: In his original STOC conference submission he had the notion of NP-completeness and an “unnatural” complete problem something like { such that M is an NTM that accepts x in time t} but NOT the proof that 3-SAT or the subgraph problem were NP-complete. He only derived the NP-completeness of the specific natural problems between original submission and the final paper deadline.
+    Paul Beame Says:
+    Comment #146 February 17th, 2011 at 12:08 am
+
+    I forgot about HTML eating tags. That should be {< M,x,1^t&; such that M is an NTM that accepts x in time t}
+    Peter Says:
+    Comment #147 February 17th, 2011 at 7:42 am
+
+    I’d avoid major commercial developments with no significant developments. E.g. Microsoft Office or Windows contained nothing new. At the time Office shipped, everything in Office was completely mainstream. It just happened to win the market war. It would be better to attribute the inventors of the GUI (which you did) for Windows, the inventor of the spreadsheet (VisiCalc), and possibly the popularizer of the word processor (this one is harder, but either Wang, WordPerfect, or one of a slew of other products). This isn’t anti-Microsoft propaganda. I’d have no problem with Gates’ Altair BASIC, or any other major contributions by Microsoft, so long as they either brought something unpopular into the mainstream, or invented something that later became major.
+    Anonomous Says:
+    Comment #148 February 17th, 2011 at 9:17 am
+
+    How about an entry like the following?
+
+    1984 Charles Bennett and Gilles Brassard propose a cryptographically secure key distribution protocol that is based on communication with quantum states. This protocol (that was first proven secure ten years later by Dominic Mayers) helps to establish the broader “quantum cryptography” field of study.
+    Ryznar Zygmunt Says:
+    Comment #149 February 17th, 2011 at 10:59 am
+
+    SIMULA language created in 1965 by Ole-Johana Dahla & Kristen Nygaard was installed in 1965 on UNIVAC 1107 in USA. SIMULA 67 is al name of the same thing at later stage of development.
+    Zygmunt
+    Lukasz Grabowski Says:
+    Comment #150 February 17th, 2011 at 6:52 pm
+
+    I agree with the comment 61 about not mentioning Marian Rejewski in the entry about breaking the Enigma codes. Right now it is a bit like mentioninng the modularity theorem without mentioning Andrew Wiles, just because he didn’t coauthor the last in the series of papers.
+    Janoma Says:
+    Comment #151 February 18th, 2011 at 10:13 am
+
+    A few observations (or: things that shouldn’t be there).
+
+    How can you possibly talk about “all-time human champions”? Jeopardy is only a *local* T.V. show, while chess is an old game with a universal language. You just can’t put Jeopardy champions side by side with Kasparov, a true *world* champion. Besides, it is clear that Watson’s achievements were already possible a few years ago, with well developed voice recognition software and natural language processors in the market. IBM just put it together and added a lot of computer power, and that’s why Watson beat “the champions” by such a wide margin, in contrast with the close Deep Blue/Kasparov match.
+
+    Also, I don’t see a reason why the iPhone should be there. Touchscreen technology was used before, and there were several powerful phones with internet access, media player and whatnot before the iPhone. The same goes for Microsoft Office, as Peter pointed out in comment #147.
+
+    Finally, the death of Akamai’s cofounder Danny Lewin on 2001/9/11 is a sad anecdote, but nothing more than that. In my opinion, it doesn’t deserve to be listed as a major event in computer science history. And I won’t even mention Asimov. The guy has got fans, but how are “the laws” a major event/breakthrough in CS?
+    Carson Chow Says:
+    Comment #152 February 18th, 2011 at 4:00 pm
+
+    I think it would be fair to add to the Lorenz entry that Poincare anticipated if not discovered Chaos in his work on the three body problem in the early twentieth century.
+    Carson Chow Says:
+    Comment #153 February 18th, 2011 at 4:01 pm
+
+    PS I believe that here is no “t” in Lorenz
+    John Cherniavsky Says:
+    Comment #154 February 18th, 2011 at 8:19 pm
+
+    The Sieve of Eratosthenes – the fastest algorithm for finding prime numbers for 2000 years (until overtaken by the Sieve of Atkin – http://en.wikipedia.org/wiki/Sieve_of_Atkin). It increased memory to save computation time and uses progressive addition rather than brute force division.
+    Gene Chase, MIT '65 Says:
+    Comment #155 February 19th, 2011 at 10:44 am
+
+    Raoul #55: BASIC is important, but more for its interactive time-sharing context by its Dartmouth inventors, Kemeny & Kurtz, not for its Microsoft connection.
+
+    John #75: The video game Space War on the TX-0 at MIT preceded video games on the PDP-1, IIRC. They were in adjacent rooms by the time I arrived at MIT. I don’t have a date, but prior to 1961.
+
+    Helfgott #81: I agree. Replace Euclid with India. See Victor Katz’s A History of Mathematics. While you’re in that book, replace Newton’s method with similar methods from India which predate.
+
+    James #97: In defense of TeX, it’s not the application that’s the genius. It’s the modeling of typesetting justification via the physics of hierarchies of springs and masses. See Knuth’s typesetting books.
+
+    Bruce #104: I agree. Since Leibniz credits Llull with his calculus of reasoning, we should too.
+
+    Personal idiosyncratic preference: My first personal computer, in 1955, a Geniac. It came not only with a manual, but a copy of Shannon’s master’s thesis, which as a 12-year old I didn’t understand. I programmed it for tic-tac-toe and a quite bounded version of animals.
+    Gene Chase, MIT '65 Says:
+    Comment #156 February 19th, 2011 at 11:16 am
+
+    Delete “hoax” because it seems to violate your own ground rules.
+
+    Delete “wooden piano” and “CSIRAC” using the following logic: “President Obama is not dead. If he were, I would have heard about it.” If these two things are important, why haven’t I heard about them in 37 years of teaching math, logic, computer science, science fiction, and most recently history of mathematics?
+
+    Yes, that does sound like an old curmudgeon speaking. But I’m a pack-rat curmudgeon. I still have Corbato’s hectographed handout from his 1961 lecture at MIT introducing time sharing to the community, and an assortment of IBM manuals, including one for the 1620 on which I was programming in 1963.
+
+    My $0.02.
+    Ungrateful_person Says:
+    Comment #157 February 20th, 2011 at 8:38 am
+
+    Scott,
+
+    Wont the discovery of zero count as one important step in any worthwhile scientific endeavor. I think that it counts as an important note for computer science. Also, I guess Dinur’s proof of the PCP theorem deserves a mention.
+
+    Even without the above two entries the list is already awesome. But one of these, in my opinion, should make it to your final 150
+    PAC man Says:
+    Comment #158 February 21st, 2011 at 4:33 pm
+
+    Valiant’s PAC learning theory (1984) came long after Vapnik and his collaborators developed statistical learning theory in Russia in the 1960-70’s. Vapnik-Chervonenkis dimension in particular has been a very influential concept in combinatorics, information theory and CS, and Support Vector Machines are used extensively in practice.
+
+    Valiant’s approach may be more appealing for complexity theorists, but it came later and does not have the same track record in practical applications (as of 2011). If there is an entry for machine learning I think it should cite VC-dimension or some other early work of the Russian school. The USSR produced a lot of what we would now call theoretical computer science under the name “cybernetics”.
+    Peter Lund Says:
+    Comment #159 February 22nd, 2011 at 10:36 am
+
+    You can’t really avoid Heron of Alexandria.
+
+    You have ATM’s on your list — but the first coin-operated vending machine was by Heron.
+
+    You have a music-playing computer on your list — but Heron built a wind-powered organ.
+
+    You have the ducks and Turks on your list, plus a Czech play and a book on cybernetics and even a sci-fi author’s fictional Laws of Robotics. What about the actual robots and mechanical devices Heron built? He programmed them with pegs on rotating rods…
+
+    A btw on von Kempelen: he built a pretty damn good speaking machine.
+    Rash Says:
+    Comment #160 February 25th, 2011 at 7:06 pm
+
+    Oh, but Scott, how can you have a timeline of Computers and not even mention inventions such as Al-Jazari’s programmable clock? Not only was it a programmable computer, it was also one of the earliest functioning examples of an automaton/robot.
+    Jeff Laird Says:
+    Comment #161 March 5th, 2011 at 7:42 pm
+
+    Interesting list. You could shorten it considerably with little loss by dropping all the robotics entries (especially the duck and the Turk, which are unrelated to computer science) and keeping just an entry or two about computerized control, e.g. the Boeing 777. Control is just one application among many. Let the engineering disciplines fill their top-150 lists with robotics.
+
+    Thumbs up to comments suggesting fewer “first computer” entries. Actually, one is enough.
+
+    I like dmfdmf’s comment #100 suggesting more emphasis on that which future historians will devote chapters to. The Internet is the 800-pound gorilla, so I was glad to see public key exchange and RSA because they facilitated commerce over the Internet. Bioinformatics will likely surpass the Internet in importance as a billion years of evolution gives way to engineered life. But then that is not as purely “computer science” as the Internet.
+
+    As far as additions, consider this: Computer science started as the study of computation but then in the 1990s expanded to include networking. Maybe I missed such an item on the list, but corresponding to the Internet’s importance, perhaps the list could use a seminal paper regarding networking, for example the small-world phenomenon, the network effect, or the emergence and role of highly connected hubs. The models apply to far more than computer networks, for example epidemiology and biochemical reactions. I do not have a paper to suggest, but Newman, Barabasi, and Watts collected seminal papers into a volume entitled “The Structure and Dynamics of Networks”. Maybe another reader of this column can read the table of contents on Amazon and suggest a candidate.
+    David Deharbe Says:
+    Comment #162 March 9th, 2011 at 1:52 pm
+
+    Very nice list. I found it odd not to find the invention of the Jacquard loom (1801?) is invented by Joseph Marie Jacquard.
+
+    Its use of punched cards to record sequences of instructions was seminal for CS.
+    Shrinivas Kudekar Says:
+    Comment #163 March 22nd, 2011 at 6:05 pm
+
+    Hello,
+
+    Very nice post and I like most of them. But was a bit surprised to see Turbo Codes/LDPC codes missing the list. Their invention led to probabilistic decoding and achieving the ultimate Shannon limits of communication systems.
+
+    regards,
+
+    shrini
+    Patrick Cummings Says:
+    Comment #164 April 12th, 2011 at 3:49 am
+
+    I strongly urge you to read appendix B and the dedication of the 1994 book “The Unix-Haters Handbook” as you revise your list. My favorite is citing P.T. Barnum. Also note the recent DARPA pursuit of better languages for mathematical programming where (surprise) Fortran is still very strong. One has to be a masochist to use versions of C for math or simulation work.
+    Industry scuttlebutt for years is that Cooley and Tukey requested their names be removed from FFT references.
+    Descriptions of chaotic orbits have been around for about 200 years.
+    We all should recall that several years ago on the internet there were numerous requests for potential problems that might be solved by quantum computers other than factorization of large numbers. There are other activities than cryptography.
+    For the most part, this list of achievements in computers is very impressive. May I respectfully suggest you do an auxiliary list what I would call excess baggage we carry around in the name of backwards compatibility. You might start with the outrage that was vocally expressed when the 80286 was announced. As a user (both analog and digital) since 1959, I will gladly contribute.
+    Paul McJones Says:
+    Comment #165 April 12th, 2011 at 9:52 pm
+
+    How about doubling-based (binary) multiplication and division, described in the Rhind papyrus circa 1650 BC (which stated it was a copy of an earlier papyrus, circa 1850 BC)? See:
+
+    Robins, Gay and Charles Shute. 1987. The Rhind Mathematical Papyrus. British Museum Publications.
+    nst Says:
+    Comment #166 April 27th, 2011 at 11:00 pm
+
+    I suggest representing this information on a timeline such as http://simile.mit.edu/
+    Nate Shiff Says:
+    Comment #167 October 25th, 2011 at 1:50 pm
+
+    Where’s the Jacquard loom? 😉
+    Nate Shiff Says:
+    Comment #168 October 25th, 2011 at 2:15 pm
+
+    PS: This list already exists on Wikipedia. Maybe we should check there, first? http://en.wikipedia.org/wiki/Timeline_of_computing_2400_BC%E2%80%931949
+    Victor Miller Says:
+    Comment #169 October 26th, 2011 at 8:41 am
+
+    You should mention more about the SAGE project. The first core memory was designed and built for their computers. Second the significant engineering issue of reliable computation was practically addressed. When SAGE was first conceived of (around 1950) the mean time between failure of the components was measured in hours. When the computer was actually built in late 1957 it’s reliability was outstanding — downtime was only a few hours per year. That’s still a standard to be envied. [Personal note: my late father worked on project SAGE from almost the beginning]
+    Ajit R. Jadhav Says:
+    Comment #170 January 14th, 2013 at 3:11 am
+
+    Hi Scott,
+
+    Good job.
+
+    I don’t know if it’s already too late to point this out but…
+
+    1. I have an issue with the 1943 – Feynman entry. (No, I really don’t hate either MIT or Feynman 🙂 )
+
+    As far as my impression goes, the use of human calculators precedes the project Manhattan.
+
+    Richard Southwell at Oxford had employed human “computers” to execute highly mechanical procedures based on his relaxation method.
+
+    Referring to the Wiki page on him, he had a paper on the relaxation method as early as in 1935; however, I am not clear if he had used human computers for that paper. He anyway had already published a book in 1940: “Relaxation methods in engineering science: a treatise on approximate computation” (OUP).
+
+    As far as my off-hand recollection goes, it was right in this 1940 book that he gave several human computers-calculated results, for field problems like the Laplace equation etc. However, see the caveat below.
+
+    Caveat: I am not sure if it’s his 1940 book or the 1946 book (“Relaxation Methods in Theoretical Physics, a continuation of the treatise, Relaxation methods in engineering science”) that gives those human-computers executing relaxation programs. I do think it was right in his 1940 book, but I can’t be very sure. I saw these two books only once, in just a day-long trip to IIT Bombay for a library reference, about 5 years ago. (And, I had to compress a lot of literature search within that time: I had to visit IITB library during my PhD even simply for plain journal references, because COEP library had no e-Journals access as late as in 2007—certainly not for me.) But, anyway, I do distinctly remember, Southwell does give dates (in footnotes) for some of the results which he discusses in his books. Some of the dates even from his 1946 book could easily precede 1943.
+
+    Anyway, over to Oxford folks to engage in any priority battles with MIT folks. (I don’t get anything out of this from either.)
+
+    (ii) While it was good to see that you included the first CAD program, I also think that the list (at least that for voting) should have included one/two out of some crucial, CAE-related, advances:
+
+    – 1910: Richardson publishes the first paper on the FDM (finite difference method)
+
+    – 1928: The CFL paper on stability in FDM
+
+    – 1935: Southwell publishes a paper on his relaxation method (as above)
+
+    – Something on FEM: BTW, can’t decide on the one single important development or priority, when it comes to FEM: Hrenikoff (1941) and Courant (1943) seem too mathematical (e.g. didn’t consider the boundary-condition, assembly and computational issues so well); Argyris and
+    Kelsey (1954, 1955) addressed only 1D frame—too close to simple matrix analysis; Clough spent summers at Boeing (1952, 53), and working with Turner (Berkeley), Martin and Topp (U Wa.) published on general 2D elasticity PDE problems (and not just the bars which make the method indistinguishable from the earlier matrix analysis of trusses). However, the name “Finite Element” itself was used in Clough et al. (1960). Of course, it was a conference paper, not immediately indexed in Scopus/Web of Science/etc., and so, like any such a paper, it need not at all be taken seriously by anyone anywhere.
+
+    – Something on CFD: It too grew up in 1950s and 1960s. Since the Navier-Stokes issue has it made to the Clay Institute’s list, it might seem appropriate to cover at least one milestone concerning its approximate solution as in CFD. To my mind, it would be the SIMPLE algorithm of Patankar and Spalding at Imperial (1970s), building on and significantly advancing a work by Chorin (1968).
+
+    But then, again, I don’t have a CS guy’s perspective on these matters. It’s possible that they may think the lattice gas automata is more important because it was in terms of boolean variables.
+
+    To my mind, if such a line is to be included, the Bhatnagar-Gross-Krook work on the BGK operator of the lattice Boltzmann method (1954) would be more important. In fact, as Succi later showed, LBM can be used to simulate the Schrodinger equation.
+
+    So, anyway, over to you CS guys and/or for voting (or, just as an extra blog note, if the voting is already over).
+
+    Ajit
+    [E&OE]
+    Abdullah Says:
+    Comment #171 February 6th, 2013 at 1:06 pm
+
+    Amazing work. I really enjoyed every second and wasted a lot of time. gotta get back to work 🙁
+    Jaguaraci Silva Says:
+    Comment #172 February 6th, 2013 at 5:24 pm
+
+    Dear Dr. Scott,
+
+    great idea, it could be a book :). I would like to add only another very important thing:
+
+    1975 John Goodenough defined concepts for exception handling to be using in programming languages.
+
+    Good job!!
+    Daniel Himmelein Says:
+    Comment #173 February 8th, 2013 at 4:32 pm
+
+    I definitely think that the invention of the Actor model by Carl Hewitt in 1973, CSP by Hoare in 1978 and the invention of Smalltalk in 1969 by Alan Kay must be added.
+    I personally would also add the first great microkernel OS, QNX, in 1982 :-).
+    Ramesh Chengappa Says:
+    Comment #174 November 6th, 2013 at 1:16 pm
+
+    Hindus invented the concept of Zero..without which there would be No Binary System..and hence no computers.
+
+    http://www.slideshare.net/jaihind/hindu-contribution-to-mathematics-science-archna-sahni . Specifically look at Slide 8.
+
+    The #1 guy in your list Al-Kwarzimi took it from the Hindus.
+
+    Look at the BBC program here : http://www.youtube.com/watch?v=gulApUKih2w
+    WillBarksdale Says:
+    Comment #175 November 6th, 2013 at 5:02 pm
+
+    The Jaquard Loom!
+    It used punch cards to describe the pattern of weave for carpets and tapestries etc… Served as the inspiration for hollerith’s census machine, and could be thought of as the first instance of software (the cards)
+    rss Says:
+    Comment #176 June 17th, 2014 at 12:32 pm
+
+    Please look up precursors to HTML:
+
+    http://en.wikipedia.org/wiki/Markup_language
+
+    http://en.wikipedia.org/wiki/Charles_Goldfarb
+    PR Says:
+    Comment #177 June 17th, 2014 at 1:04 pm
+
+    No APL in the list? Sad…
+    Gjergji Kasneci Says:
+    Comment #178 June 17th, 2014 at 2:02 pm
+
+    Great list, indeed!
+
+    The list could be extended by seminal contributions in the area of latent topic models, e.g. LSA, LDA. They ignited a whole new area of research.
+    andrey Says:
+    Comment #179 September 21st, 2014 at 5:43 pm
+
+    Wikipedia says that Lee Zehrer founded kiss.com, and that match.com was founded by Gary Kremen in 1993.
+    theCoach Says:
+    Comment #180 July 30th, 2015 at 12:48 pm
+
+    Alonzo Church’s Lambda Calculus does not even get its on entry or called out by name…tough list.
+
+    I am more interested (personally) in programming language theory stuff, but this is a fun list. Thanks.
+    Hamish Todd Says:
+    Comment #181 July 21st, 2016 at 6:37 pm
+
+    Turing may not have committed suicide! Tragic story of course, and up for debate, but the suicide version of it should not be reported as fact http://www.bbc.co.uk/news/science-environment-18561092
+    CS timeline | Ok, panico Says:
+    Comment #182 July 27th, 2016 at 8:25 am
+
+    […] Timeline of computer science; […]
+
+Shtetl-Optimized is proudly powered by WordPress
+Entries (RSS) and Comments (RSS).
+

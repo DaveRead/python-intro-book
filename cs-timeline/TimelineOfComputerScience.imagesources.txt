@@ -1,0 +1,43 @@
+2000:captcha:https://en.wikipedia.org/wiki/CAPTCHA#/media/File:Captcha.jpg
+2004:Mark Z.:https://news.harvard.edu/gazette/story/2017/03/zuckerberg-speaks-at-harvards-366th-commencement/
+2011:Watson on Jeopardy:https://www.csmonitor.com/Technology/Latest-News-Wires/2011/0215/On-Jeopardy-Watson-s-mistakes-reveal-its-genius
+1995:Toy story:https://www.imdb.com/title/tt0114709/
+1997:IBM Deep Blue:https://spectrum.ieee.org/how-ibms-deep-blue-beat-world-champion-chess-player-garry-kasparov
+1998:Google:https://www.creativebloq.com/news/google-logo-history
+1990:Tim Berners-Lee:https://home.cern/news/news/computing/web30-30-year-anniversary-invention-changed-world
+1991:Linus Torvalds:https://www.linkedin.com/in/linustorvalds/overlay/photo/
+1993:GPS:https://en.wikipedia.org/wiki/Global_Positioning_System
+1985:MS Windows:https://en.wikipedia.org/wiki/Microsoft_Windows#/media/File:Windows1.0.png
+1981:IBM PC:https://en.wikipedia.org/wiki/IBM_Personal_Computer#/media/File:IBM_PC-IMG_7271_(transparent).png
+1982:CD:https://en.wikipedia.org/wiki/Compact_disc#/media/File:OD_Compact_disc.svg
+1984:Macintosh:https://en.wikipedia.org/wiki/1984_(advertisement)#/media/File:Macintosh_128k_transparency.png
+1983:Bjorn Stroustrup:https://en.wikipedia.org/wiki/C%2B%2B#/media/File:BjarneStroustrup.jpg
+1977:RSA/PKI:https://en.wikipedia.org/wiki/Public-key_cryptography#/media/File:Public-key-crypto-1.svg
+1978:8086 processor:https://en.wikipedia.org/wiki/Intel_8086#/media/File:Intel_C8086.jpg
+1979:VisiCalc:https://en.wikipedia.org/wiki/VisiCalc#/media/File:Visicalc.png
+1970:Conway's Game of Life:https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#/media/File:Game_of_life_acorn.svg
+1972:Pong:https://en.wikipedia.org/wiki/Pong#/media/File:TeleGames-Atari-Pong.jpg
+1974:Barbara Liskov:https://en.wikipedia.org/wiki/Barbara_Liskov#/media/File:Barbara_Liskov_MIT_computer_scientist_2010.jpg
+1966:TI Cal Tech:http://www.lokker.net/THOCP/hardware/ti_calculators.htm
+1967:First mouse:https://en.wikipedia.org/wiki/Douglas_Engelbart#/media/File:SRI_Computer_Mouse.jpg
+1969:Margaret Hamilton:https://en.wikipedia.org/wiki/Apollo_Guidance_Computer#/media/File:Margaret_Hamilton_-_restoration.jpg
+1961:UNIMATE:https://www.nytimes.com/2011/08/16/business/george-devol-developer-of-robot-arm-dies-at-99.html
+1963:ASCII:https://www.johndcook.com/blog/2022/05/28/how-to-memorize-the-ascii-table/
+1958:John McCarthy:https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)#/media/File:John_McCarthy_Stanford.jpg
+1950:Turing test:https://en.wikipedia.org/wiki/Turing_test#/media/File:Turing_test_diagram.png
+1951:UNIVAC I:https://en.wikipedia.org/wiki/UNIVAC_I#/media/File:Univac_I_at_Census_Bureau_with_two_operators.jpg
+1951:Grace Hopper: https://en.wikipedia.org/wiki/File:Commodore_Grace_M._Hopper,_USN_(covered).jpg
+1945:von Neumann Architecture:https://en.wikipedia.org/wiki/Von_Neumann_architecture#/media/File:Von_Neumann_Architecture.svg
+1946:ENIAC:https://en.wikipedia.org/wiki/ENIAC#/media/File:Two_women_operating_ENIAC_(full_resolution).jpg
+1947:Transistor:https://en.wikipedia.org/wiki/Transistor#/media/File:Bardeen_Shockley_Brattain_1948.JPG
+1936:Alan Turing:https://www.newgon.net/wiki/Alan_Turing#/media/File:Turing.jpg
+1943:Neural Network:https://en.wikipedia.org/wiki/Neural_network#/media/File:Neural_network_example.svg
+1890:Hollerith machine:https://en.wikipedia.org/wiki/File:HollerithMachine.CHM.jpg
+1842:Ada Lovelace:https://en.wikipedia.org/wiki/Ada_Lovelace#/media/File:Ada_Byron_daguerreotype_by_Antoine_Claudet_1843_or_1850.jpg
+1842:Ada Lovelace's Program:https://en.wikipedia.org/wiki/Ada_Lovelace#/media/File:Diagram_for_the_computation_of_Bernoulli_numbers.jpg
+1837:Charles Babbage:https://en.wikipedia.org/wiki/Charles_Babbage#/media/File:Charles_Babbage_-_1860.jpg
+1837:Analytical Engine (portion):https://en.wikipedia.org/wiki/Analytical_Engine#/media/File:Babbages_Analytical_Engine,_1834-1871._(9660574685).jpg
+1642:Blaise Pascal Calculator:https://en.wikipedia.org/wiki/Pascal%27s_calculator#/media/File:Pascaline_-_top_view_and_mechanism.jpg
+825:Muhammad ibn Musa al-Khwarizmi:https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi#/media/File:1983_CPA_5426_(1).png
+300:Euclid's Elements:https://en.wikipedia.org/wiki/Euclid%27s_Elements#/media/File:P._Oxy._I_29.jpg
+
