@@ -51,6 +51,7 @@ BEGIN {
 		
 		# Deal with characters problematic in LaTex
 		# & % $ # _ { } ~ ^ \ (backslash was handled earlier)
+		# see: https://latex.org/forum/viewtopic.php?t=5833
 		gsub("[&]", "\\&", source)
 		gsub("[%]", "\\%", source)
 		gsub("[$]", "\\$", source)
