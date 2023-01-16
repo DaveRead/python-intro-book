@@ -30,8 +30,9 @@
 1945:von Neumann Architecture:https://en.wikipedia.org/wiki/Von_Neumann_architecture#/media/File:Von_Neumann_Architecture.svg
 1946:ENIAC:https://en.wikipedia.org/wiki/ENIAC#/media/File:Two_women_operating_ENIAC_(full_resolution).jpg
 1947:Transistor:https://en.wikipedia.org/wiki/Transistor#/media/File:Bardeen_Shockley_Brattain_1948.JPG
-1936:Alan Turing:https://www.newgon.net/wiki/Alan_Turing#/media/File:Turing.jpg
 1943:Neural Network:https://en.wikipedia.org/wiki/Neural_network#/media/File:Neural_network_example.svg
+1936:Alan Turing:https://www.newgon.net/wiki/Alan_Turing#/media/File:Turing.jpg
+1915:Elizebeth Smith Friedman:https://en.wikipedia.org/wiki/Elizebeth_Smith_Friedman#/media/File:Elizebeth-Friedman.jpg
 1890:Hollerith machine:https://en.wikipedia.org/wiki/File:HollerithMachine.CHM.jpg
 1842:Ada Lovelace:https://en.wikipedia.org/wiki/Ada_Lovelace#/media/File:Ada_Byron_daguerreotype_by_Antoine_Claudet_1843_or_1850.jpg
 1842:Ada Lovelace's Program:https://en.wikipedia.org/wiki/Ada_Lovelace#/media/File:Diagram_for_the_computation_of_Bernoulli_numbers.jpg
